@@ -1,0 +1,2 @@
+(this.webpackJsonpthree_p_world=this.webpackJsonpthree_p_world||[]).push([[8],{44:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return p}));var r=n(8),u=n(9),c=n(11),a=n(10),o=n(0),i=n.n(o),p=function(e){Object(c.a)(n,e);var t=Object(a.a)(n);function n(){return Object(r.a)(this,n),t.apply(this,arguments)}return Object(u.a)(n,[{key:"render",value:function(){return i.a.createElement("div",null,"Product Desk")}}]),n}(o.Component)}}]);
+//# sourceMappingURL=8.6baea8ee.chunk.js.map
