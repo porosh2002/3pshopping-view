@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+  text-decoration: none;
+  text-align: center;
+}
+.slider-main{
+  z-index:0;
+}
+.slider-img{
+  width: 100vw;
+  height:400px;
+  margin:0px;
+}
+/* .title-md {
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #d2d2d2;
+}
+.title-ls {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #a0a0a0;
+}
+.ftr-logo {
+  height: 60px;
+}
+.logo-ftr {
+  margin: auto 0px;
+}
+.footer {
+  background-color: #29303b;
+  padding: 30px 10px 0px 10px;
+}
+.ftr-subcription {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50px;
+}
+.footer-subs {
+  width: 800px;
+  margin: auto 0px;
+}
+.email-input {
+  width: 180px;
+  border: 1px solid #29303b;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-right: none;
+  padding: 0px 10px;
+  height: 30px;
+}
+.btn-email {
+  cursor: pointer;
+  padding: 0px 15px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border: none;
+  background-color: lightcoral;
+  color: #fff;
+  height: 30px;
+}
+.footer-form {
+  margin: 20px 0px;
+}
+.footer-title {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #fff;
+}
+.footer-des {
+  font-size: 13px;
+  display: block;
+  color: #d2d2d2;
+}
+.footer-des_menu {
+  font-size: 13px;
+  display: inline-block;
+  color: #d2d2d2;
+  margin: 5px;
+}
+
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.abt-cs {
+  display: flex;
+  width: 45%;
+  justify-content: space-around;
+  padding: 30px 15px;
+}
+.menu_-footer {
+  text-align: center;
+  width: 55%;
+  padding: 30px 15px;
+}
+.footer-lst{
+  padding:30px;
+}
+.download{
+  display: flex;
+  width:auto;
+  justify-content:space-around;
+}
+.down-social{
+  display: flex;
+  justify-content:space-around;
+}
+.fa-android,.fa-apple,.fa-instagram,.fa-linkedin,.fa-youtube,.fa-twitter-square,.fa-facebook-square{
+  font-size:25px;
+  color:#fff;
+  margin:0px 10px;
+}
+.dwnld{
+  margin-top:5px;
+}
+.app{
+  font-size:20px;
+}
+.pptu{
+  font-size:13px;
+  color:#d2d2d2;
+  text-transform:capitalize;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin:10px 20px;
+}
+.pptu_div{
+  text-align: center;
+  padding:50px 0px;
+  margin:0;
+}
+.footer-c,.linkcare{
+  font-size:13px;
+  color:#d2d2d2;
+  text-align: center;
+}
+.linkcare{
+  text-decoration: underline;
+} */
+/* Loading */
+.loader{
+  letter-spacing: 2px;
+  font-size: 25px;
+color:#444;
+}
+.error-txt{
+  letter-spacing: 2px;
+  font-size: 25px;
+color:#ea8041;
+padding:30vh 0px;
+}
+/* Offer Slider */
+.offer-slider{
+  height:150px;
+  width:100%;
+  background-color: #444;
+}
+.offer-slider-2{
+  height:150px;
+  width:100%;
+  background-color:tomato;
+}
+.offer-slider-3{
+  height:150px;
+  width:100%;
+  background-color:royalblue;
+}
