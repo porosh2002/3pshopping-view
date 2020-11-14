@@ -36,9 +36,9 @@ body{
   height:150px;
 }
 }
-.ab-p-50{
+.ab-p-60{
 position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
+top:60%;
+left:60%;
+transform:translate(-60%,-60%);
 }
