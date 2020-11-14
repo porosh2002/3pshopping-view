@@ -50,6 +50,7 @@
       .nav-modal-mob{
         height:40vh;
         width: 100vw;
+        background: url('../../Images/bg-pattern.png');
         background-color: #444;
       }
       .logo{
