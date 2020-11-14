@@ -42,3 +42,10 @@ top:60%;
 left:60%;
 transform:translate(-60%,-60%);
 }
+/* Slider */
+.slider-image{
+  height:500px;
+  width:100vw;
+  background-position: center;
+  background: url('./Images/sd1.jpg');
+}
