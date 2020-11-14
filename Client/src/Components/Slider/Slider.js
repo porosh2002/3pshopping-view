@@ -1,20 +1,20 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
-import 'swiper/swiper.scss';
-
-export default () => {
-  return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      ...
-    </Swiper>
-  );
-};
+import React, { Component, Suspense } from "react";
+const SliderDesk = React.lazy(() => import("./SliderDesk"));
+const SliderMob = React.lazy(() => import("./SliderMob"));
+export default class Navigation extends Component {
+render() {
+    return (
+      <div>
+        {window.innerWidth >800 ? (
+          <Suspense fallback={<div></div>}>
+            <SliderDesk />
+          </Suspense>
+        ) : (
+          <Suspense fallback={<div></div>}>
+            <SliderMob />
+          </Suspense>
+        )}
+      </div>
+    )
+  }
+}
