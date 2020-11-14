@@ -1,20 +1,35 @@
-import React, { Component, Suspense } from "react";
-const SliderDesk = React.lazy(() => import("./SliderDesk"));
-const SliderMob = React.lazy(() => import("./SliderMob"));
-export default class Navigation extends Component {
-render() {
+import React, { Component } from "react";
+import SwiperCore, { Autoplay , Navigation} from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+SwiperCore.use([Autoplay,Navigation]);
+export default class Slider extends Component {
+  Scroll = () => {
+    if (window.innerWidth > 900) {
+      return 4;
+    } else {
+      return 2;
+    }
+  };
+  render() {
     return (
-      <div>
-        {window.innerWidth >800 ? (
-          <Suspense fallback={<div></div>}>
-            <SliderDesk />
-          </Suspense>
-        ) : (
-          <Suspense fallback={<div></div>}>
-            <SliderMob />
-          </Suspense>
-        )}
-      </div>
-    )
+<div>
+<Swiper navigation
+        spaceBetween={30}
+        slidesPerView='1'
+        loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+      >
+ <SwiperSlide>
+
+        </SwiperSlide>
+                <SwiperSlide>
+
+        </SwiperSlide>
+      </Swiper>
+</div>
+    );
   }
 }
