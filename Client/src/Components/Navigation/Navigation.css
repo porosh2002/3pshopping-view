@@ -1,0 +1,10 @@
+.navigation{
+    background-color: #fff;
+    position: sticky;
+    top:0;
+  }
+@media screen and (min-width:800px){
+      .navdesk{
+        height:100px;
+      }
+}
