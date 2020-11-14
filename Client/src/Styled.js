@@ -9,7 +9,7 @@ export const Input = styled.input`
 margin:10px auto;
   width: 310px;
   text-align:center;
-  padding: 0.375rem 5px;
+  padding: 0.5rem 5px;
   border: 1px solid grey;
   outline: none;
   border-radius: 3px;
@@ -27,9 +27,9 @@ margin:30px auto;
 font-size:18px;
 width:150px;
 color:#f7f7f7;
-background-color:royalblue;
+background-color:#7344f5;
 cursor:pointer;
-padding:5px 0px;
+padding:7px 0px;
 border-radius:3px;
 transition:.3s;
 &:hover {

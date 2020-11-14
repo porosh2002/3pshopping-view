@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Input } from "../Styled";
 import { URL } from "../serverUrl";
+import {Link} from 'react-router-dom'
 import validator from "validator";
 import Error from "../Components/Error/Error";
 export default class Signup extends Component {
@@ -124,6 +125,9 @@ export default class Signup extends Component {
           </div>
           <Button type="submit" value="Signup" />
         </form>
+          <div style={{textAlign:"center"}}>
+          <Link to='/login'>Already have a Account ?</Link>
+          </div>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Input } from "../Styled";
 import { URL } from "../serverUrl";
+import {Link} from 'react-router-dom';
 import validator from "validator";
 import { connect } from "react-redux";
 import { setUser } from "../Redux/user/actions";
@@ -81,6 +82,9 @@ class Login extends Component {
             maxLength="32"
           />
           <Button type="submit" value="Login" />
+          <div style={{textAlign:"center"}}>
+          <Link to='/signup'>create new Account</Link>
+          </div>
         </form>
       </div>
     );
