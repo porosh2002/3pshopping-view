@@ -5,6 +5,7 @@
     top:0;
     font-family: 'Josefin Sans';
     overflow: hidden;
+    z-index:999;
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
   }
 @media screen and (min-width:800px){
@@ -48,8 +49,8 @@
           text-decoration: none;
       }
       .nav-modal-mob{
-        height:40vh;
-        width: 100vw;
+        height:50vh;
+        z-index:999;
         background: url('../../Images/bg-pattern.png');
         background-color: #444;
       }
