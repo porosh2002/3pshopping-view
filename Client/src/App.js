@@ -8,6 +8,7 @@ const Home = React.lazy(() => import("./Pages/Home"));
 const Error = React.lazy(() => import("./Pages/Error"));
 const Login = React.lazy(() => import("./Pages/Login"));
 const Signup = React.lazy(() => import("./Pages/Signup"));
+const Admin = React.lazy(() => import("./Pages/Admin"));
 class App extends Component {
   render() {
 
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={Signup} />
+            <Route exact path="/admin" component={Admin} />
             <Route component={Error} />
           </Switch>
         </Suspense>

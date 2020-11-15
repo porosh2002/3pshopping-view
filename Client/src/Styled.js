@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 export const Div = styled.div`
   text-align: center;
   margin:70px 0px;
@@ -59,4 +60,27 @@ position:absolute;
 top:20px;
 right:30px;
 cursor:pointer;
+`;
+export const Footer = styled.div`
+padding:30px 0px;
+background-color:#29303b;
+text-align:center;
+`;
+export const FooterLink = styled.div`
+display:inline-block;
+margin:20px;
+`;
+export const FooterLinkStyle = styled(Link)`
+text-decoration:none;
+font-size:1rem;
+color:#d2d2d2;
+`;
+export const FooterLinkStyleSocial = styled(Link)`
+color:#d2d2d2;
+font-size:2rem;
+`;
+export const AdminMenu = styled.div`
+background-color:#444;
+text-align:center;
+padding:20px 0px;
 `;

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../Images/logo.png";
 import { FaBars,FaTimes} from "react-icons/fa";
-
 export default class NavMob extends Component {
   state={
     modalOpen:false,
