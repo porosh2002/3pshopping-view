@@ -82,5 +82,21 @@ font-size:2rem;
 export const AdminMenu = styled.div`
 background-color:#444;
 text-align:center;
-padding:20px 0px;
+padding-top:20px;
+`;
+export const AdminContent = styled.div`
+padding:50px 0px;
+text-align:center;
+`;
+export const AdminCTitle = styled.div`
+font-size:25px;
+color:#444;
+`;
+export const Select = styled.select`
+font-size:15px;
+padding:5px 10px;
+color:#444;
+margin:30px 0px;
+border:1px solid #444;
+border-radius:3px;
 `;

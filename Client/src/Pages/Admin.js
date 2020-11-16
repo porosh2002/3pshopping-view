@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AdminMenu, FooterLinkStyle, FooterLink } from "../Styled";
+import { AdminMenu, FooterLinkStyle, FooterLink,AdminContent,AdminCTitle,Select } from "../Styled";
 import {
   VscAdd,
   VscAccount,
@@ -10,48 +10,59 @@ import {
 export default class Admin extends Component {
   render() {
     return (
-      <AdminMenu>
-        <FooterLink>
-          <FooterLinkStyle>
-            Add Match{" "}
-            <div>
-              <VscAdd />
-            </div>
-          </FooterLinkStyle>
-        </FooterLink>
-        <FooterLink>
-          <FooterLinkStyle>
-            Add Match Result{" "}
-            <div>
-              <VscLoading />
-            </div>
-          </FooterLinkStyle>
-        </FooterLink>
-        <FooterLink>
-          <FooterLinkStyle>
-            User's Details{" "}
-            <div>
-              <VscAccount />
-            </div>
-          </FooterLinkStyle>
-        </FooterLink>
-        <FooterLink>
-          <FooterLinkStyle>
-            Confirm Payment{" "}
-            <div>
-              <VscCheck />
-            </div>
-          </FooterLinkStyle>
-        </FooterLink>
-        <FooterLink>
-          <FooterLinkStyle>
-            Make Payment{" "}
-            <div>
-              <VscCreditCard />
-            </div>
-          </FooterLinkStyle>
-        </FooterLink>
-      </AdminMenu>
+      <div>
+        <AdminMenu>
+          <FooterLink>
+            <FooterLinkStyle to=''>
+              Add Match{" "}
+              <div>
+                <VscAdd />
+              </div>
+            </FooterLinkStyle>
+          </FooterLink>
+          <FooterLink>
+            <FooterLinkStyle to=''>
+              Add Match Result
+              <div>
+                <VscLoading />
+              </div>
+            </FooterLinkStyle>
+          </FooterLink>
+          <FooterLink>
+            <FooterLinkStyle to=''>
+              User's Details
+              <div>
+                <VscAccount />
+              </div>
+            </FooterLinkStyle>
+          </FooterLink>
+          <FooterLink>
+            <FooterLinkStyle to=''>
+              Confirm Payment
+              <div>
+                <VscCheck />
+              </div>
+            </FooterLinkStyle>
+          </FooterLink>
+          <FooterLink>
+            <FooterLinkStyle to=''>
+              Make Payment
+              <div>
+                <VscCreditCard />
+              </div>
+            </FooterLinkStyle>
+          </FooterLink>
+        </AdminMenu>
+        <AdminContent>
+          <AdminCTitle>Add Match</AdminCTitle>
+<Select name="cars" id="cars">
+  <option value="null">Select Match</option>
+  <option value="cricket">Cricket</option>
+  <option value="football">Football</option>
+  <option value="tabletennis">Table Tennis</option>
+</Select>
+        </AdminContent>
+      </div>
     );
   }
 }
