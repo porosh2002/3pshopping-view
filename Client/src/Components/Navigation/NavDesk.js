@@ -10,6 +10,7 @@ export default function NavDesk() {
         <ul className='nav-ul'>
             <li><Link className='menu-Link' to=''>Home</Link></li>
             <li><Link className='menu-Link' to=''>Live Match</Link></li>
+            <li><Link className='menu-Link' to=''>Account</Link></li>
             <li><Link className='menu-Link' to=''>Upcoming Match</Link></li>
             <li><Link className='menu-Link' to='/login'>Login/Signup</Link></li>
         </ul>
