@@ -8,6 +8,12 @@ import {
   VscLoading,
 } from "react-icons/vsc";
 export default class Admin extends Component {
+constructor(){
+  super()
+  this.state={
+    matchType:'',
+  }
+}
   render() {
     return (
       <div>
