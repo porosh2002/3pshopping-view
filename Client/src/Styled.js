@@ -101,3 +101,12 @@ margin:30px 0px;
 border:1px solid #444;
 border-radius:3px;
 `;
+export const UserCard = styled.div`
+font-size:17px;
+color:#f7f7f7;
+padding:20px;
+display:inline-block;
+margin:30px;
+border-radius:3px;
+background-color:#29303b;
+`;
