@@ -2,8 +2,7 @@ import React from "react";
 import {
   Footer,
   FooterLink,
-  FooterLinkStyle,
-  FooterLinkStyleSocial,
+  FooterLinkStyle
 } from "./Styled";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 export default function footer() {
@@ -11,14 +10,14 @@ export default function footer() {
     <Footer>
     <p style={{fontSize:"1rem",color:"#d2d2d2",margin:"10px"}}>Follow us on</p>
           <FooterLink>
-        <FooterLinkStyleSocial to="/">
+        <a style={{fontSize:"30px",color:"#d2d2d2"}} target='self' href="https://www.facebook.com/hd.bet">
           <FaFacebook />
-        </FooterLinkStyleSocial>
+        </a>
       </FooterLink>
       <FooterLink>
-        <FooterLinkStyleSocial to="/">
+        <a style={{fontSize:"30px",color:"#d2d2d2"}} target='self' href="https://www.youtube.com/channel/UCOAnzv7nBH8PikQGQZUfONQ">
           <FaYoutube />
-        </FooterLinkStyleSocial>
+        </a>
       </FooterLink>
       <br/>
       <br/>
@@ -32,7 +31,7 @@ export default function footer() {
         <FooterLinkStyle to="">(18+) Please Gamble Responsibly</FooterLinkStyle>
       </FooterLink>
       <FooterLink>
-        <FooterLinkStyle to="">Make Best Website with wecubs</FooterLinkStyle>
+        <a target='self' href="https://www.facebook.com/wecubs"><span style={{color:"#a7e9af"}}>Make any Website with wecubs</span></a>
       </FooterLink>
     </Footer>
   );
