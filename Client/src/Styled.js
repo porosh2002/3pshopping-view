@@ -94,6 +94,7 @@ color:#444;
 `;
 export const Select = styled.select`
 font-size:15px;
+outline:none;
 padding:5px 10px;
 color:#444;
 margin:30px 0px;

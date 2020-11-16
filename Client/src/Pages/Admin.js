@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AdminMenu, FooterLinkStyle, FooterLink,AdminContent,AdminCTitle,Select } from "../Styled";
+import { Input,AdminMenu, FooterLinkStyle, FooterLink,AdminContent,AdminCTitle,Select } from "../Styled";
 import {
   VscAdd,
   VscAccount,
@@ -67,6 +67,24 @@ constructor(){
   <option value="football">Football</option>
   <option value="tabletennis">Table Tennis</option>
 </Select>
+        </AdminContent>
+        <AdminContent>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
+<Input></Input>
         </AdminContent>
       </div>
     );
