@@ -89,7 +89,7 @@ padding:50px 0px;
 text-align:center;
 `;
 export const AdminCTitle = styled.div`
-font-size:25px;
+font-size:20px;
 color:#444;
 `;
 export const Select = styled.select`

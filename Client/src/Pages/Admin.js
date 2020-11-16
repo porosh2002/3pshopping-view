@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Input,AdminMenu, FooterLinkStyle, FooterLink,AdminContent,AdminCTitle,Select } from "../Styled";
+import {
+  Input,
+  AdminMenu,
+  FooterLinkStyle,
+  FooterLink,
+  AdminContent,
+  AdminCTitle,
+  Select,
+} from "../Styled";
 import {
   VscAdd,
   VscAccount,
@@ -8,18 +16,24 @@ import {
   VscLoading,
 } from "react-icons/vsc";
 export default class Admin extends Component {
-constructor(){
-  super()
-  this.state={
-    matchType:'',
+  constructor() {
+    super();
+    this.state = {
+      Football: false,
+      TableTenis: false,
+      Criclet: true,
+    };
   }
-}
   render() {
+    const { Football, TableTenis, Criclet } = this.state;
+    const StyleFootball = Football ? null : { display: "none" };
+    const StyleTenis = TableTenis ? null : { display: "none" };
+    const StyleCricket = Criclet ? null : { display: "none" };
     return (
       <div>
         <AdminMenu>
           <FooterLink>
-            <FooterLinkStyle to=''>
+            <FooterLinkStyle to="">
               Add Match{" "}
               <div>
                 <VscAdd />
@@ -27,7 +41,7 @@ constructor(){
             </FooterLinkStyle>
           </FooterLink>
           <FooterLink>
-            <FooterLinkStyle to=''>
+            <FooterLinkStyle to="">
               Add Match Result
               <div>
                 <VscLoading />
@@ -35,7 +49,7 @@ constructor(){
             </FooterLinkStyle>
           </FooterLink>
           <FooterLink>
-            <FooterLinkStyle to=''>
+            <FooterLinkStyle to="">
               User's Details
               <div>
                 <VscAccount />
@@ -43,7 +57,7 @@ constructor(){
             </FooterLinkStyle>
           </FooterLink>
           <FooterLink>
-            <FooterLinkStyle to=''>
+            <FooterLinkStyle to="">
               Confirm Payment
               <div>
                 <VscCheck />
@@ -51,7 +65,7 @@ constructor(){
             </FooterLinkStyle>
           </FooterLink>
           <FooterLink>
-            <FooterLinkStyle to=''>
+            <FooterLinkStyle to="">
               Make Payment
               <div>
                 <VscCreditCard />
@@ -61,38 +75,147 @@ constructor(){
         </AdminMenu>
         <AdminContent>
           <AdminCTitle>Add Match</AdminCTitle>
-<Select name="cars" id="cars">
-  <option value="null">Select Match</option>
-  <option value="cricket">Cricket</option>
-  <option value="football">Football</option>
-  <option value="tabletennis">Table Tennis</option>
-</Select>
+          <Select name="cars" id="cars">
+            <option value="null">Select Match</option>
+            <option value="cricket">Cricket</option>
+            <option value="football">Football</option>
+            <option value="tabletennis">Table Tennis</option>
+          </Select>
         </AdminContent>
-        <AdminContent>
-        <AdminCTitle>Team A</AdminCTitle>
-<Input></Input>
-        <AdminCTitle>Team B</AdminCTitle>
-<Input></Input>
-        <AdminCTitle><span style={{color:"orangered"}}>1st Half Time Result</span></AdminCTitle>
-        <AdminCTitle>Team A (Rate)</AdminCTitle>
-<Input></Input>
-        <AdminCTitle>Team B (Rate)</AdminCTitle>
-<Input></Input>
-        <AdminCTitle>Draw (Rate)</AdminCTitle>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
-<Input></Input>
+        {/* <AdminContent style={StyleFootball}>
+          <AdminCTitle>Team A</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>1st Half Time Result</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Draw (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Full Time Result</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Draw (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Total Goal of Match</span>
+          </AdminCTitle>
+          <AdminCTitle>Even (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Odd (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Penalty Match</span>
+          </AdminCTitle>
+          <AdminCTitle>Yes (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>No (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Total Match Goal</span>
+          </AdminCTitle>
+          <AdminCTitle>1 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>2 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>3 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>4 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>5 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>5+ (Rate)</AdminCTitle>
+          <Input></Input>
+        </AdminContent>
+        <AdminContent style={StyleTenis}>
+          <AdminCTitle>Team A</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Final Result</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Total Match point</span>
+          </AdminCTitle>
+          <AdminCTitle>Odd (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Even B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Total Match point</span>
+          </AdminCTitle>
+          <AdminCTitle>Over 18.5 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>under 18.5 (Rate)</AdminCTitle>
+          <Input></Input>
+        </AdminContent> */}
+        <AdminContent style={StyleCricket}>
+          <AdminCTitle>Team A</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Toss Result</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Final Match Result</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>1st ball of the 1st Innings</span>
+          </AdminCTitle>
+          <AdminCTitle>Dot Ball (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>1 Run (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>2 Run (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>3 Run (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>4 Run (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>6 Run (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Others (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>1st Over of the 1st Innings</span>
+          </AdminCTitle>
+          <AdminCTitle>0-3 Run (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>4-6 Run (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>7-9 Run (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>10+ Run (Rate)</AdminCTitle>
+          <Input></Input>
+
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Run at Fall of 1st wicket of first Innings</span>
+          </AdminCTitle>
+          <AdminCTitle>0-3 Run (Rate)</AdminCTitle>
+          <Input></Input>
+
         </AdminContent>
       </div>
     );

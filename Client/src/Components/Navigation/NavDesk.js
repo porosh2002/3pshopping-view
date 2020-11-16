@@ -5,7 +5,7 @@ export default function NavDesk() {
     return (
         <div className='navdesk'>
         <Link to='/'>
-            <img src={logo} alt='Hq Bet 365' />
+            <img style={{height:"90%"}} src={logo} alt='Hq Bet 365' />
         </Link>   
         <ul className='nav-ul'>
             <li><Link className='menu-Link' to=''>Home</Link></li>
