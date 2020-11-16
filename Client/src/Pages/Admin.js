@@ -69,8 +69,16 @@ constructor(){
 </Select>
         </AdminContent>
         <AdminContent>
+        <AdminCTitle>Team A</AdminCTitle>
 <Input></Input>
+        <AdminCTitle>Team B</AdminCTitle>
 <Input></Input>
+        <AdminCTitle><span style={{color:"orangered"}}>1st Half Time Result</span></AdminCTitle>
+        <AdminCTitle>Team A (Rate)</AdminCTitle>
+<Input></Input>
+        <AdminCTitle>Team B (Rate)</AdminCTitle>
+<Input></Input>
+        <AdminCTitle>Draw (Rate)</AdminCTitle>
 <Input></Input>
 <Input></Input>
 <Input></Input>
@@ -90,3 +98,9 @@ constructor(){
     );
   }
 }
+// required
+// name={"password"}
+// placeholder={"Enter your Password"}
+// type="password"
+// minLength="6"
+// maxLength="32"
