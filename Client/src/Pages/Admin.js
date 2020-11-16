@@ -209,13 +209,127 @@ export default class Admin extends Component {
           <Input></Input>
           <AdminCTitle>10+ Run (Rate)</AdminCTitle>
           <Input></Input>
-
           <AdminCTitle>
-            <span style={{ color: "orangered" }}>Run at Fall of 1st wicket of first Innings</span>
+            <span style={{ color: "orangered" }}>Run at Fall of 1st wicket of 1st Innings</span>
           </AdminCTitle>
-          <AdminCTitle>0-3 Run (Rate)</AdminCTitle>
+          <AdminCTitle>over 23.5 (Rate)</AdminCTitle>
           <Input></Input>
-
+          <AdminCTitle>under 23.5 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>1st wicket method of 1st Innings</span>
+          </AdminCTitle>
+          <AdminCTitle>Caught Out (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Run Out (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Stumped Out (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Bowled Out (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>LBW Out (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Others (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Wicket in Powerplay in 1st Innings</span>
+          </AdminCTitle>
+          <AdminCTitle>no Wickets (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>1 Wickets (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>2+ Wickets (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Height Run in 1st Over</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Tie (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Height six</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Tie (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Height Patnership</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Tie (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Team of Top Batsman</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Team of Top Bowler</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Height Team Total Six</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Height Team Total Four</span>
+          </AdminCTitle>
+          <AdminCTitle>Team A (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>Team B (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Height Individual Score</span>
+          </AdminCTitle>
+          <AdminCTitle>over 63.5 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>under 63.5 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Fifty Scored in the match</span>
+          </AdminCTitle>
+          <AdminCTitle>Yes (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>No (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>1st Innings Score</span>
+          </AdminCTitle>
+          <AdminCTitle>over 173.5 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>under 173.5 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Total Match Six</span>
+          </AdminCTitle>
+          <AdminCTitle>over 11.5 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>under 11.5 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>
+            <span style={{ color: "orangered" }}>Total Match Four</span>
+          </AdminCTitle>
+          <AdminCTitle>over 27.5 (Rate)</AdminCTitle>
+          <Input></Input>
+          <AdminCTitle>under 27.5 (Rate)</AdminCTitle>
+          <Input></Input>
         </AdminContent>
       </div>
     );
