@@ -8,11 +8,11 @@ const saltRounds = 10;
 require("dotenv").config();
 const mongoose = require("mongoose");
 const morgan = require("morgan");
-const FootballModel = require('./Football')
+const FootballModel = require("./Football");
 const multer = require("multer");
 const cors = require("cors");
 const RegisterUserModel = require("./Register");
-const TennisModel = require('./Tennis')
+const TennisModel = require("./Tennis");
 //
 // const whitelist = ['https://wecubs.com']
 // const corsOptions = {
@@ -57,7 +57,7 @@ app.post("/api/login", (req, res) => {
     }
   });
 });
-app.post('/api/tenisMatchAdd',(req,res)=>{
+app.post("/api/tenisMatchAdd", (req, res) => {
   const {
     TS_T_A,
     TS_T_B,
@@ -66,8 +66,8 @@ app.post('/api/tenisMatchAdd',(req,res)=>{
     TS_T_M_P_O,
     TS_T_M_P_E,
     TS_T_M_P_O_18,
-    TS_T_M_P_U_18
-  }=req.body;
+    TS_T_M_P_U_18,
+  } = req.body;
   const Tennis_match = new TennisModel({
     TS_T_A,
     TS_T_B,
@@ -77,8 +77,8 @@ app.post('/api/tenisMatchAdd',(req,res)=>{
     TS_T_M_P_E,
     TS_T_M_P_O_18,
     TS_T_M_P_U_18,
-    matchTennisStop:false
-  })
+    matchTennisStop: false,
+  });
   Tennis_match.save((err, noerr) => {
     if (err) {
       res.sendStatus(400);
@@ -87,58 +87,60 @@ app.post('/api/tenisMatchAdd',(req,res)=>{
       res.sendStatus(200);
     }
   });
-})
-app.post("/api/footballMatchAdd", (req, res) => {
-const {    FB_T_A,
-  FB_T_B,
-  FB_T_A_R,
-  FB_T_B_R,
-  FB_T_Half_D,
-  FB_T_A_W,
-  FB_T_B_W,
-  FB_T_F_D,
-  FB_T_G_E,
-  FB_T_G_O,
-  FB_T_P_Y,
-  FB_T_P_N,
-  FB_T_M_G_1,
-  FB_T_M_G_2,
-  FB_T_M_G_3,
-  FB_T_M_G_4,
-  FB_T_M_G_5,
-  FB_T_M_G_5_M} = req.body;
-const Football_Match = new FootballModel({
-  FB_T_A,
-  FB_T_B,
-  FB_T_A_R,
-  FB_T_B_R,
-  FB_T_Half_D,
-  FB_T_A_W,
-  FB_T_B_W,
-  FB_T_F_D,
-  FB_T_G_E,
-  FB_T_G_O,
-  FB_T_P_Y,
-  FB_T_P_N,
-  FB_T_M_G_1,
-  FB_T_M_G_2,
-  FB_T_M_G_3,
-  FB_T_M_G_4,
-  FB_T_M_G_5,
-  FB_T_M_G_5_M,
-  fast_Half_res:false,
-  full_res:false,
-  total_goal_res:false,
-  Penalty_res:false
-})
-Football_Match.save((err, noerr) => {
-  if (err) {
-    res.sendStatus(400);
-  }
-  if (noerr) {
-    res.sendStatus(200);
-  }
 });
+app.post("/api/footballMatchAdd", (req, res) => {
+  const {
+    FB_T_A,
+    FB_T_B,
+    FB_T_A_R,
+    FB_T_B_R,
+    FB_T_Half_D,
+    FB_T_A_W,
+    FB_T_B_W,
+    FB_T_F_D,
+    FB_T_G_E,
+    FB_T_G_O,
+    FB_T_P_Y,
+    FB_T_P_N,
+    FB_T_M_G_1,
+    FB_T_M_G_2,
+    FB_T_M_G_3,
+    FB_T_M_G_4,
+    FB_T_M_G_5,
+    FB_T_M_G_5_M,
+  } = req.body;
+  const Football_Match = new FootballModel({
+    FB_T_A,
+    FB_T_B,
+    FB_T_A_R,
+    FB_T_B_R,
+    FB_T_Half_D,
+    FB_T_A_W,
+    FB_T_B_W,
+    FB_T_F_D,
+    FB_T_G_E,
+    FB_T_G_O,
+    FB_T_P_Y,
+    FB_T_P_N,
+    FB_T_M_G_1,
+    FB_T_M_G_2,
+    FB_T_M_G_3,
+    FB_T_M_G_4,
+    FB_T_M_G_5,
+    FB_T_M_G_5_M,
+    fast_Half_res: false,
+    full_res: false,
+    total_goal_res: false,
+    Penalty_res: false,
+  });
+  Football_Match.save((err, noerr) => {
+    if (err) {
+      res.sendStatus(400);
+    }
+    if (noerr) {
+      res.sendStatus(200);
+    }
+  });
 });
 app.post("/api/register", (req, res) => {
   const { name, email, password } = req.body;

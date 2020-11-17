@@ -113,33 +113,33 @@ export default class Admin extends Component {
       }),
     });
   };
-  submitTenisMatch=event=>{
+  submitTenisMatch = (event) => {
     event.preventDefault();
-const {
-  TS_T_A,
-  TS_T_B,
-  TS_T_A_R_F,
-  TS_T_B_R_F,
-  TS_T_M_P_O,
-  TS_T_M_P_E,
-  TS_T_M_P_O_18,
-  TS_T_M_P_U_18
-}= this.state;
-fetch(`${URL}api/tenisMatchAdd`, {
-  method: "post",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    TS_T_A,
-    TS_T_B,
-    TS_T_A_R_F,
-    TS_T_B_R_F,
-    TS_T_M_P_O,
-    TS_T_M_P_E,
-    TS_T_M_P_O_18,
-    TS_T_M_P_U_18
-  }),
-});
-  }
+    const {
+      TS_T_A,
+      TS_T_B,
+      TS_T_A_R_F,
+      TS_T_B_R_F,
+      TS_T_M_P_O,
+      TS_T_M_P_E,
+      TS_T_M_P_O_18,
+      TS_T_M_P_U_18,
+    } = this.state;
+    fetch(`${URL}api/tenisMatchAdd`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        TS_T_A,
+        TS_T_B,
+        TS_T_A_R_F,
+        TS_T_B_R_F,
+        TS_T_M_P_O,
+        TS_T_M_P_E,
+        TS_T_M_P_O_18,
+        TS_T_M_P_U_18,
+      }),
+    });
+  };
   inputvalue = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
