@@ -42,7 +42,14 @@ export default class Admin extends Component {
       FB_T_M_G_4:'',
       FB_T_M_G_5:'',
       FB_T_M_G_5_M:'',
-
+      TS_T_A:"",
+      TS_T_B:"",
+      TS_T_A_R_F:"",
+      TS_T_B_R_F:"",
+      TS_T_M_P_O:"",
+      TS_T_M_P_E:"",
+      TS_T_M_P_O_18:"",
+      TS_T_M_P_U_18:"",
     };
   }
 MatchSelect=event=>{
@@ -260,9 +267,9 @@ inputvalue=event=>{
             <span style={{ color: "orangered" }}>Total Match point</span>
           </AdminCTitle>
           <AdminCTitle>Over 18.5 (Rate)</AdminCTitle>
-          <Input onChange={this.inputvalue} type='number' required name='TS_T_M_P_O_18.5'></Input>
+          <Input onChange={this.inputvalue} type='number' required name='TS_T_M_P_O_18'></Input>
           <AdminCTitle>under 18.5 (Rate)</AdminCTitle>
-          <Input onChange={this.inputvalue} type='number' required name='TS_T_M_P_U_18.5'></Input>
+          <Input onChange={this.inputvalue} type='number' required name='TS_T_M_P_U_18'></Input>
         </AdminContent>
 
 
