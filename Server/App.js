@@ -55,6 +55,9 @@ app.post("/api/login", (req, res) => {
     }
   });
 });
+app.post("/api/footballMatchAdd", (req, res) => {
+console.log(req.body);
+});
 app.post("/api/register", (req, res) => {
   const { name, email, password } = req.body;
   bcrypt.hash(password, saltRounds).then(function (Passwordhash) {

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { URL } from "../serverUrl";
 import {
+  Button,
   Input,
   AdminMenu,
   FooterLinkStyle,
@@ -22,6 +24,25 @@ export default class Admin extends Component {
       Football: false,
       TableTenis: false,
       Criclet: false,
+      FB_T_A:'',
+      FB_T_B:'',
+      FB_T_A_R:'',
+      FB_T_B_R:'',
+      FB_T_Half_D:'',
+      FB_T_A_W:'',
+      FB_T_B_W:'',
+      FB_T_F_D:'',
+      FB_T_G_E:'',
+      FB_T_G_O:'',
+      FB_T_P_Y:'',
+      FB_T_P_N:'',
+      FB_T_M_G_1:'',
+      FB_T_M_G_2:'',
+      FB_T_M_G_3:'',
+      FB_T_M_G_4:'',
+      FB_T_M_G_5:'',
+      FB_T_M_G_5_M:'',
+
     };
   }
 MatchSelect=event=>{
@@ -37,6 +58,57 @@ MatchSelect=event=>{
       this.setState({TableTenis:false,Football:true,Criclet:false})
     }
   }
+}
+submitFootballMatch=(event)=>{
+  event.preventDefault();
+  const {
+    FB_T_A,
+    FB_T_B,
+    FB_T_A_R,
+    FB_T_B_R,
+    FB_T_Half_D,
+    FB_T_A_W,
+    FB_T_B_W,
+    FB_T_F_D,
+    FB_T_G_E,
+    FB_T_G_O,
+    FB_T_P_Y,
+    FB_T_P_N,
+    FB_T_M_G_1,
+    FB_T_M_G_2,
+    FB_T_M_G_3,
+    FB_T_M_G_4,
+    FB_T_M_G_5,
+    FB_T_M_G_5_M
+  } = this.state
+  fetch(`${URL}api/footballMatchAdd`, {
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      FB_T_A,
+      FB_T_B,
+      FB_T_A_R,
+      FB_T_B_R,
+      FB_T_Half_D,
+      FB_T_A_W,
+      FB_T_B_W,
+      FB_T_F_D,
+      FB_T_G_E,
+      FB_T_G_O,
+      FB_T_P_Y,
+      FB_T_P_N,
+      FB_T_M_G_1,
+      FB_T_M_G_2,
+      FB_T_M_G_3,
+      FB_T_M_G_4,
+      FB_T_M_G_5,
+      FB_T_M_G_5_M
+    }),
+  })
+}
+inputvalue=event=>{
+  const {name,value} = event.target;
+  this.setState({ [name]: value });
 }
   render() {
     const { Football, TableTenis, Criclet } = this.state;
@@ -97,58 +169,74 @@ MatchSelect=event=>{
           </Select>
         </AdminContent>
         <AdminContent style={StyleFootball}>
+
+        <form onSubmit={this.submitFootballMatch}>
           <AdminCTitle>Team A</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='text' required name='FB_T_A'></Input>
           <AdminCTitle>Team B</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='text' required name='FB_T_B'></Input>
           <AdminCTitle>
             <span style={{ color: "orangered" }}>1st Half Time Result</span>
           </AdminCTitle>
           <AdminCTitle>Team A (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_A_R'></Input>
           <AdminCTitle>Team B (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_B_R'></Input>
           <AdminCTitle>Draw (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_Half_D'></Input>
           <AdminCTitle>
             <span style={{ color: "orangered" }}>Full Time Result</span>
           </AdminCTitle>
           <AdminCTitle>Team A (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_A_W'></Input>
           <AdminCTitle>Team B (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_B_W'></Input>
           <AdminCTitle>Draw (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_F_D'></Input>
           <AdminCTitle>
             <span style={{ color: "orangered" }}>Total Goal of Match</span>
           </AdminCTitle>
           <AdminCTitle>Even (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_G_E'></Input>
           <AdminCTitle>Odd (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_G_O'></Input>
           <AdminCTitle>
             <span style={{ color: "orangered" }}>Penalty Match</span>
           </AdminCTitle>
           <AdminCTitle>Yes (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_P_Y'></Input>
           <AdminCTitle>No (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_P_N'></Input>
           <AdminCTitle>
             <span style={{ color: "orangered" }}>Total Match Goal</span>
           </AdminCTitle>
           <AdminCTitle>1 (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_M_G_1'></Input>
           <AdminCTitle>2 (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_M_G_2'></Input>
           <AdminCTitle>3 (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_M_G_3'></Input>
           <AdminCTitle>4 (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_M_G_4'></Input>
           <AdminCTitle>5 (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='FB_T_M_G_5'></Input>
           <AdminCTitle>5+ (Rate)</AdminCTitle>
-          <Input></Input>
+          
+        <Input onChange={this.inputvalue} type='number' required name='FB_T_M_G_5_M'></Input>
+        <Button type="submit" value=" ADD Football Match" />
+
+</form>
         </AdminContent>
+
+
+
+
+
+
+
+
+
+
         <AdminContent style={StyleTenis}>
           <AdminCTitle>Team A</AdminCTitle>
           <Input></Input>

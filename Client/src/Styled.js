@@ -26,7 +26,7 @@ border:none;
 display:block;
 margin:30px auto;
 font-size:18px;
-width:150px;
+width:180px;
 color:#f7f7f7;
 background-color:#7344f5;
 cursor:pointer;
