@@ -239,31 +239,41 @@ inputvalue=event=>{
 
         <AdminContent style={StyleTenis}>
           <AdminCTitle>Team A</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='text' required name='TS_T_A'></Input>
           <AdminCTitle>Team B</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='text' required name='TS_T_B'></Input>
           <AdminCTitle>
             <span style={{ color: "orangered" }}>Final Result</span>
           </AdminCTitle>
           <AdminCTitle>Team A (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='TS_T_A_R_F'></Input>
           <AdminCTitle>Team B (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='TS_T_B_R_F'></Input>
           <AdminCTitle>
             <span style={{ color: "orangered" }}>Total Match point</span>
           </AdminCTitle>
           <AdminCTitle>Odd (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='TS_T_M_P_O'></Input>
           <AdminCTitle>Even B (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='TS_T_M_P_E'></Input>
           <AdminCTitle>
             <span style={{ color: "orangered" }}>Total Match point</span>
           </AdminCTitle>
           <AdminCTitle>Over 18.5 (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='TS_T_M_P_O_18.5'></Input>
           <AdminCTitle>under 18.5 (Rate)</AdminCTitle>
-          <Input></Input>
+          <Input onChange={this.inputvalue} type='number' required name='TS_T_M_P_U_18.5'></Input>
         </AdminContent>
+
+
+
+
+
+
+
+
+
+
         <AdminContent style={StyleCricket}>
           <AdminCTitle>Team A</AdminCTitle>
           <Input></Input>
