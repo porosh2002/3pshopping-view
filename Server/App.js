@@ -13,7 +13,9 @@ const multer = require("multer");
 const cors = require("cors");
 const RegisterUserModel = require("./Register");
 const TennisModel = require("./Tennis");
-const  CricketModel = require('./Cricket')
+const  CricketModel = require('./Cricket');
+const AddmoneyModel = require('./addmoney')
+const outmoneyModel = require('./withmoneyy')
 //
 // const whitelist = ['https://wecubs.com']
 // const corsOptions = {
@@ -42,6 +44,34 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(helmet());
 //
+app.post('/api/addmoney',(req,res)=>{
+  const {userid,tid} = req.body;
+  const Add_balance = new AddmoneyModel({
+    userid,tid,done:false
+  })
+  Add_balance.save((err, noerr) => {
+    if (err) {
+      res.sendStatus(400);
+    }
+    if (noerr) {
+      res.sendStatus(200);
+    }
+  });
+})
+app.post('/api/outmoney',(req,res)=>{
+  const {userid,tid,withamount} = req.body;
+  const out_balance = new AddmoneyModel({
+    userid,tid,withamount,done:false
+  })
+  out_balance.save((err, noerr) => {
+    if (err) {
+      res.sendStatus(400);
+    }
+    if (noerr) {
+      res.sendStatus(200);
+    }
+  });
+})
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;
   RegisterUserModel.findOne({ email: md5(email) }, (error, result) => {

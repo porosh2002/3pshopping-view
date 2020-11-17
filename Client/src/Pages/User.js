@@ -4,7 +4,10 @@ import {Link} from 'react-router-dom'
 export default class User extends Component {
     state={
         addbalance:false,
-        withdrawbalance:false
+        withdrawbalance:false,
+        addbkashid:'',
+        outBkashNumber:'',
+        outAmmount:''
     }
     render() {
         const{addbalance,withdrawbalance}=this.state;
@@ -13,7 +16,7 @@ export default class User extends Component {
         return (
             <AdminContent>
             <UserCard>
-                Balance : 0
+                Balance : 0 Coin
             </UserCard>
             <UserCard><Link style={{color:"royalblue",textDecoration:"none"}} onClick={()=>{this.setState({addbalance:true,withdrawbalance:false})}} to='#'>Add Balance</Link></UserCard>
             <UserCard> <Link style={{color:"royalblue",textDecoration:"none"}} onClick={()=>{this.setState({addbalance:false,withdrawbalance:true})}} to='#'>Withdraw Balance (min-500 max-20,000)</Link></UserCard>
