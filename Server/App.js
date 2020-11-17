@@ -12,6 +12,7 @@ const FootballModel = require('./Football')
 const multer = require("multer");
 const cors = require("cors");
 const RegisterUserModel = require("./Register");
+const TennisModel = require('./Tennis')
 //
 // const whitelist = ['https://wecubs.com']
 // const corsOptions = {
@@ -56,6 +57,37 @@ app.post("/api/login", (req, res) => {
     }
   });
 });
+app.post('/api/tenisMatchAdd',(req,res)=>{
+  const {
+    TS_T_A,
+    TS_T_B,
+    TS_T_A_R_F,
+    TS_T_B_R_F,
+    TS_T_M_P_O,
+    TS_T_M_P_E,
+    TS_T_M_P_O_18,
+    TS_T_M_P_U_18
+  }=req.body;
+  const Tennis_match = new TennisModel({
+    TS_T_A,
+    TS_T_B,
+    TS_T_A_R_F,
+    TS_T_B_R_F,
+    TS_T_M_P_O,
+    TS_T_M_P_E,
+    TS_T_M_P_O_18,
+    TS_T_M_P_U_18,
+    matchTennisStop:false
+  })
+  Tennis_match.save((err, noerr) => {
+    if (err) {
+      res.sendStatus(400);
+    }
+    if (noerr) {
+      res.sendStatus(200);
+    }
+  });
+})
 app.post("/api/footballMatchAdd", (req, res) => {
 const {    FB_T_A,
   FB_T_B,
