@@ -15,7 +15,7 @@ const RegisterUserModel = require("./Register");
 const TennisModel = require("./Tennis");
 const  CricketModel = require('./Cricket');
 const AddmoneyModel = require('./addmoney')
-const outmoneyModel = require('./withmoneyy')
+const outmoneyModel = require('./withmoney')
 //
 // const whitelist = ['https://wecubs.com']
 // const corsOptions = {

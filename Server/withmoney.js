@@ -1,5 +1,4 @@
-const AddmoneyModel = mongoose.model("Add_money",Addmoney);
-module.exports = AddmoneyModel;
+const mongoose = require("mongoose");
 const outmoney = new mongoose.Schema({
 userid:{
     type:String,
