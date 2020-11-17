@@ -1,0 +1,302 @@
+const mongoose = require("mongoose");
+const cricketSchema = new mongoose.Schema({
+tossdone:{
+    type:Boolean,
+    required:true
+},
+finalmatch:{
+    type:Boolean,
+    required:true
+},
+firstball:{
+    type:Boolean,
+    required:true
+},
+firststover:{
+    type:Boolean,
+    required:true
+},
+firstwicket:{
+    type:Boolean,
+    required:true
+},
+firstwicketmethod:{
+    type:Boolean,
+    required:true
+},
+poerplaywicket:{
+    type:Boolean,
+    required:true
+},
+heightrunfirststover:{
+    type:Boolean,
+    required:true
+},
+heightsix:{
+    type:Boolean,
+    required:true
+},
+heightpatnership:{
+    type:Boolean,
+    required:true
+},
+teamtopbats:{
+    type:Boolean,
+    required:true
+},
+teamtopbowl:{
+    type:Boolean,
+    required:true
+},
+totalheightsix:{
+    type:Boolean,
+    required:true
+},
+totalheightfour:{
+    type:Boolean,
+    required:true
+},
+individualscore:{
+    type:Boolean,
+    required:true
+},
+firstinningsrun:{
+    type:Boolean,
+    required:true
+},
+fiftymade:{
+    type:Boolean,
+    required:true
+},
+totalsix:{
+    type:Boolean,
+    required:true
+},
+totalfour:{
+    type:Boolean,
+    required:true
+},
+// 
+C_T_A:{
+    type:String,
+    required:true
+},
+C_T_B:{
+    type:String,
+    required:true
+},
+C_T_A_T:{
+    type:Number,
+    required:true
+},
+C_T_B_T:{
+    type:Number,
+    required:true
+},
+F_M_R_A:{
+    type:Number,
+    required:true
+},
+F_M_R_B:{
+    type:Number,
+    required:true
+},
+F_B_F_I_0:{
+    type:Number,
+    required:true
+},
+F_B_F_I_1:{
+    type:Number,
+    required:true
+},
+F_B_F_I_2:{
+    type:Number,
+    required:true
+},
+F_B_F_I_3:{
+    type:Number,
+    required:true
+},
+F_B_F_I_4:{
+    type:Number,
+    required:true
+},
+F_B_F_I_6:{
+    type:Number,
+    required:true
+},
+TS_T_A_R_more:{
+    type:Number,
+    required:true
+},
+F_O_F_I_3:{
+    type:Number,
+    required:true
+},
+TS_T_A_R_F_6:{
+    type:Number,
+    required:true
+},
+F_O_F_I_9:{
+    type:Number,
+    required:true
+},
+F_O_F_I_10:{
+    type:Number,
+    required:true
+},
+F_W_F_I_O:{
+    type:Number,
+    required:true
+},
+F_W_F_I_U:{
+    type:Number,
+    required:true
+},
+F_W_M_F_I_C:{
+    type:Number,
+    required:true
+},
+F_W_M_F_I_R:{
+    type:Number,
+    required:true
+},
+F_W_M_F_I_S:{
+    type:Number,
+    required:true
+},
+F_W_M_F_I_B:{
+    type:Number,
+    required:true
+},
+F_W_M_F_I_LBW:{
+    type:Number,
+    required:true
+},
+F_W_M_F_I_OTHR:{
+    type:Number,
+    required:true
+},
+W_P_P_N:{
+    type:Number,
+    required:true
+},
+W_P_P_1:{
+    type:Number,
+    required:true
+},
+W_P_P_N_2:{
+    type:Number,
+    required:true
+},
+H_R_F_O_A:{
+    type:Number,
+    required:true
+},
+H_R_F_O_B:{
+    type:Number,
+    required:true
+},
+H_R_F_O_D:{
+    type:Number,
+    required:true
+},
+H_S_A:{
+    type:Number,
+    required:true
+},
+H_S_B:{
+    type:Number,
+    required:true
+},
+H_S_T:{
+    type:Number,
+    required:true
+},
+H_P_A:{
+    type:Number,
+    required:true
+},
+H_P_B:{
+    type:Number,
+    required:true
+},
+H_P_T:{
+    type:Number,
+    required:true
+},
+T_B_T_A:{
+    type:Number,
+    required:true
+},
+T_B_T_B:{
+    type:Number,
+    required:true
+},
+T_BO_T_A:{
+    type:Number,
+    required:true
+},
+T_BO_T_B:{
+    type:Number,
+    required:true
+},
+H_T_T_S_A:{
+    type:Number,
+    required:true
+},
+H_T_T_S_B:{
+    type:Number,
+    required:true
+},
+H_T_T_F_A:{
+    type:Number,
+    required:true
+},
+H_T_T_F_B:{
+    type:Number,
+    required:true
+},
+H_I_S_OV:{
+    type:Number,
+    required:true
+},
+H_I_S_UN:{
+    type:Number,
+    required:true
+},
+S_FY:{
+    type:Number,
+    required:true
+},
+S_FN:{
+    type:Number,
+    required:true
+},
+F_I_S_O:{
+    type:Number,
+    required:true
+},
+F_I_S_U:{
+    type:Number,
+    required:true
+},
+T_M_S_OV:{
+    type:Number,
+    required:true
+},
+T_M_S_UN:{
+    type:Number,
+    required:true
+},
+T_M_F_OV:{
+    type:Number,
+    required:true
+},
+T_M_F_UN:{
+    type:Number,
+    required:true
+},
+});
+const CricketModel = mongoose.model("cricket",cricketSchema);
+module.exports = CricketModel;
