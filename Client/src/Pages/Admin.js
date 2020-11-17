@@ -21,9 +21,23 @@ export default class Admin extends Component {
     this.state = {
       Football: false,
       TableTenis: false,
-      Criclet: true,
+      Criclet: false,
     };
   }
+MatchSelect=event=>{
+  const name = event.target.value;
+  if(name !== 'null'){
+    if(name === 'tabletennis'){
+      this.setState({TableTenis:true,Football:false,Criclet:false})
+    }
+    if(name === 'cricket'){
+      this.setState({TableTenis:false,Football:false,Criclet:true})
+    }
+    if(name === 'football'){
+      this.setState({TableTenis:false,Football:true,Criclet:false})
+    }
+  }
+}
   render() {
     const { Football, TableTenis, Criclet } = this.state;
     const StyleFootball = Football ? null : { display: "none" };
@@ -75,14 +89,14 @@ export default class Admin extends Component {
         </AdminMenu>
         <AdminContent>
           <AdminCTitle>Add Match</AdminCTitle>
-          <Select name="cars" id="cars">
+          <Select onChange={this.MatchSelect} name="cars" id="cars">
             <option value="null">Select Match</option>
             <option value="cricket">Cricket</option>
             <option value="football">Football</option>
             <option value="tabletennis">Table Tennis</option>
           </Select>
         </AdminContent>
-        {/* <AdminContent style={StyleFootball}>
+        <AdminContent style={StyleFootball}>
           <AdminCTitle>Team A</AdminCTitle>
           <Input></Input>
           <AdminCTitle>Team B</AdminCTitle>
@@ -161,7 +175,7 @@ export default class Admin extends Component {
           <Input></Input>
           <AdminCTitle>under 18.5 (Rate)</AdminCTitle>
           <Input></Input>
-        </AdminContent> */}
+        </AdminContent>
         <AdminContent style={StyleCricket}>
           <AdminCTitle>Team A</AdminCTitle>
           <Input></Input>
