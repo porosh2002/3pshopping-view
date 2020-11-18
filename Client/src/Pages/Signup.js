@@ -45,7 +45,7 @@ export default class Signup extends Component {
             }),
           }).then((res) => {
             if (res.status === 200) {
-              //! account Created Successfully
+              alert('Account Created')
             } else {
               this.setState({ errorHappend: true });
             }
