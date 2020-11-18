@@ -11,43 +11,17 @@ import { selectCurrentUser } from "../../Redux/user/user_selector";
 import { connect } from "react-redux";
 class TennisCard extends Component {
   state = {
-    userid: null,
-    betamount: 0,
-    betprice: null,
-    betid: null,
-    betProject_id: null,
-    getAmount: false,
+    betid:null,
+    matchwin:null,
+    pointE_O:null,
+    matchPointO_U:null
   };
   componentDidMount() {
-    const { data, userID } = this.props;
-    this.setState({ betid: data._id, userid: userID });
+    const { data } = this.props;
+    this.setState({ betid: data._id});
   }
-  closegetamount = (event) => {
-    this.setState({ getAmount: false });
-    const {userid,betamount,betprice,betid,betProject_id,getAmount} = this.state;
-    fetch(`${URL}api/tenisBet`, {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        userid,betamount,betprice,betid,betProject_id,getAmount
-      }),
-    });
-  };
-  setbetamount = (event) => {
-    this.setState({ betamount: event.target.value });
-  };
-  betclick = (event) => {
-    const { id } = event.target;
-    const betpriceGet = event.target.textContent;
-    this.setState({
-      betProject_id: id,
-      betprice: betpriceGet,
-      getAmount: true,
-    });
-  };
+
   render() {
-    const { getAmount } = this.state;
-    const getAmountStyle = getAmount ? null : { display: "none" };
     const { data } = this.props;
     return (
       <TennisDIV>
@@ -81,23 +55,6 @@ class TennisCard extends Component {
         <TennisTitleSub id="5" onClick={this.betclick}>
           {data.TS_T_M_P_U_18}
         </TennisTitleSub>
-        <div style={getAmountStyle}>
-          <form
-            onSubmit={this.closegetamount}
-            className="ab-p-50"
-            style={{ padding: "50px 20px", backgroundColor: "#444" }}
-          >
-            <Input
-              min="10"
-              max="200"
-              required
-              onChange={this.setbetamount}
-              type="number"
-              placeholder="Enter Amount"
-            />
-            <Button value="Submit" type="submit" />
-          </form>
-        </div>
       </TennisDIV>
     );
   }
