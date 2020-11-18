@@ -336,6 +336,13 @@ app.post("/api/register", (req, res) => {
   });
 });
 //
+app.get('/api/tennis',(req,res)=>{
+  TennisModel.find({},(err,result)=>{
+    if(result){
+      res.json(result);
+    }
+  })
+})
 app.listen(process.env.DB_PORT, async () => {
   try {
     await mongoose.connect("mongodb://localhost:27017/BoilerPlate_DB", {
