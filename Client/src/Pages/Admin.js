@@ -1,22 +1,13 @@
 import React, { Component } from "react";
 import { URL } from "../serverUrl";
+import AdminMenu from '../Components/AdminMEnu/AdminMenu'
 import {
   Button,
   Input,
-  AdminMenu,
-  FooterLinkStyle,
-  FooterLink,
   AdminContent,
   AdminCTitle,
   Select,
 } from "../Styled";
-import {
-  VscAdd,
-  VscAccount,
-  VscCheck,
-  VscCreditCard,
-  VscLoading,
-} from "react-icons/vsc";
 export default class Admin extends Component {
   constructor() {
     super();
@@ -332,48 +323,7 @@ export default class Admin extends Component {
     const StyleCricket = Criclet ? null : { display: "none" };
     return (
       <div>
-        <AdminMenu>
-          <FooterLink>
-            <FooterLinkStyle to="">
-              Add Match{" "}
-              <div>
-                <VscAdd />
-              </div>
-            </FooterLinkStyle>
-          </FooterLink>
-          <FooterLink>
-            <FooterLinkStyle to="">
-              Add Match Result
-              <div>
-                <VscLoading />
-              </div>
-            </FooterLinkStyle>
-          </FooterLink>
-          <FooterLink>
-            <FooterLinkStyle to="">
-              User's Details
-              <div>
-                <VscAccount />
-              </div>
-            </FooterLinkStyle>
-          </FooterLink>
-          <FooterLink>
-            <FooterLinkStyle to="">
-              Confirm Payment
-              <div>
-                <VscCheck />
-              </div>
-            </FooterLinkStyle>
-          </FooterLink>
-          <FooterLink>
-            <FooterLinkStyle to="">
-              Make Payment
-              <div>
-                <VscCreditCard />
-              </div>
-            </FooterLinkStyle>
-          </FooterLink>
-        </AdminMenu>
+<AdminMenu />
         <AdminContent>
           <AdminCTitle>Add Match</AdminCTitle>
           <Select onChange={this.MatchSelect} name="cars" id="cars">
