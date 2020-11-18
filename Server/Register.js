@@ -16,6 +16,10 @@ const RegisterUserSchema = new mongoose.Schema({
         required:true,
         minlength:2,
     }
+    ,balance:{
+        type:Number,
+        required:true
+    }
 });
 const RegisterUserModel = mongoose.model('User', RegisterUserSchema);
 module.exports = RegisterUserModel;

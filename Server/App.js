@@ -70,7 +70,6 @@ app.post('/api/tenisBet',(req,res)=>{
   }); 
 })
 app.post('/api/tennisResult',(req,res)=>{
-  console.log(req.body);
   const{
     betid,
     matchwin,
@@ -79,7 +78,23 @@ app.post('/api/tennisResult',(req,res)=>{
   } = req.body
   TennisBetModel.find({betid:betid},(err,result)=>{
     if(result){
-      console.log(result);
+      result.map(data=>{
+        if(Number(data.betProject_id) === matchwin || Number(data.betProject_id) === pointE_O || Number(data.betProject_id) === matchPointO_U){
+          
+            const emailHashed = md5(data.userid);
+            RegisterUserModel.findOne({email:emailHashed},(err,res)=>{
+              if(res){
+                const newBalance =res.balance + (data.betPrice*data.betamount);
+              RegisterUserModel.updateOne({email:emailHashed},  
+            {balance:newBalance}, function (err, docs) { 
+            if (err){ 
+                console.log(err) 
+            } 
+        }); 
+              }
+            })
+        }
+      })
     }
   })
 })
@@ -363,6 +378,7 @@ app.post("/api/register", (req, res) => {
       email: md5(email),
       password: Passwordhash,
       name,
+      balance:0
     });
     Register.save((err, noerr) => {
       if (err) {
