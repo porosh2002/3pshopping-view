@@ -69,6 +69,9 @@ app.post('/api/tenisBet',(req,res)=>{
     }
   }); 
 })
+app.post('/api/tennisResult',(req,res)=>{
+  console.log(req.body);
+})
 app.post('/api/addmoney',(req,res)=>{
   const {userid,tid} = req.body;
   const Add_balance = new AddmoneyModel({

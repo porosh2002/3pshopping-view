@@ -1,60 +1,84 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Input,
-  TennisDIV,
-  TennisTitle,
-  TennisTitleSub,
-} from "../../Styled";
+import {Button,TennisDIV, TennisTitle, TennisTitleSub } from "../../Styled";
 import { URL } from "../../serverUrl";
 import { selectCurrentUser } from "../../Redux/user/user_selector";
 import { connect } from "react-redux";
 class TennisCard extends Component {
   state = {
-    betid:null,
-    matchwin:null,
-    pointE_O:null,
-    matchPointO_U:null
+    betid:'',
+    matchwin:'',
+    pointE_O:'',
+    matchPointO_U:'',
+    sectiononeDisable: false,
+    sectiontwoDisable: false,
+    sectionthreeDisable: false,
   };
   componentDidMount() {
     const { data } = this.props;
-    this.setState({ betid: data._id});
+    this.setState({ betid: data._id });
   }
-
+  betclick = (event) => {
+    if(event.target.id==='0'){
+      this.setState({matchwin:0,sectiononeDisable:true})
+    }
+    if(event.target.id==='1'){
+      this.setState({matchwin:1,sectiononeDisable:true})
+    }
+    if(event.target.id==='2'){
+      this.setState({pointE_O:2,sectiontwoDisable:true})
+    }
+    if(event.target.id==='3'){
+      this.setState({pointE_O:3,sectiontwoDisable:true})
+    }
+    if(event.target.id==='4'){
+      this.setState({matchPointO_U:4,sectionthreeDisable:true})
+    }
+    if(event.target.id==='5'){
+      this.setState({matchPointO_U:5,sectionthreeDisable:true})
+    }
+  };
+  // betid !== null && matchwin !==null && pointE_O !==null && matchPointO_U !==null && betProjectid !==null
+  submitdata=()=>{
+    const{betid,matchwin,pointE_O,matchPointO_U} = this.state;
+      fetch(`${URL}api/tennisResult`, {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          betid,matchwin,pointE_O,matchPointO_U
+        }),
+      });
+  }
   render() {
+    const {
+      sectiononeDisable,
+      sectionthreeDisable,
+      sectiontwoDisable,
+    } = this.state;
+    const oneStyle = sectiononeDisable ? { display: "none" } : null;
+    const twoStyle = sectiontwoDisable ? { display: "none" } : null;
+    const threeStyle = sectionthreeDisable ? { display: "none" } : null;
     const { data } = this.props;
     return (
       <TennisDIV>
-        <TennisTitle>To Win the Match Line</TennisTitle>
-        <TennisTitleSub>{data.TS_T_A}</TennisTitleSub>
-        <TennisTitleSub>{data.TS_T_B}</TennisTitleSub>
+        <div style={oneStyle}>
+          <TennisTitle>To Win the Match Line</TennisTitle>
+          <TennisTitleSub onClick={this.betclick} id="0">{data.TS_T_A}</TennisTitleSub>
+          <TennisTitleSub onClick={this.betclick} id="1">{data.TS_T_B}</TennisTitleSub>
+        </div>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>
-          {data.TS_T_A_R_F}
-        </TennisTitleSub>
-        <TennisTitleSub id="1" onClick={this.betclick}>
-          {data.TS_T_B_R_F}
-        </TennisTitleSub>
-        <TennisTitle>Total Match Point</TennisTitle>
-        <TennisTitleSub>{"Odd"}</TennisTitleSub>
-        <TennisTitleSub>{"Even"}</TennisTitleSub>
+        <div style={twoStyle}>
+          <TennisTitle>Total Match Point</TennisTitle>
+          <TennisTitleSub onClick={this.betclick} id="2">{"Odd"}</TennisTitleSub>
+          <TennisTitleSub onClick={this.betclick} id="3">{"Even"}</TennisTitleSub>
+        </div>
         <br></br>
-        <TennisTitleSub id="2" onClick={this.betclick}>
-          {data.TS_T_M_P_O}
-        </TennisTitleSub>
-        <TennisTitleSub id="3" onClick={this.betclick}>
-          {data.TS_T_M_P_E}
-        </TennisTitleSub>
-        <TennisTitle>1st Game Total Point</TennisTitle>
-        <TennisTitleSub>{"Over 18.5"}</TennisTitleSub>
-        <TennisTitleSub>{"Under 18.5"}</TennisTitleSub>
+        <div style={threeStyle}>
+          <TennisTitle>1st Game Total Point</TennisTitle>
+          <TennisTitleSub onClick={this.betclick} id="4">{"Over 18.5"}</TennisTitleSub>
+          <TennisTitleSub onClick={this.betclick} id="5">{"Under 18.5"}</TennisTitleSub>
+        </div>
         <br></br>
-        <TennisTitleSub id="4" onClick={this.betclick}>
-          {data.TS_T_M_P_O_18}
-        </TennisTitleSub>
-        <TennisTitleSub id="5" onClick={this.betclick}>
-          {data.TS_T_M_P_U_18}
-        </TennisTitleSub>
+        <button onClick={this.submitdata}>Submit</button>
       </TennisDIV>
     );
   }
