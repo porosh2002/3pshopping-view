@@ -110,3 +110,19 @@ margin:30px;
 border-radius:3px;
 background-color:#29303b;
 `;
+export const TennisDIV = styled.div`
+background-color:#7344f580;
+text-align:center;
+padding:50px 20px;
+border:2px solid #000;
+`;
+export const TennisTitle = styled.p`
+font-size:2rem;
+color:#29303b;
+`;
+export const TennisTitleSub = styled.p`
+font-size:1.2rem;
+color:#29303b;
+display:inline-block;
+margin:10px;
+`;
