@@ -10,6 +10,7 @@ const Login = React.lazy(() => import("./Pages/Login"));
 const Signup = React.lazy(() => import("./Pages/Signup"));
 const Admin = React.lazy(() => import("./Pages/Admin"));
 const User = React.lazy(() => import("./Pages/User"));
+const MatchResult = React.lazy(() => import("./Pages/MatchResult"));
 class App extends Component {
   render() {
 
@@ -28,6 +29,7 @@ class App extends Component {
             <Route exact path="/Signup" component={Signup} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/user" component={User} />
+            <Route exact path="/result" component={MatchResult} />
             <Route component={Error} />
           </Switch>
         </Suspense>
