@@ -6,6 +6,7 @@ import {
   TennisTitle,
   TennisTitleSub,
 } from "../../Styled";
+import { URL } from "../../serverUrl";
 import { selectCurrentUser } from "../../Redux/user/user_selector";
 import { connect } from "react-redux";
 class TennisCard extends Component {
@@ -23,6 +24,14 @@ class TennisCard extends Component {
   }
   closegetamount = (event) => {
     this.setState({ getAmount: false });
+    const {userid,betamount,betprice,betid,betProject_id,getAmount} = this.state;
+    fetch(`${URL}api/tenisBet`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userid,betamount,betprice,betid,betProject_id,getAmount
+      }),
+    });
   };
   setbetamount = (event) => {
     this.setState({ betamount: event.target.value });

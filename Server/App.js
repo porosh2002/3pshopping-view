@@ -16,6 +16,7 @@ const TennisModel = require("./Tennis");
 const  CricketModel = require('./Cricket');
 const AddmoneyModel = require('./addmoney')
 const outmoneyModel = require('./withmoney')
+const TennisBetModel = require('./Tennisbet')
 //
 // const whitelist = ['https://wecubs.com']
 // const corsOptions = {
@@ -44,6 +45,30 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(helmet());
 //
+app.post('/api/tenisBet',(req,res)=>{
+  const {    betProject_id,
+    betid,
+    betprice,
+    betamount,
+    userid} = req.body;
+  const Add_balance = new TennisBetModel({
+    betProject_id,
+    betid,
+    betPrice:betprice,
+    betamount,
+    userid,
+    done:false
+  })
+  Add_balance.save((err, noerr) => {
+    if (err) {
+      res.sendStatus(400);
+      console.log(err);
+    }
+    if (noerr) {
+      res.sendStatus(200);
+    }
+  }); 
+})
 app.post('/api/addmoney',(req,res)=>{
   const {userid,tid} = req.body;
   const Add_balance = new AddmoneyModel({
