@@ -121,8 +121,12 @@ font-size:2rem;
 color:#29303b;
 `;
 export const TennisTitleSub = styled.p`
-font-size:1.2rem;
-color:#29303b;
+font-size:1.4rem;
+cursor:pointer;
+color:#f7f7f7;
 display:inline-block;
 margin:10px;
+width:120px;
+border-radius:3px;
+background-color:#29303b
 `;
