@@ -71,6 +71,17 @@ app.post('/api/tenisBet',(req,res)=>{
 })
 app.post('/api/tennisResult',(req,res)=>{
   console.log(req.body);
+  const{
+    betid,
+    matchwin,
+    pointE_O,
+    matchPointO_U
+  } = req.body
+  TennisBetModel.find({betid:betid},(err,result)=>{
+    if(result){
+      console.log(result);
+    }
+  })
 })
 app.post('/api/addmoney',(req,res)=>{
   const {userid,tid} = req.body;
