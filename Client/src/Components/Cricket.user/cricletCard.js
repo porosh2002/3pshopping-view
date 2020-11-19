@@ -132,37 +132,35 @@ class TennisCard extends PureComponent {
       <TennisDIV style={{backgroundColor:"#93abd3"}}>
         <TennisTitle>{C_T_A}</TennisTitle>
         VS
-        <TennisTitle>{data.TS_T_B}</TennisTitle>
-        <TennisTitle>To Win the Match Line</TennisTitle>
-        <TennisTitleSub>{data.TS_T_A}</TennisTitleSub>
-        <TennisTitleSub>{data.TS_T_B}</TennisTitleSub>
+        <TennisTitle>{C_T_B}</TennisTitle>
+        <TennisTitle>To Win Toss</TennisTitle>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub><br></br>
+        <TennisTitleSub>{C_T_A_T}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B_T}</TennisTitleSub>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>
-          {data.TS_T_A_R_F}
-        </TennisTitleSub>
-        <TennisTitleSub id="1" onClick={this.betclick}>
-          {data.TS_T_B_R_F}
-        </TennisTitleSub>
-        <TennisTitle>Total Match Point</TennisTitle>
-        <TennisTitleSub>{"Odd"}</TennisTitleSub>
-        <TennisTitleSub>{"Even"}</TennisTitleSub>
-        <br></br>
-        <TennisTitleSub id="2" onClick={this.betclick}>
-          {data.TS_T_M_P_O}
-        </TennisTitleSub>
-        <TennisTitleSub id="3" onClick={this.betclick}>
-          {data.TS_T_M_P_E}
-        </TennisTitleSub>
-        <TennisTitle>1st Game Total Point</TennisTitle>
-        <TennisTitleSub>{"Over 18.5"}</TennisTitleSub>
-        <TennisTitleSub>{"Under 18.5"}</TennisTitleSub>
-        <br></br>
-        <TennisTitleSub id="4" onClick={this.betclick}>
-          {data.TS_T_M_P_O_18}
-        </TennisTitleSub>
-        <TennisTitleSub id="5" onClick={this.betclick}>
-          {data.TS_T_M_P_U_18}
-        </TennisTitleSub>
+        <TennisTitle>Final Result</TennisTitle>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub><br></br>
+        <TennisTitleSub>{F_M_R_A}</TennisTitleSub>
+        <TennisTitleSub>{F_M_R_B}</TennisTitleSub><br></br>
+        <TennisTitle>1st ball of the Innings</TennisTitle>
+        <TennisTitleSub>One</TennisTitleSub>
+        <TennisTitleSub>Two</TennisTitleSub>
+        <TennisTitleSub>Three</TennisTitleSub><br></br>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+{/*  */}
+        <TennisTitleSub>{C_T_A}</TennisTitleSub><br></br>
+        <TennisTitleSub>Four</TennisTitleSub>
+        <TennisTitleSub>Six</TennisTitleSub>
+        <TennisTitleSub>Others</TennisTitleSub><br></br>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub><br></br>
+        <TennisTitleSub>Dot Ball</TennisTitleSub><br></br>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        {/*  */}
         <div style={getAmountStyle}>
           <form
             onSubmit={this.closegetamount}
