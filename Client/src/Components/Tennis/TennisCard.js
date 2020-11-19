@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import {
   Button,
   Input,
@@ -9,7 +9,7 @@ import {
 import { URL } from "../../serverUrl";
 import { selectCurrentUser } from "../../Redux/user/user_selector";
 import { connect } from "react-redux";
-class TennisCard extends Component {
+class TennisCard extends PureComponent {
   state = {
     userid:'',
     betamount: 0,
@@ -17,9 +17,17 @@ class TennisCard extends Component {
     betid: null,
     betProject_id: null,
     getAmount: false,
+    userBalance:null,
   };
   componentDidMount() {
     const { data, userID } = this.props;
+    fetch(`${URL}api/getuserdata`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userID
+      })
+    }).then(res=>res.json()).then(res=>this.setState({userBalance:res[0].balance}))
     this.setState({ betid: data._id, userid: userID });
   }
   closegetamount = (event) => {

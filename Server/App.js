@@ -69,6 +69,7 @@ app.post('/api/tenisBet',(req,res)=>{
     }
   }); 
 })
+  // Need to Delete Tennis Data Here After Proccessing 
 app.post('/api/tennisResult',(req,res)=>{
   const{
     betid,
@@ -390,6 +391,13 @@ app.post("/api/register", (req, res) => {
     });
   });
 });
+app.post('/api/getuserdata',(req,res)=>{
+  RegisterUserModel.find({email:md5(req.body.userID)},(err,result)=>{
+    if(result){
+      res.json(result)
+    }
+  })
+})
 //
 app.get('/api/tennis',(req,res)=>{
   TennisModel.find({},(err,result)=>{
