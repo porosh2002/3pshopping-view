@@ -14,6 +14,14 @@ class TennisCard extends PureComponent {
     betid:'',
     halfValue:'',
     halfSection:false,
+    fw:'',
+    g_E_O:'',
+    Penalty:'',
+    GoalinNum:'',
+    fw_res:false,
+    g_E_O_res:false,
+    Penalty_res:false,
+    GoalinNum_res:false
   };
   componentDidMount() {
     const { data } = this.props;
@@ -33,26 +41,35 @@ class TennisCard extends PureComponent {
     const {id} = event.target;
     this.setState({halfValue:id})
   };
+  betclick = (event) => {
+    const {id} = event.target;
+    console.log(id);
+if(id==='3'){
+this.setState({fw:3})
+}
+if(id==='4'){
+this.setState({fw:4})
+}
+if(id==='5'){
+this.setState({fw:5})
+}
+if(id==='6'){
+this.setState({g_E_O:6})
+}
+if(id==='7'){
+this.setState({g_E_O:7})
+}
+if(id==='8'){
+this.setState({Penalty:8})
+}
+if(id==='9'){
+this.setState({Penalty:9})
+}
+  };
   render() {
     const {
       FB_T_A,
       FB_T_B,
-      // FB_T_A_R,
-      // FB_T_B_R,
-      // FB_T_Half_D,
-      // FB_T_A_W,
-      // FB_T_B_W,
-      // FB_T_F_D,
-      // FB_T_G_E,
-      // FB_T_G_O,
-      // FB_T_P_Y,
-      // FB_T_P_N,
-      // FB_T_M_G_1,
-      // FB_T_M_G_2,
-      // FB_T_M_G_3,
-      // FB_T_M_G_4,
-      // FB_T_M_G_5,
-      // FB_T_M_G_5_M
     } = this.props.data
     const { getAmount } = this.state;
     const getAmountStyle = getAmount ? null : { display: "none" };
@@ -69,42 +86,25 @@ class TennisCard extends PureComponent {
 <button onClick={this.submitdata}>Submit</button>
 <br></br>
 <TennisTitle>Full Time Result</TennisTitle>
-<TennisTitleSub>{FB_T_A}</TennisTitleSub>
-<TennisTitleSub>{FB_T_B}</TennisTitleSub>
-<TennisTitleSub>Draw</TennisTitleSub>
+<TennisTitleSub id='3' onClick={this.betclick}>{FB_T_A}</TennisTitleSub>
+<TennisTitleSub id='4' onClick={this.betclick}>{FB_T_B}</TennisTitleSub>
+<TennisTitleSub id='5' onClick={this.betclick}>Draw</TennisTitleSub>
 <br></br>
 <TennisTitle>Total Goal of Match</TennisTitle>
-<TennisTitleSub>Even</TennisTitleSub>
-<TennisTitleSub>Odd</TennisTitleSub><br></br>
+<TennisTitleSub id='6' onClick={this.betclick}>Even</TennisTitleSub>
+<TennisTitleSub id='7' onClick={this.betclick}>Odd</TennisTitleSub><br></br>
 <TennisTitle>Penalty Match</TennisTitle>
-<TennisTitleSub>Yes</TennisTitleSub>
-<TennisTitleSub>No</TennisTitleSub><br></br>
+<TennisTitleSub id='8' onClick={this.betclick}>Yes</TennisTitleSub>
+<TennisTitleSub id='9' onClick={this.betclick}>No</TennisTitleSub><br></br>
 <TennisTitle>Total Match Goal</TennisTitle>
-<TennisTitleSub>One</TennisTitleSub>
-<TennisTitleSub>Two</TennisTitleSub>
-<TennisTitleSub>Three</TennisTitleSub><br></br>
+<TennisTitleSub id='10' onClick={this.betclick}>One</TennisTitleSub>
+<TennisTitleSub id='11' onClick={this.betclick}>Two</TennisTitleSub>
+<TennisTitleSub id='12' onClick={this.betclick}>Three</TennisTitleSub><br></br>
 <br></br>
-<TennisTitleSub>Four</TennisTitleSub>
-<TennisTitleSub>Five</TennisTitleSub>
-<TennisTitleSub>Five+</TennisTitleSub><br></br>
+<TennisTitleSub id='13' onClick={this.betclick}>Four</TennisTitleSub>
+<TennisTitleSub id='14' onClick={this.betclick}>Five</TennisTitleSub>
+<TennisTitleSub id='15' onClick={this.betclick}>Five+</TennisTitleSub><br></br>
       </TennisDIV>
-      <div style={getAmountStyle}>
-          <form
-            onSubmit={this.closegetamount}
-            className="ab-p-50"
-            style={{ padding: "50px 20px", backgroundColor: "#444" }}
-          >
-            <Input
-              min="10"
-              max="200"
-              required
-              onChange={this.setbetamount}
-              type="number"
-              placeholder="Enter Amount"
-            />
-            <Button value="Submit" type="submit" />
-          </form>
-        </div>
       </div>
     );
   }
