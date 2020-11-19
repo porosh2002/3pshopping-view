@@ -16,7 +16,7 @@ class App extends Component {
 
     // !!!!!!!!!! 
     const { userID } = this.props;
-    console.log(userID);
+    // console.log(userID);
     // !!!!!!!!!! 
 
     return (

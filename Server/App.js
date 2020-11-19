@@ -408,9 +408,6 @@ app.post("/api/getuserdata", (req, res) => {
     if (result) {
       res.json(result);
     }
-    if(err){
-      console.log(err);
-    }
   });
 });
 // Football

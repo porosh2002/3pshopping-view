@@ -74,6 +74,9 @@ class TennisCard extends PureComponent {
     const { data } = this.props;
     return (
       <TennisDIV>
+        <TennisTitle>{data.TS_T_A}</TennisTitle>
+        VS
+        <TennisTitle>{data.TS_T_B}</TennisTitle>
         <TennisTitle>To Win the Match Line</TennisTitle>
         <TennisTitleSub>{data.TS_T_A}</TennisTitleSub>
         <TennisTitleSub>{data.TS_T_B}</TennisTitleSub>
