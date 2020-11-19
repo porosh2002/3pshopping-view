@@ -71,19 +71,7 @@ const FootballSchema = new mongoose.Schema({
   FB_T_M_G_5_M: {
     type: Number,
     required: true,
-  },
-  fast_Half_res: {
-    type: Boolean,
-  },
-  full_res: {
-    type: Boolean,
-  },
-  total_goal_res: {
-    type: Boolean,
-  },
-  Penalty_res: {
-    type: Boolean,
-  },
+  }
 });
 const FootballModel = mongoose.model("Football", FootballSchema);
 module.exports = FootballModel;

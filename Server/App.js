@@ -13,10 +13,10 @@ const multer = require("multer");
 const cors = require("cors");
 const RegisterUserModel = require("./Register");
 const TennisModel = require("./Tennis");
-const  CricketModel = require('./Cricket');
-const AddmoneyModel = require('./addmoney')
-const outmoneyModel = require('./withmoney')
-const TennisBetModel = require('./Tennisbet')
+const CricketModel = require("./Cricket");
+const AddmoneyModel = require("./addmoney");
+const outmoneyModel = require("./withmoney");
+const TennisBetModel = require("./Tennisbet");
 //
 // const whitelist = ['https://wecubs.com']
 // const corsOptions = {
@@ -45,20 +45,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(helmet());
 //
-app.post('/api/tenisBet',(req,res)=>{
-  const {    betProject_id,
-    betid,
-    betprice,
-    betamount,
-    userid} = req.body;
+app.post("/api/tenisBet", (req, res) => {
+  const { betProject_id, betid, betprice, betamount, userid } = req.body;
   const Add_balance = new TennisBetModel({
     betProject_id,
     betid,
-    betPrice:betprice,
+    betPrice: betprice,
     betamount,
     userid,
-    done:false
-  })
+    done: false,
+  });
   Add_balance.save((err, noerr) => {
     if (err) {
       res.sendStatus(400);
@@ -67,52 +63,59 @@ app.post('/api/tenisBet',(req,res)=>{
     if (noerr) {
       res.sendStatus(200);
     }
-  }); 
-})
-  // Need to Delete Tennis Data Here After Proccessing 
-  app.post('/api/balanceEdit',(req,res)=>{
-    console.log(req.body);
-    const {userid,newBalance} = req.body;
-    RegisterUserModel.updateOne({email:md5(userid)},{balance:newBalance},(err,noerr)=>{
-      if(noerr){
-        console.log('Done');
+  });
+});
+// Need to Delete Tennis Data Here After Proccessing
+app.post("/api/balanceEdit", (req, res) => {
+  console.log(req.body);
+  const { userid, newBalance } = req.body;
+  RegisterUserModel.updateOne(
+    { email: md5(userid) },
+    { balance: newBalance },
+    (err, noerr) => {
+      if (noerr) {
+        console.log("Done");
       }
-    })
-  })
-app.post('/api/tennisResult',(req,res)=>{
-  const{
-    betid,
-    matchwin,
-    pointE_O,
-    matchPointO_U
-  } = req.body
-  TennisBetModel.find({betid:betid},(err,result)=>{
-    if(result){
-      result.map(data=>{
-        if(Number(data.betProject_id) === matchwin || Number(data.betProject_id) === pointE_O || Number(data.betProject_id) === matchPointO_U){
-          
-            const emailHashed = md5(data.userid);
-            RegisterUserModel.findOne({email:emailHashed},(err,res)=>{
-              if(res){
-                const newBalance =res.balance + (data.betPrice*data.betamount);
-              RegisterUserModel.updateOne({email:emailHashed},  
-            {balance:newBalance}, function (err, docs) { 
-            if (err){ 
-                console.log(err) 
-            } 
-        }); 
-              }
-            })
-        }
-      })
     }
-  })
-})
-app.post('/api/addmoney',(req,res)=>{
-  const {userid,tid} = req.body;
+  );
+});
+app.post("/api/tennisResult", (req, res) => {
+  const { betid, matchwin, pointE_O, matchPointO_U } = req.body;
+  TennisBetModel.find({ betid: betid }, (err, result) => {
+    if (result) {
+      result.map((data) => {
+        if (
+          Number(data.betProject_id) === matchwin ||
+          Number(data.betProject_id) === pointE_O ||
+          Number(data.betProject_id) === matchPointO_U
+        ) {
+          const emailHashed = md5(data.userid);
+          RegisterUserModel.findOne({ email: emailHashed }, (err, res) => {
+            if (res) {
+              const newBalance = res.balance + data.betPrice * data.betamount;
+              RegisterUserModel.updateOne(
+                { email: emailHashed },
+                { balance: newBalance },
+                function (err, docs) {
+                  if (err) {
+                    console.log(err);
+                  }
+                }
+              );
+            }
+          });
+        }
+      });
+    }
+  });
+});
+app.post("/api/addmoney", (req, res) => {
+  const { userid, tid } = req.body;
   const Add_balance = new AddmoneyModel({
-    userid,tid,done:false
-  })
+    userid,
+    tid,
+    done: false,
+  });
   Add_balance.save((err, noerr) => {
     if (err) {
       res.sendStatus(400);
@@ -121,12 +124,15 @@ app.post('/api/addmoney',(req,res)=>{
       res.sendStatus(200);
     }
   });
-})
-app.post('/api/outmoney',(req,res)=>{
-  const {userid,tid,withamount} = req.body;
+});
+app.post("/api/outmoney", (req, res) => {
+  const { userid, tid, withamount } = req.body;
   const out_balance = new AddmoneyModel({
-    userid,tid,withamount,done:false
-  })
+    userid,
+    tid,
+    withamount,
+    done: false,
+  });
   out_balance.save((err, noerr) => {
     if (err) {
       res.sendStatus(400);
@@ -135,7 +141,7 @@ app.post('/api/outmoney',(req,res)=>{
       res.sendStatus(200);
     }
   });
-})
+});
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;
   RegisterUserModel.findOne({ email: md5(email) }, (error, result) => {
@@ -152,8 +158,8 @@ app.post("/api/login", (req, res) => {
     }
   });
 });
-app.post("/api/cricketMatchAdd",(req,res)=>{
-  const{
+app.post("/api/cricketMatchAdd", (req, res) => {
+  const {
     C_T_A,
     C_T_B,
     C_T_A_T,
@@ -208,8 +214,8 @@ app.post("/api/cricketMatchAdd",(req,res)=>{
     T_M_S_OV,
     T_M_S_UN,
     T_M_F_OV,
-    T_M_F_UN
-  } = req.body
+    T_M_F_UN,
+  } = req.body;
   const cricket_match = new CricketModel({
     C_T_A,
     C_T_B,
@@ -266,26 +272,26 @@ app.post("/api/cricketMatchAdd",(req,res)=>{
     T_M_S_UN,
     T_M_F_OV,
     T_M_F_UN,
-tossdone:false,
-finalmatch:false,
-firstball:false,
-firststover:false,
-firstwicket:false,
-firstwicketmethod:false,
-poerplaywicket:false,
-heightrunfirststover:false,
-heightsix:false,
-heightpatnership:false,
-teamtopbats:false,
-teamtopbowl:false,
-totalheightsix:false,
-totalheightfour:false,
-individualscore:false,
-firstinningsrun:false,
-fiftymade:false,
-totalsix:false,
-totalfour:false,
-  })
+    tossdone: false,
+    finalmatch: false,
+    firstball: false,
+    firststover: false,
+    firstwicket: false,
+    firstwicketmethod: false,
+    poerplaywicket: false,
+    heightrunfirststover: false,
+    heightsix: false,
+    heightpatnership: false,
+    teamtopbats: false,
+    teamtopbowl: false,
+    totalheightsix: false,
+    totalheightfour: false,
+    individualscore: false,
+    firstinningsrun: false,
+    fiftymade: false,
+    totalsix: false,
+    totalfour: false,
+  });
   cricket_match.save((err, noerr) => {
     if (err) {
       // res.sendStatus(400);
@@ -295,7 +301,7 @@ totalfour:false,
       res.sendStatus(200);
     }
   });
-})
+});
 app.post("/api/tenisMatchAdd", (req, res) => {
   const {
     TS_T_A,
@@ -367,10 +373,6 @@ app.post("/api/footballMatchAdd", (req, res) => {
     FB_T_M_G_4,
     FB_T_M_G_5,
     FB_T_M_G_5_M,
-    fast_Half_res: false,
-    full_res: false,
-    total_goal_res: false,
-    Penalty_res: false,
   });
   Football_Match.save((err, noerr) => {
     if (err) {
@@ -388,7 +390,7 @@ app.post("/api/register", (req, res) => {
       email: md5(email),
       password: Passwordhash,
       name,
-      balance:0
+      balance: 0,
     });
     Register.save((err, noerr) => {
       if (err) {
@@ -400,21 +402,33 @@ app.post("/api/register", (req, res) => {
     });
   });
 });
-app.post('/api/getuserdata',(req,res)=>{
-  RegisterUserModel.find({email:md5(req.body.userID)},(err,result)=>{
+app.post("/api/getuserdata", (req, res) => {
+  const hashedEmail = md5(req.body.userID);
+  RegisterUserModel.find({email:hashedEmail}, (err, result) => {
+    if (result) {
+      res.json(result);
+    }
+    if(err){
+      console.log(err);
+    }
+  });
+});
+// Football
+//
+app.get('/api/football',(req,res)=>{
+  FootballModel.find({},(err,result)=>{
     if(result){
       res.json(result)
     }
   })
 })
-//
-app.get('/api/tennis',(req,res)=>{
-  TennisModel.find({},(err,result)=>{
-    if(result){
+app.get("/api/tennis", (req, res) => {
+  TennisModel.find({}, (err, result) => {
+    if (result) {
       res.json(result);
     }
-  })
-})
+  });
+});
 app.listen(process.env.DB_PORT, async () => {
   try {
     await mongoose.connect("mongodb://localhost:27017/BoilerPlate_DB", {

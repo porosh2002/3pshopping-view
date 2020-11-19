@@ -21,9 +21,9 @@ class TennisCard extends PureComponent {
   };
   componentDidMount() {
     const { data, userID } = this.props;
-    fetch(`${URL}api/getuserdata`, {
+    fetch(`${URL}api/getuserdata`,{
       method: "post",
-      headers: { "Content-Type": "application/json" },
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
         userID
       })
