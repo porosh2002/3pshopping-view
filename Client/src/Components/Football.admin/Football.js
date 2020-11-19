@@ -1,6 +1,6 @@
 import { PureComponent } from "react";
 import { URL } from "../../serverUrl";
-import FootballCard from '../Football.users/FootballCard'
+import FootballCard from './FootballCard'
 export default class Tennis extends PureComponent {
   componentDidMount() {
     fetch(`${URL}api/football`).then((res) => {

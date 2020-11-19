@@ -72,22 +72,22 @@ class TennisCard extends PureComponent {
     const {
       FB_T_A,
       FB_T_B,
-      FB_T_A_R,
-      FB_T_B_R,
-      FB_T_Half_D,
-      FB_T_A_W,
-      FB_T_B_W,
-      FB_T_F_D,
-      FB_T_G_E,
-      FB_T_G_O,
-      FB_T_P_Y,
-      FB_T_P_N,
-      FB_T_M_G_1,
-      FB_T_M_G_2,
-      FB_T_M_G_3,
-      FB_T_M_G_4,
-      FB_T_M_G_5,
-      FB_T_M_G_5_M
+      // FB_T_A_R,
+      // FB_T_B_R,
+      // FB_T_Half_D,
+      // FB_T_A_W,
+      // FB_T_B_W,
+      // FB_T_F_D,
+      // FB_T_G_E,
+      // FB_T_G_O,
+      // FB_T_P_Y,
+      // FB_T_P_N,
+      // FB_T_M_G_1,
+      // FB_T_M_G_2,
+      // FB_T_M_G_3,
+      // FB_T_M_G_4,
+      // FB_T_M_G_5,
+      // FB_T_M_G_5_M
     } = this.props.data
     const { getAmount } = this.state;
     const getAmountStyle = getAmount ? null : { display: "none" };
@@ -102,40 +102,25 @@ class TennisCard extends PureComponent {
 <TennisTitleSub>{FB_T_B}</TennisTitleSub>
 <TennisTitleSub>Draw</TennisTitleSub>
 <br></br>
-<TennisTitleSub id="0" onClick={this.betclick}>{FB_T_A_R}</TennisTitleSub>
-<TennisTitleSub id="1" onClick={this.betclick}>{FB_T_B_R}</TennisTitleSub>
-<TennisTitleSub id="2" onClick={this.betclick}>{FB_T_Half_D}</TennisTitleSub>
 <TennisTitle>Full Time Result</TennisTitle>
 <TennisTitleSub>{FB_T_A}</TennisTitleSub>
 <TennisTitleSub>{FB_T_B}</TennisTitleSub>
 <TennisTitleSub>Draw</TennisTitleSub>
 <br></br>
-<TennisTitleSub id="3" onClick={this.betclick}>{FB_T_A_W}</TennisTitleSub>
-<TennisTitleSub id="4" onClick={this.betclick}>{FB_T_B_W}</TennisTitleSub>
-<TennisTitleSub id="5" onClick={this.betclick}>{FB_T_F_D}</TennisTitleSub>
 <TennisTitle>Total Goal of Match</TennisTitle>
 <TennisTitleSub>Even</TennisTitleSub>
 <TennisTitleSub>Odd</TennisTitleSub><br></br>
-<TennisTitleSub id="6" onClick={this.betclick}>{FB_T_G_E}</TennisTitleSub>
-<TennisTitleSub id="7" onClick={this.betclick}>{FB_T_G_O}</TennisTitleSub>
 <TennisTitle>Penalty Match</TennisTitle>
 <TennisTitleSub>Yes</TennisTitleSub>
 <TennisTitleSub>No</TennisTitleSub><br></br>
-<TennisTitleSub id="8" onClick={this.betclick}>{FB_T_P_Y}</TennisTitleSub>
-<TennisTitleSub id="9" onClick={this.betclick}>{FB_T_P_N}</TennisTitleSub>
 <TennisTitle>Total Match Goal</TennisTitle>
 <TennisTitleSub>One</TennisTitleSub>
 <TennisTitleSub>Two</TennisTitleSub>
 <TennisTitleSub>Three</TennisTitleSub><br></br>
-<TennisTitleSub id="10" onClick={this.betclick}>{FB_T_M_G_1}</TennisTitleSub>
-<TennisTitleSub id="11" onClick={this.betclick}>{FB_T_M_G_2}</TennisTitleSub>
-<TennisTitleSub id="12" onClick={this.betclick}>{FB_T_M_G_3}</TennisTitleSub><br></br>
+<br></br>
 <TennisTitleSub>Four</TennisTitleSub>
 <TennisTitleSub>Five</TennisTitleSub>
 <TennisTitleSub>Five+</TennisTitleSub><br></br>
-<TennisTitleSub id="13" onClick={this.betclick}>{FB_T_M_G_4}</TennisTitleSub>
-<TennisTitleSub id="14" onClick={this.betclick}>{FB_T_M_G_5}</TennisTitleSub>
-<TennisTitleSub id="15" onClick={this.betclick}>{FB_T_M_G_5_M}</TennisTitleSub>
       </TennisDIV>
       <div style={getAmountStyle}>
           <form
