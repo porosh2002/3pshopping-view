@@ -37,6 +37,16 @@ class TennisCard extends PureComponent {
       }),
     });
   }
+  submitdataFull=()=>{
+    const{betid,fw,g_E_O,Penalty,GoalinNum} = this.state;
+    fetch(`${URL}api/footballfull`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        betid,fw,g_E_O,Penalty,GoalinNum
+      }),
+    });
+  }
   betclickHalf = (event) => {
     const {id} = event.target;
     this.setState({halfValue:id})
@@ -122,6 +132,7 @@ this.setState({GoalinNum:15})
 <TennisTitleSub id='13' onClick={this.betclick}>Four</TennisTitleSub>
 <TennisTitleSub id='14' onClick={this.betclick}>Five</TennisTitleSub>
 <TennisTitleSub id='15' onClick={this.betclick}>Five+</TennisTitleSub><br></br>
+<button onClick={this.submitdataFull}>Submit</button>
       </TennisDIV>
       </div>
     );
