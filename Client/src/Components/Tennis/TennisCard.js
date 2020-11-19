@@ -32,7 +32,16 @@ class TennisCard extends PureComponent {
   }
   closegetamount = (event) => {
     this.setState({ getAmount: false });
-    const {userid,betamount,betprice,betid,betProject_id,getAmount} = this.state;
+    const {userid,betamount,betprice,betid,betProject_id,getAmount,userBalance} = this.state;
+  const newBalance = userBalance - betamount;
+  this.setState({userBalance:newBalance})
+  fetch(`${URL}api/balanceEdit`, {
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      newBalance,userid
+    }),
+  });
   fetch(`${URL}api/tenisBet`, {
     method: "post",
     headers: { "Content-Type": "application/json" },

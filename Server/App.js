@@ -70,6 +70,15 @@ app.post('/api/tenisBet',(req,res)=>{
   }); 
 })
   // Need to Delete Tennis Data Here After Proccessing 
+  app.post('/api/balanceEdit',(req,res)=>{
+    console.log(req.body);
+    const {userid,newBalance} = req.body;
+    RegisterUserModel.updateOne({email:md5(userid)},{balance:newBalance},(err,noerr)=>{
+      if(noerr){
+        console.log('Done');
+      }
+    })
+  })
 app.post('/api/tennisResult',(req,res)=>{
   const{
     betid,
