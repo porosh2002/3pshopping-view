@@ -463,6 +463,13 @@ app.post('/api/fthfRes',(req,res)=>{
   })
 })
 //
+app.get('/api/cricket',(req,res)=>{
+  CricketModel.find({},(err,result)=>{
+    if(result){
+      res.json(result)
+    }
+  })
+})
 app.get('/api/football',(req,res)=>{
   FootballModel.find({},(err,result)=>{
     if(result){
