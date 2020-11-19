@@ -65,6 +65,24 @@ this.setState({Penalty:8})
 if(id==='9'){
 this.setState({Penalty:9})
 }
+if(id==='10'){
+this.setState({GoalinNum:10})
+}
+if(id==='11'){
+this.setState({GoalinNum:11})
+}
+if(id==='12'){
+this.setState({GoalinNum:12})
+}
+if(id==='13'){
+this.setState({GoalinNum:13})
+}
+if(id==='14'){
+this.setState({GoalinNum:14})
+}
+if(id==='15'){
+this.setState({GoalinNum:15})
+}
   };
   render() {
     const {
