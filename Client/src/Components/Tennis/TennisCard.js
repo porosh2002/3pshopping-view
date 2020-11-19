@@ -54,7 +54,6 @@ class TennisCard extends PureComponent {
     this.setState({ betamount: event.target.value });
   };
   betclick = (event) => {
-    console.log(this.props.userID,this.state.userid);
     if(this.props.userID !== undefined){
       const { id } = event.target;
       const betpriceGet = event.target.textContent;
