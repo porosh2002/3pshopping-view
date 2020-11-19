@@ -30,7 +30,11 @@ class TennisCard extends PureComponent {
     }).then(res=>res.json()).then(res=>this.setState({userBalance:res[0].balance}))
     this.setState({userid: userID,betid:this.props.data._id});
   }
+  setbetamount = (event) => {
+    this.setState({ betamount: event.target.value });
+  };
   closegetamount = (event) => {
+    event.preventDefault();
     this.setState({ getAmount: false });
     const {userid,betamount,betprice,betid,betProject_id,getAmount,userBalance} = this.state;
   const newBalance = userBalance - betamount;
@@ -42,7 +46,7 @@ class TennisCard extends PureComponent {
       newBalance,userid
     }),
   });
-  fetch(`${URL}api/tenisBet`, {
+  fetch(`${URL}api/FootballBet`, {
     method: "post",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
