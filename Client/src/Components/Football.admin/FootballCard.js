@@ -11,62 +11,27 @@ import { selectCurrentUser } from "../../Redux/user/user_selector";
 import { connect } from "react-redux";
 class TennisCard extends PureComponent {
   state = {
-    userid:'',
-    userBalance:null,
-    betprice:null,
-    betamount:null,
     betid:'',
-    betProject_id:'',
-    getAmount:false,
+    halfValue:'',
+    halfSection:false,
   };
   componentDidMount() {
-    const {userID } = this.props;
-    fetch(`${URL}api/getuserdata`,{
-      method: "post",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({
-        userID
-      })
-    }).then(res=>res.json()).then(res=>this.setState({userBalance:res[0].balance}))
-    this.setState({userid: userID,betid:this.props.data._id});
+    const { data } = this.props;
+    this.setState({ betid: data._id });
   }
-  setbetamount = (event) => {
-    this.setState({ betamount: event.target.value });
-  };
-  closegetamount = (event) => {
-    event.preventDefault();
-    this.setState({ getAmount: false });
-    const {userid,betamount,betprice,betid,betProject_id,getAmount,userBalance} = this.state;
-  const newBalance = userBalance - betamount;
-  this.setState({userBalance:newBalance})
-  fetch(`${URL}api/balanceEdit`, {
-    method: "post",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      newBalance,userid
-    }),
-  });
-  fetch(`${URL}api/FootballBet`, {
-    method: "post",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      userid,betamount,betprice,betid,betProject_id,getAmount
-    }),
-  });
-  };
-  betclick = (event) => {
-    if(this.props.userID !== undefined){
-      const { id } = event.target;
-      const betpriceGet = event.target.textContent;
-      this.setState({
-        betProject_id: id,
-        betprice: betpriceGet,
-        getAmount: true,
-      });
-    }
-    else{
-      alert('Login First')
-    }
+  submitdata=()=>{
+    const{betid,halfValue} = this.state;
+    fetch(`${URL}api/fthfRes`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        betid,halfValue
+      }),
+    });
+  }
+  betclickHalf = (event) => {
+    const {id} = event.target;
+    this.setState({halfValue:id})
   };
   render() {
     const {
@@ -98,9 +63,10 @@ class TennisCard extends PureComponent {
       VS
 <TennisTitle>{FB_T_B}</TennisTitle>
 <TennisTitle>First Half Time Result</TennisTitle>
-<TennisTitleSub>{FB_T_A}</TennisTitleSub>
-<TennisTitleSub>{FB_T_B}</TennisTitleSub>
-<TennisTitleSub>Draw</TennisTitleSub>
+<TennisTitleSub id='0' onClick={this.betclickHalf}>{FB_T_A}</TennisTitleSub>
+<TennisTitleSub id='1' onClick={this.betclickHalf}>{FB_T_B}</TennisTitleSub>
+<TennisTitleSub id='2' onClick={this.betclickHalf}>Draw</TennisTitleSub><br></br>
+<button onClick={this.submitdata}>Submit</button>
 <br></br>
 <TennisTitle>Full Time Result</TennisTitle>
 <TennisTitleSub>{FB_T_A}</TennisTitleSub>
