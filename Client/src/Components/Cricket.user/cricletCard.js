@@ -145,21 +145,21 @@ class TennisCard extends PureComponent {
         <TennisTitleSub>{F_M_R_A}</TennisTitleSub>
         <TennisTitleSub>{F_M_R_B}</TennisTitleSub><br></br>
         <TennisTitle>1st ball of the Innings</TennisTitle>
+        <TennisTitleSub>Dot Ball</TennisTitleSub><br></br>
+        <TennisTitleSub>{F_B_F_I_0}</TennisTitleSub><br></br>
         <TennisTitleSub>One</TennisTitleSub>
         <TennisTitleSub>Two</TennisTitleSub>
         <TennisTitleSub>Three</TennisTitleSub><br></br>
-        <TennisTitleSub>{C_T_A}</TennisTitleSub>
-        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        <TennisTitleSub>{F_B_F_I_1}</TennisTitleSub>
+        <TennisTitleSub>{F_B_F_I_2}</TennisTitleSub>
 {/*  */}
-        <TennisTitleSub>{C_T_A}</TennisTitleSub><br></br>
+        <TennisTitleSub>{F_B_F_I_3}</TennisTitleSub><br></br>
         <TennisTitleSub>Four</TennisTitleSub>
         <TennisTitleSub>Six</TennisTitleSub>
         <TennisTitleSub>Others</TennisTitleSub><br></br>
-        <TennisTitleSub>{C_T_A}</TennisTitleSub>
-        <TennisTitleSub>{C_T_B}</TennisTitleSub>
-        <TennisTitleSub>{C_T_B}</TennisTitleSub><br></br>
-        <TennisTitleSub>Dot Ball</TennisTitleSub><br></br>
-        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        <TennisTitleSub>{F_B_F_I_4}</TennisTitleSub>
+        <TennisTitleSub>{F_B_F_I_6}</TennisTitleSub>
+        <TennisTitleSub>{TS_T_A_R_more}</TennisTitleSub><br></br>
         {/*  */}
         <div style={getAmountStyle}>
           <form
