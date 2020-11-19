@@ -11,7 +11,7 @@ import { selectCurrentUser } from "../../Redux/user/user_selector";
 import { connect } from "react-redux";
 class TennisCard extends Component {
   state = {
-    userid: null,
+    userid:'',
     betamount: 0,
     betprice: null,
     betid: null,
@@ -25,25 +25,31 @@ class TennisCard extends Component {
   closegetamount = (event) => {
     this.setState({ getAmount: false });
     const {userid,betamount,betprice,betid,betProject_id,getAmount} = this.state;
-    fetch(`${URL}api/tenisBet`, {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        userid,betamount,betprice,betid,betProject_id,getAmount
-      }),
-    });
+  fetch(`${URL}api/tenisBet`, {
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      userid,betamount,betprice,betid,betProject_id,getAmount
+    }),
+  });
   };
   setbetamount = (event) => {
     this.setState({ betamount: event.target.value });
   };
   betclick = (event) => {
-    const { id } = event.target;
-    const betpriceGet = event.target.textContent;
-    this.setState({
-      betProject_id: id,
-      betprice: betpriceGet,
-      getAmount: true,
-    });
+    console.log(this.props.userID,this.state.userid);
+    if(this.props.userID !== undefined){
+      const { id } = event.target;
+      const betpriceGet = event.target.textContent;
+      this.setState({
+        betProject_id: id,
+        betprice: betpriceGet,
+        getAmount: true,
+      });
+    }
+    else{
+      alert('Login First')
+    }
   };
   render() {
     const { getAmount } = this.state;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Button,TennisDIV, TennisTitle, TennisTitleSub } from "../../Styled";
+import {TennisDIV, TennisTitle, TennisTitleSub } from "../../Styled";
 import { URL } from "../../serverUrl";
 import { selectCurrentUser } from "../../Redux/user/user_selector";
 import { connect } from "react-redux";
