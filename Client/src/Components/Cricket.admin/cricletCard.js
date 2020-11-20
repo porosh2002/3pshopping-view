@@ -81,6 +81,120 @@ if(id==='13'){
 if(id==='14'){
   this.setState({firstovrRun:14})
 }
+if(id==='15'){
+  this.setState({firstWicket:15})
+}
+if(id==='16'){
+  this.setState({firstWicket:16})
+}
+if(id==='17'){
+  this.setState({firstWicketMethod:17})
+}
+if(id==='18'){
+  this.setState({firstWicketMethod:18})
+}
+if(id==='19'){
+  this.setState({firstWicketMethod:19})
+}
+if(id==='20'){
+  this.setState({firstWicketMethod:20})
+}
+if(id==='21'){
+  this.setState({firstWicketMethod:21})
+}
+if(id==='22'){
+  this.setState({firstWicketMethod:22})
+}
+if(id==='23'){
+  this.setState({WicketInPowerolay:23})
+}
+if(id==='24'){
+  this.setState({WicketInPowerolay:24})
+}
+if(id==='25'){
+  this.setState({WicketInPowerolay:25})
+}
+if(id==='26'){
+  this.setState({Heightrunin1stover:26})
+}
+if(id==='27'){
+  this.setState({Heightrunin1stover:27})
+}
+if(id==='28'){
+  this.setState({Heightrunin1stover:28})
+}
+if(id==='29'){
+  this.setState({Hsix:29})
+}
+if(id==='30'){
+  this.setState({Hsix:30})
+}
+if(id==='31'){
+  this.setState({Hsix:31})
+}
+if(id==='32'){
+  this.setState({Hpatner:32})
+}
+if(id==='33'){
+  this.setState({Hpatner:33})
+}
+if(id==='34'){
+  this.setState({Hpatner:34})
+}
+if(id==='35'){
+  this.setState({TopBatsman:35})
+}
+if(id==='36'){
+  this.setState({TopBatsman:36})
+}
+if(id==='36'){
+  this.setState({TopBowler:36})
+}
+if(id==='37'){
+  this.setState({TopBowler:37})
+}
+if(id==='38'){
+  this.setState({totalsix:38})
+}
+if(id==='39'){
+  this.setState({totalsix:39})
+}
+if(id==='40'){
+  this.setState({totalfour:40})
+}
+if(id==='41'){
+  this.setState({totalfour:41})
+}
+if(id==='42'){
+  this.setState({heightInvidualScore:42})
+}
+if(id==='43'){
+  this.setState({heightInvidualScore:43})
+}
+if(id==='44'){
+  this.setState({fifty:44})
+}
+if(id==='45'){
+  this.setState({fifty:45})
+}
+if(id==='46'){
+  this.setState({FirstinningsScore:46})
+}
+if(id==='47'){
+  this.setState({FirstinningsScore:47})
+}
+if(id==='48'){
+  this.setState({totalsixScore:48})
+}
+if(id==='49'){
+  this.setState({totalsixScore:49})
+}
+if(id==='50'){
+  this.setState({totalsixfour:50})
+}
+if(id==='51'){
+  this.setState({totalsixfour:51})
+}
   };
   render() {
     const { getAmount } = this.state;
