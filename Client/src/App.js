@@ -28,10 +28,10 @@ class App extends Component {
         <Suspense fallback={<p>Loading...</p>}>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/Login" render={()=>userID !== undefined ? (<Redirect to='/' />):(<Login />)} />
+            <Route exact path="/Login" render={()=>userID !== undefined ? (<Redirect to='/user' />):(<Login />)} />
             <Route exact path="/Signup" component={Signup} />
             <Route exact path="/admin" component={Admin} />
-            <Route exact path="/user" component={User} />
+            <Route exact path="/user" render={()=>userID === undefined ? (<Redirect to='/login' />):(<User />)} />
             <Route exact path="/football" component={Football} />
             <Route exact path="/cricket" component={Cricket} />
             <Route exact path="/tennis" component={Tennis} />
