@@ -102,7 +102,7 @@ border:1px solid #444;
 border-radius:3px;
 `;
 export const UserCard = styled.div`
-font-size:17px;
+font-size:20px;
 color:#f7f7f7;
 padding:20px;
 display:inline-block;

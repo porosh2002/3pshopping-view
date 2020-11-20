@@ -3,6 +3,7 @@ import { AdminContent, UserCard, Input, AdminCTitle, Button } from "../Styled";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setUser } from "../Redux/user/actions";
+import { FcSalesPerformance } from "react-icons/fc";
 class User extends Component {
   state = {
     addbalance: false,
@@ -17,7 +18,7 @@ class User extends Component {
     const outstyle = withdrawbalance ? null : { display: "none" };
     return (
       <AdminContent>
-        <UserCard>Balance : 0 Coin</UserCard>
+        <UserCard>0 Coin <FcSalesPerformance /></UserCard>
         <UserCard>
           <Link
             style={{ color: "royalblue", textDecoration: "none" }}
