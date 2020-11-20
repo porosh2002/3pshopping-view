@@ -127,7 +127,6 @@ class TennisCard extends PureComponent {
         T_M_F_OV,
         T_M_F_UN,
     } = this.props.data;
-    const data = []
     return (
       <TennisDIV style={{backgroundColor:"#93abd3"}}>
         <TennisTitle>{C_T_A}</TennisTitle>
@@ -188,6 +187,97 @@ class TennisCard extends PureComponent {
         <TennisTitleSub>{F_W_M_F_I_B}</TennisTitleSub>
         <TennisTitleSub>{F_W_M_F_I_LBW}</TennisTitleSub>
         <TennisTitleSub>{F_W_M_F_I_OTHR}</TennisTitleSub><br></br>
+        <TennisTitle>Wicket in Powerplay in 1st Innings</TennisTitle><br></br>
+        <TennisTitleSub>no Wickets</TennisTitleSub>
+        <TennisTitleSub>1 Wickets</TennisTitleSub>
+        <TennisTitleSub>2+ Wickets</TennisTitleSub><br></br>
+        <TennisTitleSub>{W_P_P_N}</TennisTitleSub>
+        <TennisTitleSub>{W_P_P_1}</TennisTitleSub>
+        <TennisTitleSub>{W_P_P_N_2}</TennisTitleSub><br></br>
+        <TennisTitle>Height Run in 1st Over</TennisTitle><br></br>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        <TennisTitleSub>Tie</TennisTitleSub><br></br>
+        <TennisTitleSub>{H_R_F_O_A}</TennisTitleSub>
+        <TennisTitleSub>{H_R_F_O_B}</TennisTitleSub>
+        <TennisTitleSub>{H_R_F_O_D}</TennisTitleSub><br></br>
+        <TennisTitle>Height six</TennisTitle><br></br>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        <TennisTitleSub>Tie</TennisTitleSub><br></br>
+        <TennisTitleSub>{H_S_A}</TennisTitleSub>
+        <TennisTitleSub>{H_S_B}</TennisTitleSub>
+        <TennisTitleSub>{H_S_T}</TennisTitleSub><br></br>
+        <TennisTitle>Height Patnership</TennisTitle><br></br>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        <TennisTitleSub>Tie</TennisTitleSub><br></br>
+        <TennisTitleSub>{H_P_A}</TennisTitleSub>
+        <TennisTitleSub>{H_P_B}</TennisTitleSub>
+        <TennisTitleSub>{H_P_T}</TennisTitleSub><br></br>
+        <TennisTitle>Team of Top Batsman</TennisTitle><br></br>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        <br></br>
+        <TennisTitleSub>{T_B_T_A}</TennisTitleSub>
+        <TennisTitleSub>{T_B_T_B}</TennisTitleSub>
+        <br></br>
+        <TennisTitle>Team of Top Bowler</TennisTitle><br></br>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        <br></br>
+        <TennisTitleSub>{T_BO_T_A}</TennisTitleSub>
+        <TennisTitleSub>{T_BO_T_B}</TennisTitleSub>
+        <br></br>
+        <TennisTitle>Height Team Total Six</TennisTitle><br></br>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        <br></br>
+        <TennisTitleSub>{H_T_T_S_A}</TennisTitleSub>
+        <TennisTitleSub>{H_T_T_S_B}</TennisTitleSub>
+        <br></br>
+        <TennisTitle>Height Team Total Four</TennisTitle><br></br>
+        <TennisTitleSub>{C_T_A}</TennisTitleSub>
+        <TennisTitleSub>{C_T_B}</TennisTitleSub>
+        <br></br>
+        <TennisTitleSub>{H_T_T_F_A}</TennisTitleSub>
+        <TennisTitleSub>{H_T_T_F_B}</TennisTitleSub>
+        <br></br>
+        <TennisTitle>Height Individual Score</TennisTitle><br></br>
+        <TennisTitleSub>over 63.5</TennisTitleSub>
+        <TennisTitleSub>under 63.5</TennisTitleSub>
+        <br></br>
+        <TennisTitleSub>{H_I_S_OV}</TennisTitleSub>
+        <TennisTitleSub>{H_I_S_UN}</TennisTitleSub>
+        <br></br>
+        <TennisTitle>Fifty Scored in the match</TennisTitle><br></br>
+        <TennisTitleSub>Yes</TennisTitleSub>
+        <TennisTitleSub>NO</TennisTitleSub>
+        <br></br>
+        <TennisTitleSub>{S_FY}</TennisTitleSub>
+        <TennisTitleSub>{S_FN}</TennisTitleSub>
+        <br></br>
+        <TennisTitle>1st Innings Score</TennisTitle><br></br>
+        <TennisTitleSub>over 173.5</TennisTitleSub>
+        <TennisTitleSub>under 173.5</TennisTitleSub>
+        <br></br>
+        <TennisTitleSub>{F_I_S_O}</TennisTitleSub>
+        <TennisTitleSub>{F_I_S_U}</TennisTitleSub>
+        <br></br>
+        <TennisTitle>Total Match Six</TennisTitle><br></br>
+        <TennisTitleSub>over 11.5</TennisTitleSub>
+        <TennisTitleSub>under 11.5</TennisTitleSub>
+        <br></br>
+        <TennisTitleSub>{T_M_S_OV}</TennisTitleSub>
+        <TennisTitleSub>{T_M_S_UN}</TennisTitleSub>
+        <br></br>
+        <TennisTitle>Total Match Four</TennisTitle><br></br>
+        <TennisTitleSub>over 27.5</TennisTitleSub>
+        <TennisTitleSub>under 27.5</TennisTitleSub>
+        <br></br>
+        <TennisTitleSub>{T_M_F_OV}</TennisTitleSub>
+        <TennisTitleSub>{T_M_F_UN}</TennisTitleSub>
+        <br></br>
         <div style={getAmountStyle}>
           <form
             onSubmit={this.closegetamount}
