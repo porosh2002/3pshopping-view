@@ -9,6 +9,13 @@ import { connect } from "react-redux";
 class TennisCard extends PureComponent {
   state = {
     betid: null,
+    tossResult:'',
+    firstballres:'',
+    firstovrRun:'',
+    firstOverHeight:'',
+    firstWicket:'',
+    firstWicketMethod:'',
+    WicketInPowerolay:'',
   };
   componentDidMount() {
     const { data } = this.props;
