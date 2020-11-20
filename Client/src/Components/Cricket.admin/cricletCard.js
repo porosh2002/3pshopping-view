@@ -35,7 +35,52 @@ class TennisCard extends PureComponent {
     this.setState({ betid: data._id });
   }
   betclick = (event) => {
-console.log(event.target.id);
+const {id} = event.target;
+if(id === '0'){
+  this.setState({tossResult:0})
+}
+if(id === '1'){
+  this.setState({tossResult:1})
+}
+if(id === '2'){
+  this.setState({finalresult:2})
+}
+if(id === '3'){
+  this.setState({finalresult:3})
+}
+if(id==='4'){
+  this.setState({firstballres:4})
+}
+if(id==='5'){
+  this.setState({firstballres:5})
+}
+if(id==='6'){
+  this.setState({firstballres:6})
+}
+if(id==='7'){
+  this.setState({firstballres:7})
+}
+if(id==='8'){
+  this.setState({firstballres:8})
+}
+if(id==='9'){
+  this.setState({firstballres:9})
+}
+if(id==='10'){
+  this.setState({firstballres:10})
+}
+if(id==='11'){
+  this.setState({firstovrRun:11})
+}
+if(id==='12'){
+  this.setState({firstovrRun:12})
+}
+if(id==='13'){
+  this.setState({firstovrRun:13})
+}
+if(id==='14'){
+  this.setState({firstovrRun:14})
+}
   };
   render() {
     const { getAmount } = this.state;
