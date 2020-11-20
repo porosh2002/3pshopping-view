@@ -1,8 +1,6 @@
 import React, { PureComponent } from "react";
 import { URL } from "../../serverUrl";
 import {
-  Button,
-  Input,
   TennisDIV,
   TennisTitle,
   TennisTitleSub,
@@ -53,7 +51,6 @@ class TennisCard extends PureComponent {
   };
   betclick = (event) => {
     const {id} = event.target;
-    console.log(id);
 if(id==='3'){
 this.setState({fw:3})
 }
