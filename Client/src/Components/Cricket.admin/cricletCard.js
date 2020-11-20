@@ -4,6 +4,7 @@ import {
   TennisTitle,
   TennisTitleSub,
 } from "../../Styled";
+import {URL} from '../../serverUrl'
 import { selectCurrentUser } from "../../Redux/user/user_selector";
 import { connect } from "react-redux";
 class TennisCard extends PureComponent {
@@ -196,6 +197,26 @@ if(id==='52'){
   this.setState({totalsixfour:52})
 }
   };
+  submitdatatoss=()=>{
+    const{betid,tossResult} = this.state;
+    fetch(`${URL}api/tossCricket`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        betid,tossResult
+      }),
+    });
+  }
+  submitdatafirstball=()=>{
+    const{betid,firstballres} = this.state;
+    fetch(`${URL}api/firstballCricket`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        betid,firstballres
+      }),
+    });
+  }
   render() {
     const { getAmount } = this.state;
     const getAmountStyle = getAmount ? null : { display: "none" };
@@ -212,14 +233,16 @@ if(id==='52'){
         <TennisTitleSub onClick={this.betclick} id="0">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="1">{C_T_B}</TennisTitleSub><br></br>
         <br></br>
-        <TennisTitle>Final Result</TennisTitle>
-        <TennisTitleSub onClick={this.betclick} id="2">{C_T_A}</TennisTitleSub>
-        <TennisTitleSub onClick={this.betclick} id="3">{C_T_B}</TennisTitleSub><br></br>
+        <button onClick={this.submitdatatoss}>Submit</button>
         <TennisTitle>1st ball of the Innings</TennisTitle>
         <TennisTitleSub onClick={this.betclick} id="4">Dot Ball</TennisTitleSub><br></br>
         <TennisTitleSub onClick={this.betclick} id="5">One</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="6">Two</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="7">Three</TennisTitleSub><br></br>
+        <button></button>
+        <TennisTitle>Final Result</TennisTitle>
+        <TennisTitleSub onClick={this.betclick} id="2">{C_T_A}</TennisTitleSub>
+        <TennisTitleSub onClick={this.betclick} id="3">{C_T_B}</TennisTitleSub><br></br>
 {/*  */}
         <TennisTitleSub onClick={this.betclick} id="8">Four</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="9">Six</TennisTitleSub>
