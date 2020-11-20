@@ -531,6 +531,30 @@ app.post('/api/firstballCricket',(req,res)=>{
     }
   })
 })
+app.post('/api/firstOverCricket',(req,res)=>{
+  const {betid,firstovrRun} = req.body;
+  CricketBetModel.find({betid:betid},(err,result)=>{
+    if(result){
+      result.map(data=>{
+        if(Number(data.betProject_id)===Number(firstovrRun)){
+          const BetPrice = data.betPrice;
+          const Betamount = data.betamount;
+          const HashedEmail = md5(data.userid)
+          RegisterUserModel.find({email:HashedEmail},(err,result)=>{
+            if(result){
+              const newBalance = result[0].balance + (BetPrice*Betamount);
+              RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+                if(result){
+                  console.log('ok');
+                }
+              })
+            }
+          })
+        }
+      })
+    }
+  })
+})
 //
 app.get('/api/cricket',(req,res)=>{
   CricketModel.find({},(err,result)=>{
