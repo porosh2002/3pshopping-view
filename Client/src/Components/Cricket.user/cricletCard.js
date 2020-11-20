@@ -54,20 +54,18 @@ class TennisCard extends PureComponent {
     this.setState({ betamount: event.target.value });
   };
   betclick = (event) => {
+    if(this.props.userID !== undefined){
       const { id } = event.target;
-      console.log(id);
-    // if(this.props.userID !== undefined){
-    //   const { id } = event.target;
-    //   const betpriceGet = event.target.textContent;
-    //   this.setState({
-    //     betProject_id: id,
-    //     betprice: betpriceGet,
-    //     getAmount: true,
-    //   });
-    // }
-    // else{
-    //   alert('Login First')
-    // }
+      const betpriceGet = event.target.textContent;
+      this.setState({
+        betProject_id: id,
+        betprice: betpriceGet,
+        getAmount: true,
+      });
+    }
+    else{
+      alert('Login First')
+    }
   };
   render() {
     const { getAmount } = this.state;
