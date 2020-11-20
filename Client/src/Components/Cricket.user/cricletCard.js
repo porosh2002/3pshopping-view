@@ -54,6 +54,8 @@ class TennisCard extends PureComponent {
     this.setState({ betamount: event.target.value });
   };
   betclick = (event) => {
+      const { id } = event.target;
+      console.log(id);
     // if(this.props.userID !== undefined){
     //   const { id } = event.target;
     //   const betpriceGet = event.target.textContent;
@@ -136,147 +138,147 @@ class TennisCard extends PureComponent {
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub><br></br>
         <TennisTitleSub id="0" onClick={this.betclick}>{C_T_A_T}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{C_T_B_T}</TennisTitleSub>
+        <TennisTitleSub id="1" onClick={this.betclick}>{C_T_B_T}</TennisTitleSub>
         <br></br>
         <TennisTitle>Final Result</TennisTitle>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_M_R_A}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_M_R_B}</TennisTitleSub><br></br>
+        <TennisTitleSub id="2" onClick={this.betclick}>{F_M_R_A}</TennisTitleSub>
+        <TennisTitleSub id="3" onClick={this.betclick}>{F_M_R_B}</TennisTitleSub><br></br>
         <TennisTitle>1st ball of the Innings</TennisTitle>
         <TennisTitleSub>Dot Ball</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_B_F_I_0}</TennisTitleSub><br></br>
+        <TennisTitleSub id="4" onClick={this.betclick}>{F_B_F_I_0}</TennisTitleSub><br></br>
         <TennisTitleSub>One</TennisTitleSub>
         <TennisTitleSub>Two</TennisTitleSub>
         <TennisTitleSub>Three</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_B_F_I_1}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_B_F_I_2}</TennisTitleSub>
+        <TennisTitleSub id="5" onClick={this.betclick}>{F_B_F_I_1}</TennisTitleSub>
+        <TennisTitleSub id="6" onClick={this.betclick}>{F_B_F_I_2}</TennisTitleSub>
 {/*  */}
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_B_F_I_3}</TennisTitleSub><br></br>
+        <TennisTitleSub id="7" onClick={this.betclick}>{F_B_F_I_3}</TennisTitleSub><br></br>
         <TennisTitleSub>Four</TennisTitleSub>
         <TennisTitleSub>Six</TennisTitleSub>
         <TennisTitleSub>Others</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_B_F_I_4}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_B_F_I_6}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{TS_T_A_R_more}</TennisTitleSub><br></br>
+        <TennisTitleSub id="8" onClick={this.betclick}>{F_B_F_I_4}</TennisTitleSub>
+        <TennisTitleSub id="9" onClick={this.betclick}>{F_B_F_I_6}</TennisTitleSub>
+        <TennisTitleSub id="10" onClick={this.betclick}>{TS_T_A_R_more}</TennisTitleSub><br></br>
         {/*  */}
         <TennisTitle>1st Over of the 1st Innings</TennisTitle>
         <TennisTitleSub>0-3 Run</TennisTitleSub>
         <TennisTitleSub>4-6 Run</TennisTitleSub>
         <TennisTitleSub>7-9 Run</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_O_F_I_3}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{TS_T_A_R_F_6}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_O_F_I_9}</TennisTitleSub><br></br>
+        <TennisTitleSub id="11" onClick={this.betclick}>{F_O_F_I_3}</TennisTitleSub>
+        <TennisTitleSub id="12" onClick={this.betclick}>{TS_T_A_R_F_6}</TennisTitleSub>
+        <TennisTitleSub id="13" onClick={this.betclick}>{F_O_F_I_9}</TennisTitleSub><br></br>
         <TennisTitleSub>10+ Run</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_O_F_I_10}</TennisTitleSub><br></br>
+        <TennisTitleSub id="14" onClick={this.betclick}>{F_O_F_I_10}</TennisTitleSub><br></br>
         <TennisTitle>Run at Fall of 1st wicket of 1st Innings</TennisTitle><br></br>
         <TennisTitleSub>over 23.5 </TennisTitleSub>
         <TennisTitleSub>under 23.5</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_W_F_I_O}</TennisTitleSub> 
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_W_F_I_U}</TennisTitleSub>
+        <TennisTitleSub id="15" onClick={this.betclick}>{F_W_F_I_O}</TennisTitleSub> 
+        <TennisTitleSub id="16" onClick={this.betclick}>{F_W_F_I_U}</TennisTitleSub>
         <TennisTitle>1st wicket method of 1st Innings</TennisTitle><br></br>
         <TennisTitleSub>Caught Out </TennisTitleSub>
         <TennisTitleSub>Run Out </TennisTitleSub>
         <TennisTitleSub>Stumped</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_W_M_F_I_C}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_W_M_F_I_R}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_W_M_F_I_S}</TennisTitleSub><br></br>
+        <TennisTitleSub id="17" onClick={this.betclick}>{F_W_M_F_I_C}</TennisTitleSub>
+        <TennisTitleSub id="18" onClick={this.betclick}>{F_W_M_F_I_R}</TennisTitleSub>
+        <TennisTitleSub id="19" onClick={this.betclick}>{F_W_M_F_I_S}</TennisTitleSub><br></br>
         <TennisTitleSub>Bowled Out</TennisTitleSub>
         <TennisTitleSub>LBW Out </TennisTitleSub>
         <TennisTitleSub>Others</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_W_M_F_I_B}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_W_M_F_I_LBW}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_W_M_F_I_OTHR}</TennisTitleSub><br></br>
+        <TennisTitleSub id="20" onClick={this.betclick}>{F_W_M_F_I_B}</TennisTitleSub>
+        <TennisTitleSub id="21" onClick={this.betclick}>{F_W_M_F_I_LBW}</TennisTitleSub>
+        <TennisTitleSub id="22" onClick={this.betclick}>{F_W_M_F_I_OTHR}</TennisTitleSub><br></br>
         <TennisTitle>Wicket in Powerplay in 1st Innings</TennisTitle><br></br>
         <TennisTitleSub>no Wickets</TennisTitleSub>
         <TennisTitleSub>1 Wickets</TennisTitleSub>
         <TennisTitleSub>2+ Wickets</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{W_P_P_N}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{W_P_P_1}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{W_P_P_N_2}</TennisTitleSub><br></br>
+        <TennisTitleSub id="23" onClick={this.betclick}>{W_P_P_N}</TennisTitleSub>
+        <TennisTitleSub id="24" onClick={this.betclick}>{W_P_P_1}</TennisTitleSub>
+        <TennisTitleSub id="25" onClick={this.betclick}>{W_P_P_N_2}</TennisTitleSub><br></br>
         <TennisTitle>Height Run in 1st Over</TennisTitle><br></br>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub>
         <TennisTitleSub>Tie</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_R_F_O_A}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_R_F_O_B}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_R_F_O_D}</TennisTitleSub><br></br>
+        <TennisTitleSub id="26" onClick={this.betclick}>{H_R_F_O_A}</TennisTitleSub>
+        <TennisTitleSub id="27" onClick={this.betclick}>{H_R_F_O_B}</TennisTitleSub>
+        <TennisTitleSub id="28" onClick={this.betclick}>{H_R_F_O_D}</TennisTitleSub><br></br>
         <TennisTitle>Height six</TennisTitle><br></br>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub>
         <TennisTitleSub>Tie</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_S_A}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_S_B}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_S_T}</TennisTitleSub><br></br>
+        <TennisTitleSub id="29" onClick={this.betclick}>{H_S_A}</TennisTitleSub>
+        <TennisTitleSub id="30" onClick={this.betclick}>{H_S_B}</TennisTitleSub>
+        <TennisTitleSub id="31" onClick={this.betclick}>{H_S_T}</TennisTitleSub><br></br>
         <TennisTitle>Height Patnership</TennisTitle><br></br>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub>
         <TennisTitleSub>Tie</TennisTitleSub><br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_P_A}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_P_B}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_P_T}</TennisTitleSub><br></br>
+        <TennisTitleSub id="32" onClick={this.betclick}>{H_P_A}</TennisTitleSub>
+        <TennisTitleSub id="33" onClick={this.betclick}>{H_P_B}</TennisTitleSub>
+        <TennisTitleSub id="34" onClick={this.betclick}>{H_P_T}</TennisTitleSub><br></br>
         <TennisTitle>Team of Top Batsman</TennisTitle><br></br>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{T_B_T_A}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{T_B_T_B}</TennisTitleSub>
+        <TennisTitleSub id="35" onClick={this.betclick}>{T_B_T_A}</TennisTitleSub>
+        <TennisTitleSub id="36" onClick={this.betclick}>{T_B_T_B}</TennisTitleSub>
         <br></br>
         <TennisTitle>Team of Top Bowler</TennisTitle><br></br>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{T_BO_T_A}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{T_BO_T_B}</TennisTitleSub>
+        <TennisTitleSub id="37" onClick={this.betclick}>{T_BO_T_A}</TennisTitleSub>
+        <TennisTitleSub id="38" onClick={this.betclick}>{T_BO_T_B}</TennisTitleSub>
         <br></br>
         <TennisTitle>Height Team Total Six</TennisTitle><br></br>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_T_T_S_A}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_T_T_S_B}</TennisTitleSub>
+        <TennisTitleSub id="39" onClick={this.betclick}>{H_T_T_S_A}</TennisTitleSub>
+        <TennisTitleSub id="40" onClick={this.betclick}>{H_T_T_S_B}</TennisTitleSub>
         <br></br>
         <TennisTitle>Height Team Total Four</TennisTitle><br></br>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_T_T_F_A}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_T_T_F_B}</TennisTitleSub>
+        <TennisTitleSub id="41" onClick={this.betclick}>{H_T_T_F_A}</TennisTitleSub>
+        <TennisTitleSub id="42" onClick={this.betclick}>{H_T_T_F_B}</TennisTitleSub>
         <br></br>
         <TennisTitle>Height Individual Score</TennisTitle><br></br>
         <TennisTitleSub>over 63.5</TennisTitleSub>
         <TennisTitleSub>under 63.5</TennisTitleSub>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_I_S_OV}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{H_I_S_UN}</TennisTitleSub>
+        <TennisTitleSub id="43" onClick={this.betclick}>{H_I_S_OV}</TennisTitleSub>
+        <TennisTitleSub id="44" onClick={this.betclick}>{H_I_S_UN}</TennisTitleSub>
         <br></br>
         <TennisTitle>Fifty Scored in the match</TennisTitle><br></br>
         <TennisTitleSub>Yes</TennisTitleSub>
         <TennisTitleSub>NO</TennisTitleSub>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{S_FY}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{S_FN}</TennisTitleSub>
+        <TennisTitleSub id="45" onClick={this.betclick}>{S_FY}</TennisTitleSub>
+        <TennisTitleSub id="46" onClick={this.betclick}>{S_FN}</TennisTitleSub>
         <br></br>
         <TennisTitle>1st Innings Score</TennisTitle><br></br>
         <TennisTitleSub>over 173.5</TennisTitleSub>
         <TennisTitleSub>under 173.5</TennisTitleSub>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_I_S_O}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{F_I_S_U}</TennisTitleSub>
+        <TennisTitleSub id="47" onClick={this.betclick}>{F_I_S_O}</TennisTitleSub>
+        <TennisTitleSub id="48" onClick={this.betclick}>{F_I_S_U}</TennisTitleSub>
         <br></br>
         <TennisTitle>Total Match Six</TennisTitle><br></br>
         <TennisTitleSub>over 11.5</TennisTitleSub>
         <TennisTitleSub>under 11.5</TennisTitleSub>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{T_M_S_OV}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{T_M_S_UN}</TennisTitleSub>
+        <TennisTitleSub id="49" onClick={this.betclick}>{T_M_S_OV}</TennisTitleSub>
+        <TennisTitleSub id="50" onClick={this.betclick}>{T_M_S_UN}</TennisTitleSub>
         <br></br>
         <TennisTitle>Total Match Four</TennisTitle><br></br>
         <TennisTitleSub>over 27.5</TennisTitleSub>
         <TennisTitleSub>under 27.5</TennisTitleSub>
         <br></br>
-        <TennisTitleSub id="0" onClick={this.betclick}>{T_M_F_OV}</TennisTitleSub>
-        <TennisTitleSub id="0" onClick={this.betclick}>{T_M_F_UN}</TennisTitleSub>
+        <TennisTitleSub id="51" onClick={this.betclick}>{T_M_F_OV}</TennisTitleSub>
+        <TennisTitleSub id="52" onClick={this.betclick}>{T_M_F_UN}</TennisTitleSub>
         <br></br>
         <div style={getAmountStyle}>
           <form
