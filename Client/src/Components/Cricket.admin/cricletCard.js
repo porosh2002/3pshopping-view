@@ -10,12 +10,25 @@ class TennisCard extends PureComponent {
   state = {
     betid: null,
     tossResult:'',
+    finalresult:'',
     firstballres:'',
     firstovrRun:'',
     firstOverHeight:'',
     firstWicket:'',
     firstWicketMethod:'',
     WicketInPowerolay:'',
+    Heightrunin1stover:'',
+    Hsix:'',
+    Hpatner:'',
+    TopBatsman:'',
+    TopBowler:'',
+    totalsix:"",
+    totalfour:"",
+    heightInvidualScore:"",
+    fifty:'',
+    FirstinningsScore:'',
+    totalsixScore:'',
+    totalsixfour:'',
   };
   componentDidMount() {
     const { data } = this.props;
