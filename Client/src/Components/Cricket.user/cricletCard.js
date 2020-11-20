@@ -42,7 +42,7 @@ class TennisCard extends PureComponent {
       newBalance,userid
     }),
   });
-  fetch(`${URL}api/tenisBet`, {
+  fetch(`${URL}api/CricketBet`, {
     method: "post",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

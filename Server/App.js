@@ -49,7 +49,7 @@ app.use(helmet());
 //
 app.post("/api/CricketBet", (req, res) => {
   const { betProject_id, betid, betprice, betamount, userid } = req.body;
-  const Add_balance = new TennisBetModel({
+  const Add_balance = new CricketBetModel({
     betProject_id,
     betid,
     betPrice: betprice,
