@@ -25,7 +25,20 @@ class User extends Component {
         }),
       }).then(res=>res.json()).then(res=>{this.setState({Balance:res[0].balance})})
   }
-  
+  addBalance=()=>{
+    const{userID} = this.props;
+    const{addbkashid}=this.state
+    fetch(`${URL}api/addmoney`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+          userID,addbkashid
+      }),
+    })
+  }
+  withdrawaddBalance=()=>{
+
+  }
   render() {
     const { addbalance, withdrawbalance } = this.state;
     const addstyle = addbalance ? null : { display: "none" };
@@ -57,12 +70,12 @@ class User extends Component {
           </Link>
         </UserCard>
         <UserCard onClick={()=>{this.props.setUserID(undefined)}} style={{ cursor: "pointer" }}>Logout</UserCard>
-        <form style={addstyle}>
+        <form onSubmit={this.addBalance} style={addstyle}>
           <AdminCTitle style={{ marginTop: "100px" }}>Add Balance</AdminCTitle>
-          <Input required placeholder="Enter Bkash Transition ID"></Input>
+          <Input onChange={(e)=>{this.setState({addbkashid:e.target.value})}} required placeholder="Enter Bkash Transition ID"></Input>
           <Button value="Submit" type="submit"></Button>
         </form>
-        <form style={outstyle}>
+        <form onSubmit={this.withdrawaddBalance} style={outstyle}>
           <AdminCTitle style={{ marginTop: "100px" }}>Withdrawal</AdminCTitle>
           <Input required placeholder="Enter Withdrawal amount"></Input>
           <Input required placeholder="Enter Your Bkash Number"></Input>

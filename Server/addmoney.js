@@ -13,4 +13,6 @@ done:{
     required:true
 }
 });
+const AddmoneyModel = mongoose.model("Addmoney", Addmoney);
+module.exports = AddmoneyModel;
 

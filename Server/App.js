@@ -152,10 +152,10 @@ app.post("/api/tennisResult", (req, res) => {
   });
 });
 app.post("/api/addmoney", (req, res) => {
-  const { userid, tid } = req.body;
+  const { userID,addbkashid} = req.body;
   const Add_balance = new AddmoneyModel({
-    userid,
-    tid,
+    userid:userID,
+    tid:addbkashid,
     done: false,
   });
   Add_balance.save((err, noerr) => {
