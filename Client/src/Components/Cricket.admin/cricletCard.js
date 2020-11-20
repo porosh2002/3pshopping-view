@@ -147,53 +147,53 @@ if(id==='35'){
 if(id==='36'){
   this.setState({TopBatsman:36})
 }
-if(id==='36'){
-  this.setState({TopBowler:36})
-}
 if(id==='37'){
   this.setState({TopBowler:37})
 }
 if(id==='38'){
-  this.setState({totalsix:38})
+  this.setState({TopBowler:38})
 }
 if(id==='39'){
   this.setState({totalsix:39})
 }
 if(id==='40'){
-  this.setState({totalfour:40})
+  this.setState({totalsix:40})
 }
 if(id==='41'){
   this.setState({totalfour:41})
 }
 if(id==='42'){
-  this.setState({heightInvidualScore:42})
+  this.setState({totalfour:42})
 }
 if(id==='43'){
   this.setState({heightInvidualScore:43})
 }
 if(id==='44'){
-  this.setState({fifty:44})
+  this.setState({heightInvidualScore:44})
 }
 if(id==='45'){
   this.setState({fifty:45})
 }
 if(id==='46'){
-  this.setState({FirstinningsScore:46})
+  this.setState({fifty:46})
 }
 if(id==='47'){
   this.setState({FirstinningsScore:47})
 }
 if(id==='48'){
-  this.setState({totalsixScore:48})
+  this.setState({FirstinningsScore:48})
 }
 if(id==='49'){
   this.setState({totalsixScore:49})
 }
 if(id==='50'){
-  this.setState({totalsixfour:50})
+  this.setState({totalsixScore:50})
 }
 if(id==='51'){
   this.setState({totalsixfour:51})
+}
+if(id==='52'){
+  this.setState({totalsixfour:52})
 }
   };
   render() {
