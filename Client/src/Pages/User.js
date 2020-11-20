@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { AdminContent, UserCard, Input, AdminCTitle, Button } from "../Styled";
 import { Link } from "react-router-dom";
+import {URL} from '../serverUrl';
+import {selectCurrentUser} from '../Redux/user/user_selector'
 import { connect } from "react-redux";
 import { setUser } from "../Redux/user/actions";
 import { FcSalesPerformance } from "react-icons/fc";
@@ -11,14 +13,26 @@ class User extends Component {
     addbkashid: "",
     outBkashNumber: "",
     outAmmount: "",
+    Balance:0,
   };
+  componentDidMount() {
+      const{userID} = this.props
+    fetch(`${URL}api/getuserdata`, {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            userID
+        }),
+      }).then(res=>res.json()).then(res=>{this.setState({Balance:res[0].balance})})
+  }
+  
   render() {
     const { addbalance, withdrawbalance } = this.state;
     const addstyle = addbalance ? null : { display: "none" };
     const outstyle = withdrawbalance ? null : { display: "none" };
     return (
       <AdminContent>
-        <UserCard>0 Coin <FcSalesPerformance /></UserCard>
+        <UserCard>{this.state.Balance} Coin <FcSalesPerformance /></UserCard>
         <UserCard>
           <Link
             style={{ color: "royalblue", textDecoration: "none" }}
@@ -58,9 +72,14 @@ class User extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+    return {
+      userID: selectCurrentUser(state),
+    };
+  };
 const mapDispatchToProps = dispatch => {
     return {
       setUserID: (user) => dispatch(setUser(user)),
     };
   };
-export default connect(null,mapDispatchToProps)(User);
+export default connect(mapStateToProps,mapDispatchToProps)(User);
