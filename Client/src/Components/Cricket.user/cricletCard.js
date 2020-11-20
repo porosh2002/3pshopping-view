@@ -161,6 +161,33 @@ class TennisCard extends PureComponent {
         <TennisTitleSub>{F_B_F_I_6}</TennisTitleSub>
         <TennisTitleSub>{TS_T_A_R_more}</TennisTitleSub><br></br>
         {/*  */}
+        <TennisTitle>1st Over of the 1st Innings</TennisTitle>
+        <TennisTitleSub>0-3 Run</TennisTitleSub>
+        <TennisTitleSub>4-6 Run</TennisTitleSub>
+        <TennisTitleSub>7-9 Run</TennisTitleSub><br></br>
+        <TennisTitleSub>{F_O_F_I_3}</TennisTitleSub>
+        <TennisTitleSub>{TS_T_A_R_F_6}</TennisTitleSub>
+        <TennisTitleSub>{F_O_F_I_9}</TennisTitleSub><br></br>
+        <TennisTitleSub>10+ Run</TennisTitleSub><br></br>
+        <TennisTitleSub>{F_O_F_I_10}</TennisTitleSub><br></br>
+        <TennisTitle>Run at Fall of 1st wicket of 1st Innings</TennisTitle><br></br>
+        <TennisTitleSub>over 23.5 </TennisTitleSub>
+        <TennisTitleSub>under 23.5</TennisTitleSub><br></br>
+        <TennisTitleSub>{F_W_F_I_O}</TennisTitleSub> 
+        <TennisTitleSub>{F_W_F_I_U}</TennisTitleSub>
+        <TennisTitle>1st wicket method of 1st Innings</TennisTitle><br></br>
+        <TennisTitleSub>Caught Out </TennisTitleSub>
+        <TennisTitleSub>Run Out </TennisTitleSub>
+        <TennisTitleSub>Stumped</TennisTitleSub><br></br>
+        <TennisTitleSub>{F_W_M_F_I_C}</TennisTitleSub>
+        <TennisTitleSub>{F_W_M_F_I_R}</TennisTitleSub>
+        <TennisTitleSub>{F_W_M_F_I_S}</TennisTitleSub><br></br>
+        <TennisTitleSub>Bowled Out</TennisTitleSub>
+        <TennisTitleSub>LBW Out </TennisTitleSub>
+        <TennisTitleSub>Others</TennisTitleSub><br></br>
+        <TennisTitleSub>{F_W_M_F_I_B}</TennisTitleSub>
+        <TennisTitleSub>{F_W_M_F_I_LBW}</TennisTitleSub>
+        <TennisTitleSub>{F_W_M_F_I_OTHR}</TennisTitleSub><br></br>
         <div style={getAmountStyle}>
           <form
             onSubmit={this.closegetamount}
