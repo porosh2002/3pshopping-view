@@ -459,6 +459,32 @@ app.post('/api/footballfull',(req,res)=>{
     }
   })
 })
+app.post('/api/firstwicketandmethfull',(req,res)=>{
+  console.log(req.body);
+  const {betid,firstWicket,firstWicketMethod} = req.body;
+  CricketBetModel.find({betid:betid},(err,result)=>{
+    if(result){
+      result.map(data=>{
+        // console.log(Number(data.betProject_id) === 5);
+        if(Number(data.betProject_id)===firstWicket || Number(data.betProject_id)===firstWicketMethod){
+          const BetPrice = data.betPrice;
+          const Betamount = data.betamount;
+          const HashedEmail = md5(data.userid)
+          RegisterUserModel.find({email:HashedEmail},(err,result)=>{
+            if(result){
+              const newBalance = result[0].balance + (BetPrice*Betamount);
+              RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+                if(result){
+                  console.log('ok');
+                }
+              })
+            }
+          })
+        }
+      })
+    }
+  })
+})
 app.post('/api/fthfRes',(req,res)=>{
   const {betid,halfValue} = req.body;
   FootballBetModel.find({betid:betid},(err,result)=>{
@@ -555,6 +581,31 @@ app.post('/api/firstOverCricket',(req,res)=>{
     }
   })
 })
+app.post('/api/powerplayCricket',(req,res)=>{
+  const {betid,WicketInPowerolay} = req.body;
+  CricketBetModel.find({betid:betid},(err,result)=>{
+    if(result){
+      result.map(data=>{
+        if(Number(data.betProject_id)===Number(WicketInPowerolay)){
+          const BetPrice = data.betPrice;
+          const Betamount = data.betamount;
+          const HashedEmail = md5(data.userid)
+          RegisterUserModel.find({email:HashedEmail},(err,result)=>{
+            if(result){
+              const newBalance = result[0].balance + (BetPrice*Betamount);
+              RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+                if(result){
+                  console.log('ok');
+                }
+              })
+            }
+          })
+        }
+      })
+    }
+  })
+})
+
 //
 app.get('/api/cricket',(req,res)=>{
   CricketModel.find({},(err,result)=>{

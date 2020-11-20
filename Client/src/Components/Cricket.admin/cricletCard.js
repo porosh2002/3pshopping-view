@@ -227,6 +227,26 @@ if(id==='52'){
       }),
     });
   }
+  firstwicketandmethfull=()=>{
+    const{betid,firstWicket,firstWicketMethod} = this.state;
+    fetch(`${URL}api/firstwicketandmethfull`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        betid,firstWicket,firstWicketMethod
+      }),
+    });
+  }
+  powerplayCricket=()=>{
+    const{betid,WicketInPowerolay} = this.state;
+    fetch(`${URL}api/powerplayCricket`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        betid,WicketInPowerolay
+      }),
+    });
+  }
   render() {
     const { getAmount } = this.state;
     const getAmountStyle = getAmount ? null : { display: "none" };
@@ -259,11 +279,7 @@ if(id==='52'){
         <TennisTitleSub onClick={this.betclick} id="13">7-9 Run</TennisTitleSub><br></br>
         <TennisTitleSub onClick={this.betclick} id="14">10+ Run</TennisTitleSub><br></br>
         <button onClick={this.submitdatafirstover}>Submit</button>
-        <TennisTitle>Final Result</TennisTitle>
-        <TennisTitleSub onClick={this.betclick} id="2">{C_T_A}</TennisTitleSub>
-        <TennisTitleSub onClick={this.betclick} id="3">{C_T_B}</TennisTitleSub><br></br>
-{/*  */}
-        {/*  */}
+
         <TennisTitle>Run at Fall of 1st wicket of 1st Innings</TennisTitle><br></br>
         <TennisTitleSub onClick={this.betclick} id="15">over 23.5 </TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="16">under 23.5</TennisTitleSub><br></br>
@@ -274,10 +290,16 @@ if(id==='52'){
         <TennisTitleSub onClick={this.betclick} id="20">Bowled Out</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="21">LBW Out </TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="22">Others</TennisTitleSub><br></br>
-        <TennisTitle>Wicket in Powerplay in 1st Innings</TennisTitle><br></br>
+          <button onClick={this.firstwicketandmethfull}>Submit</button>    
+          <TennisTitle>Wicket in Powerplay in 1st Innings</TennisTitle><br></br>
         <TennisTitleSub onClick={this.betclick} id="23">no Wickets</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="24">1 Wickets</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="25">2+ Wickets</TennisTitleSub><br></br>
+<button onClick={this.powerplayCricket}>Submit</button>
+        <TennisTitle>Final Result</TennisTitle>
+        <TennisTitleSub onClick={this.betclick} id="2">{C_T_A}</TennisTitleSub>
+        <TennisTitleSub onClick={this.betclick} id="3">{C_T_B}</TennisTitleSub><br></br>
+
         <TennisTitle>Height Run in 1st Over</TennisTitle><br></br>
         <TennisTitleSub onClick={this.betclick} id="26">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="27">{C_T_B}</TennisTitleSub>
