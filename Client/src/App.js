@@ -10,6 +10,9 @@ const Login = React.lazy(() => import("./Pages/Login"));
 const Signup = React.lazy(() => import("./Pages/Signup"));
 const Admin = React.lazy(() => import("./Pages/Admin"));
 const User = React.lazy(() => import("./Pages/User"));
+const Football = React.lazy(() => import("./Pages/Football"));
+const Cricket = React.lazy(() => import("./Pages/Cricket"));
+const Tennis = React.lazy(() => import("./Pages/Tennis"));
 const MatchResult = React.lazy(() => import("./Pages/MatchResult"));
 class App extends Component {
   render() {
@@ -29,6 +32,9 @@ class App extends Component {
             <Route exact path="/Signup" component={Signup} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/user" component={User} />
+            <Route exact path="/football" component={Football} />
+            <Route exact path="/cricket" component={Cricket} />
+            <Route exact path="/tennis" component={Tennis} />
             <Route exact path="/result" component={MatchResult} />
             <Route component={Error} />
           </Switch>

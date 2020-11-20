@@ -284,8 +284,6 @@ if(id==='52'){
     });
   }
   render() {
-    const { getAmount } = this.state;
-    const getAmountStyle = getAmount ? null : { display: "none" };
     const { 
         C_T_A,
         C_T_B,

@@ -24,10 +24,11 @@ export default class NavMob extends Component {
           </div>
           <div style={style} className='nav-modal-mob'>
           <ul className='nav-ul ab-p-60'>
-            <li><Link onClick={this.makemodalOpenFalse} className='menu-Link' to=''>Home</Link></li>
-            <li><Link onClick={this.makemodalOpenFalse} className='menu-Link' to=''>Live Match</Link></li>
-            <li><Link onClick={this.makemodalOpenFalse} className='menu-Link' to=''>Account</Link></li>
-            <li><Link onClick={this.makemodalOpenFalse} className='menu-Link' to=''>Upcoming Match</Link></li>
+            <li><Link onClick={this.makemodalOpenFalse} className='menu-Link' to='/'>Home</Link></li>
+            <li><Link onClick={this.makemodalOpenFalse} className='menu-Link' to='/football'>Football</Link></li>
+            <li><Link onClick={this.makemodalOpenFalse} className='menu-Link' to='/cricket'>Cricket</Link></li>
+            <li><Link onClick={this.makemodalOpenFalse} className='menu-Link' to='/tennis'>Tennis</Link></li>
+            <li><Link onClick={this.makemodalOpenFalse} className='menu-Link' to='/user'>Account</Link></li>
             <li><Link onClick={this.makemodalOpenFalse} className='menu-Link' to='/login'>Login/Signup</Link></li>
         </ul>
           </div>

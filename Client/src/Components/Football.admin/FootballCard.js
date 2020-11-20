@@ -96,8 +96,6 @@ this.setState({GoalinNum:15})
       FB_T_A,
       FB_T_B,
     } = this.props.data
-    const { getAmount } = this.state;
-    const getAmountStyle = getAmount ? null : { display: "none" };
     return (
       <div>
       <TennisDIV style={{backgroundColor:"lightgreen"}}>
