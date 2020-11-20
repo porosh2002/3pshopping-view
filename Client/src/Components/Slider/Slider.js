@@ -6,7 +6,7 @@ export default function Slider() {
 <div className='slider'>
   <div className='slider-txt-wraper'>
 <p className='slider-txt'>Get up to 15x extra for winning a Bet</p>
-<Link className='cta-btn' to='/'>Bet Now</Link>
+<Link className='cta-btn' to='/signup'>Join Now</Link>
   </div>
 </div>
 </div>
