@@ -237,6 +237,42 @@ if(id==='52'){
       }),
     });
   }
+  finalcricket=()=>{
+    const{betid,
+      Heightrunin1stover,
+      Hsix,
+      Hpatner,
+      TopBatsman,
+      TopBowler,
+      totalsix,
+      totalfour,
+      heightInvidualScore,
+      fifty,
+      FirstinningsScor,
+      totalsixScore,
+      totalsixfour,
+    
+    } = this.state;
+    fetch(`${URL}api/finalcricket`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        betid,
+      Heightrunin1stover,
+      Hsix,
+      Hpatner,
+      TopBatsman,
+      TopBowler,
+      totalsix,
+      totalfour,
+      heightInvidualScore,
+      fifty,
+      FirstinningsScor,
+      totalsixScore,
+      totalsixfour,
+      }),
+    });
+  }
   powerplayCricket=()=>{
     const{betid,WicketInPowerolay} = this.state;
     fetch(`${URL}api/powerplayCricket`, {
@@ -339,6 +375,7 @@ if(id==='52'){
         <TennisTitle>Total Match Four</TennisTitle><br></br>
         <TennisTitleSub onClick={this.betclick} id="51">over 27.5</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="52">under 27.5</TennisTitleSub>
+        <button onClick={this.finalcricket}>Submit</button>
       </TennisDIV>
     );
   }
