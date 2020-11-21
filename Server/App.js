@@ -672,6 +672,14 @@ app.post('/api/tennisDelete',(req,res)=>{
     }
   })
 })
+app.post('/api/footballDelete',(req,res)=>{
+  const{betid} = req.body;
+  FootballModel.deleteOne({_id:betid},(err,result)=>{
+    if(err){
+      console.log(err);
+    }
+  })
+})
 app.get('/api/cricket',(req,res)=>{
   CricketModel.find({},(err,result)=>{
     if(result){

@@ -91,6 +91,18 @@ if(id==='15'){
 this.setState({GoalinNum:15})
 }
   };
+  deletetennis=()=>{
+    const {betid}= this.state;
+    console.log(betid);
+    fetch(`${URL}api/footballDelete`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        betid
+      }),
+    });
+    window.location.reload(true);
+  }
   render() {
     const {
       FB_T_A,
@@ -128,6 +140,7 @@ this.setState({GoalinNum:15})
 <TennisTitleSub id='14' onClick={this.betclick}>Five</TennisTitleSub>
 <TennisTitleSub id='15' onClick={this.betclick}>Five+</TennisTitleSub><br></br>
 <button onClick={this.submitdataFull}>Submit</button>
+<button style={{margin:"100px", padding:"10px",backgroundColor:"orangered"}} onClick={this.deletetennis}>Delete This Bet</button>
       </TennisDIV>
       </div>
     );

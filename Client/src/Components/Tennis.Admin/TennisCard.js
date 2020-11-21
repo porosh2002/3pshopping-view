@@ -38,7 +38,6 @@ class TennisCard extends Component {
     }
   };
   deletetennis=()=>{
-    window.location.reload(true);
     const {betid}= this.state;
     console.log(betid);
     fetch(`${URL}api/tennisDelete`, {
@@ -48,6 +47,7 @@ class TennisCard extends Component {
         betid
       }),
     });
+    window.location.reload(true);
   }
   // betid !== null && matchwin !==null && pointE_O !==null && matchPointO_U !==null && betProjectid !==null
   submitdata=()=>{
