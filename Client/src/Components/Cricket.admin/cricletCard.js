@@ -30,6 +30,26 @@ class TennisCard extends PureComponent {
     FirstinningsScore:'',
     totalsixScore:'',
     totalsixfour:'',
+    tossWin:false,
+    firstballinnings:false,
+    firstoverinnings:false,
+    firstwicketfallinRun:false,
+    firstwicketmethod:false,
+    wicketinpowerplay:false,
+    finalResult:false,
+    heightRunin1stovr:false,
+    heightsix:false,
+    heightfour:false,
+    heightpatnership:false,
+    topBatsman:false,
+    topBowler:false,
+    H_total_six:false,
+    H_total_four:false,
+    H_Own_score:false,
+    FiftyMade:false,
+    FirstInnScore:false,
+    totalSix:false,
+    totalfour:false,
   };
   componentDidMount() {
     const { data } = this.props;
@@ -300,91 +320,173 @@ if(id==='52'){
         C_T_A,
         C_T_B,
     } = this.props.data;
+    const {      tossWin,
+      firstballinnings,
+      firstoverinnings,
+      firstwicketfallinRun,
+      firstwicketmethod,
+      wicketinpowerplay,
+      finalResult,
+      heightRunin1stovr,
+      heightsix,
+      heightfour,
+      heightpatnership,
+      topBatsman,
+      topBowler,
+      H_total_six,
+      H_total_four,
+      H_Own_score,
+      FiftyMade,
+      FirstInnScore,
+      totalSix,
+      totalfour}= this.state
+    const TossStyle = tossWin ? {display:"none"} :null
+    const FirstBallINN = firstballinnings ? {display:"none"} :null
+    const FirstOvrINN = firstoverinnings ? {display:"none"} :null
+    const FirstwicketfallRUN = firstwicketfallinRun ? {display:"none"} :null
+    const FirstwicketMeth = firstwicketmethod ? {display:"none"} :null
+    const PowerplayWicket = wicketinpowerplay ? {display:"none"} :null
+    const FinalResult = finalResult ? {display:"none"} :null
+    const HeightRunFirstOvr =  heightRunin1stovr ? {display:"none"} :null
+    const HeightSix = heightsix ? {display:"none"} :null
+    // const HeightFour = heightfour ? {display:"none"} :null
+    const heightpatnersHip = heightpatnership ? {display:"none"} :null
+    const topBatsmaN = topBatsman ? {display:"none"} :null
+    const TopBowler = topBowler ? {display:"none"} :null
+    const H_total_siX = H_total_six ? {display:"none"} :null
+    const H_total_fouR = H_total_four ? {display:"none"} :null
+    const H_Own_scorE = H_Own_score ? {display:"none"} :null
+    const FiftyMadE = FiftyMade ? {display:"none"} :null
+    const FirstInnScorE = FirstInnScore ? {display:"none"} :null
+    const totalSiX = totalSix ? {display:"none"} :null
+    const totalfouR = totalfour ? {display:"none"} :null
     return (
       <TennisDIV style={{backgroundColor:"#93abd3"}}>
         <TennisTitle>{C_T_A}</TennisTitle>
         VS
         <TennisTitle>{C_T_B}</TennisTitle>
-        <TennisTitle>To Win Toss</TennisTitle>
+<div>
+          <TennisTitle>To Win Toss</TennisTitle>
+<div style={TossStyle}>
         <TennisTitleSub onClick={this.betclick} id="0">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="1">{C_T_B}</TennisTitleSub><br></br>
+</div>
         <br></br>
         <button onClick={this.submitdatatoss}>Submit</button>
+</div>
         <TennisTitle>1st ball of the Innings</TennisTitle>
-        <TennisTitleSub onClick={this.betclick} id="4">Dot Ball</TennisTitleSub><br></br>
+ <div style={FirstBallINN}>
+ <TennisTitleSub onClick={this.betclick} id="4">Dot Ball</TennisTitleSub><br></br>
         <TennisTitleSub onClick={this.betclick} id="5">One</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="6">Two</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="7">Three</TennisTitleSub><br></br>
         <TennisTitleSub onClick={this.betclick} id="8">Four</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="9">Six</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="10">Others</TennisTitleSub><br></br>
+ </div>
         <button onClick={this.submitdatafirstball}>Submit</button>
         <TennisTitle>1st Over of the 1st Innings</TennisTitle>
-        <TennisTitleSub onClick={this.betclick} id="11">0-3 Run</TennisTitleSub>
+<div style={FirstOvrINN}>
+<TennisTitleSub onClick={this.betclick} id="11">0-3 Run</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="12">4-6 Run</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="13">7-9 Run</TennisTitleSub><br></br>
         <TennisTitleSub onClick={this.betclick} id="14">10+ Run</TennisTitleSub><br></br>
+</div>
         <button onClick={this.submitdatafirstover}>Submit</button>
 
         <TennisTitle>Run at Fall of 1st wicket of 1st Innings</TennisTitle><br></br>
-        <TennisTitleSub onClick={this.betclick} id="15">over 23.5 </TennisTitleSub>
+<div style={FirstwicketfallRUN}>
+<TennisTitleSub onClick={this.betclick} id="15">over 23.5 </TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="16">under 23.5</TennisTitleSub><br></br>
+        </div>
         <TennisTitle>1st wicket method of 1st Innings</TennisTitle><br></br>
-        <TennisTitleSub onClick={this.betclick} id="17">Caught Out </TennisTitleSub>
+<div style={FirstwicketMeth}>
+<TennisTitleSub onClick={this.betclick} id="17">Caught Out </TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="18">Run Out </TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="19">Stumped</TennisTitleSub><br></br>
         <TennisTitleSub onClick={this.betclick} id="20">Bowled Out</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="21">LBW Out </TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="22">Others</TennisTitleSub><br></br>
+</div>
           <button onClick={this.firstwicketandmethfull}>Submit</button>    
           <TennisTitle>Wicket in Powerplay in 1st Innings</TennisTitle><br></br>
-        <TennisTitleSub onClick={this.betclick} id="23">no Wickets</TennisTitleSub>
+<div style={PowerplayWicket}>
+<TennisTitleSub onClick={this.betclick} id="23">no Wickets</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="24">1 Wickets</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="25">2+ Wickets</TennisTitleSub><br></br>
+</div>
 <button onClick={this.powerplayCricket}>Submit</button>
         <TennisTitle>Final Result</TennisTitle>
-        <TennisTitleSub onClick={this.betclick} id="2">{C_T_A}</TennisTitleSub>
+<div style={FinalResult}>
+<TennisTitleSub onClick={this.betclick} id="2">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="3">{C_T_B}</TennisTitleSub><br></br>
+</div>
 
         <TennisTitle>Height Run in 1st Over</TennisTitle><br></br>
-        <TennisTitleSub onClick={this.betclick} id="26">{C_T_A}</TennisTitleSub>
+<div style={HeightRunFirstOvr}>
+<TennisTitleSub onClick={this.betclick} id="26">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="27">{C_T_B}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="28">Tie</TennisTitleSub><br></br>
+</div>
         <TennisTitle>Height six</TennisTitle><br></br>
-        <TennisTitleSub onClick={this.betclick} id="29">{C_T_A}</TennisTitleSub>
+<div style={HeightSix}>
+<TennisTitleSub onClick={this.betclick} id="29">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="30">{C_T_B}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="31">Tie</TennisTitleSub><br></br>
+</div>
         <TennisTitle>Height Patnership</TennisTitle><br></br>
-        <TennisTitleSub onClick={this.betclick} id="32">{C_T_A}</TennisTitleSub>
+<div style={heightpatnersHip}>
+<TennisTitleSub onClick={this.betclick} id="32">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="33">{C_T_B}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="34">Tie</TennisTitleSub><br></br>
+</div>
         <TennisTitle>Team of Top Batsman</TennisTitle><br></br>
-        <TennisTitleSub onClick={this.betclick} id="35">{C_T_A}</TennisTitleSub>
+<div style={topBatsmaN}>
+<TennisTitleSub onClick={this.betclick} id="35">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="36">{C_T_B}</TennisTitleSub>
+</div>
         <TennisTitle>Team of Top Bowler</TennisTitle><br></br>
-        <TennisTitleSub onClick={this.betclick} id="37">{C_T_A}</TennisTitleSub>
+<div style={TopBowler}>
+<TennisTitleSub onClick={this.betclick} id="37">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="38">{C_T_B}</TennisTitleSub>
+</div>
         <TennisTitle>Height Team Total Six</TennisTitle><br></br>
-        <TennisTitleSub onClick={this.betclick} id="39">{C_T_A}</TennisTitleSub>
+<div style={H_total_siX}>
+<TennisTitleSub onClick={this.betclick} id="39">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="40">{C_T_B}</TennisTitleSub>
+</div>
         <TennisTitle>Height Team Total Four</TennisTitle><br></br>
-        <TennisTitleSub onClick={this.betclick} id="41">{C_T_A}</TennisTitleSub>
+<div style={H_total_fouR}>
+<TennisTitleSub onClick={this.betclick} id="41">{C_T_A}</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="42">{C_T_B}</TennisTitleSub>
+</div>
         <TennisTitle>Height Individual Score</TennisTitle><br></br>
+        <div style={H_Own_scorE}>
         <TennisTitleSub onClick={this.betclick} id="43">over 63.5</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="44">under 63.5</TennisTitleSub>
+        </div>
         <TennisTitle>Fifty Scored in the match</TennisTitle><br></br>
+        <div style={FiftyMadE}>
+
         <TennisTitleSub onClick={this.betclick} id="45">Yes</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="46">NO</TennisTitleSub>
+        </div>
         <TennisTitle>1st Innings Score</TennisTitle><br></br>
+        <div style={FirstInnScorE}>
         <TennisTitleSub onClick={this.betclick} id="47">over 173.5</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="48">under 173.5</TennisTitleSub>
+        </div>
         <TennisTitle>Total Match Six</TennisTitle><br></br>
+        <div style={totalSiX}>
+
         <TennisTitleSub onClick={this.betclick} id="49">over 11.5</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="50">under 11.5</TennisTitleSub>
+        </div>
         <TennisTitle>Total Match Four</TennisTitle><br></br>
+        <div style={totalfouR}>
         <TennisTitleSub onClick={this.betclick} id="51">over 27.5</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="52">under 27.5</TennisTitleSub>
+        </div>
         <button onClick={this.finalcricket}>Submit</button>
         <button style={{margin:"100px", padding:"10px",backgroundColor:"orangered"}} onClick={this.deletetennis}>Delete This Bet</button>
       </TennisDIV>

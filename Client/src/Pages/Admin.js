@@ -96,6 +96,7 @@ export default class Admin extends Component {
       T_M_S_UN:'',
       T_M_F_OV:'',
       T_M_F_UN:'',
+      //
     };
   }
   MatchSelect = (event) => {
@@ -315,7 +316,7 @@ export default class Admin extends Component {
     this.setState({ [name]: value });
   };
   render() {
-    const { Football, TableTenis, Criclet } = this.state;
+    const { Football, TableTenis, Criclet} = this.state;
     const StyleFootball = Football ? null : { display: "none" };
     const StyleTenis = TableTenis ? null : { display: "none" };
     const StyleCricket = Criclet ? null : { display: "none" };
