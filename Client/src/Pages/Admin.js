@@ -186,7 +186,6 @@ export default class Admin extends Component {
     });
   };
   submitCricketMatch=(event)=>{
-    event.preventDefault();
     const{
       C_T_A,
       C_T_B,
