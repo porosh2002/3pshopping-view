@@ -35,6 +35,7 @@ class TennisCard extends PureComponent {
     const {userid,betamount,betprice,betid,betProject_id,getAmount,userBalance} = this.state;
   const newBalance = userBalance - betamount;
   this.setState({userBalance:newBalance})
+if(newBalance>0){
   fetch(`${URL}api/balanceEdit`, {
     method: "post",
     headers: { "Content-Type": "application/json" },
@@ -49,6 +50,10 @@ class TennisCard extends PureComponent {
       userid,betamount,betprice,betid,betProject_id,getAmount
     }),
   });
+}
+else{
+  alert('Not Enough Coin')
+}
   };
   setbetamount = (event) => {
     this.setState({ betamount: event.target.value });
@@ -285,8 +290,8 @@ class TennisCard extends PureComponent {
             style={{ padding: "50px 20px", backgroundColor: "#444" }}
           >
             <Input
-              min="10"
-              max="200"
+              min="20"
+              max="6000"
               required
               onChange={this.setbetamount}
               type="number"
