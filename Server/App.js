@@ -663,8 +663,15 @@ app.post('/api/powerplayCricket',(req,res)=>{
     }
   })
 })
-
 //
+app.post('/api/tennisDelete',(req,res)=>{
+  const{betid} = req.body;
+  TennisModel.deleteOne({_id:betid},(err,result)=>{
+    if(err){
+      console.log(err);
+    }
+  })
+})
 app.get('/api/cricket',(req,res)=>{
   CricketModel.find({},(err,result)=>{
     if(result){

@@ -37,6 +37,18 @@ class TennisCard extends Component {
       this.setState({matchPointO_U:5,sectionthreeDisable:true})
     }
   };
+  deletetennis=()=>{
+    window.location.reload(true);
+    const {betid}= this.state;
+    console.log(betid);
+    fetch(`${URL}api/tennisDelete`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        betid
+      }),
+    });
+  }
   // betid !== null && matchwin !==null && pointE_O !==null && matchPointO_U !==null && betProjectid !==null
   submitdata=()=>{
     const{betid,matchwin,pointE_O,matchPointO_U} = this.state;
@@ -79,6 +91,7 @@ class TennisCard extends Component {
         </div>
         <br></br>
         <button onClick={this.submitdata}>Submit</button>
+        <button style={{margin:"100px", padding:"10px",backgroundColor:"orangered"}} onClick={this.deletetennis}>Delete This Bet</button>
       </TennisDIV>
     );
   }
