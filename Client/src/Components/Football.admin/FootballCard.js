@@ -16,10 +16,14 @@ class TennisCard extends PureComponent {
     g_E_O:'',
     Penalty:'',
     GoalinNum:'',
-    fw_res:false,
-    g_E_O_res:false,
-    Penalty_res:false,
-    GoalinNum_res:false
+    // fw_res:false,
+    // g_E_O_res:false,
+    // Penalty_res:false,
+    // GoalinNum_res:false
+    fullhalf:false,
+    totalGoal:false,
+    PenaltyMade:false,
+    totalmatchGoal:false
   };
   componentDidMount() {
     const { data } = this.props;
@@ -109,7 +113,17 @@ this.setState({GoalinNum:15})
       FB_T_B,
       halfdone
     } = this.props.data
+    const {
+      fullhalf,
+      totalGoal,
+      PenaltyMade,
+      totalmatchGoal
+    } = this.state
     const halfStyle = halfdone ?  { display: "none" } : null;
+    const fullhalfStyle = fullhalf ?  { display: "none" } : null;
+    const totalGoalStyle = totalGoal ?  { display: "none" } : null;
+    const PenaltyMadeStyle = PenaltyMade ?  { display: "none" } : null;
+    const totalmatchGoalStyle = totalmatchGoal ?  { display: "none" } : null;
     return (
       <div>
       <TennisDIV style={{backgroundColor:"lightgreen"}}>
@@ -124,17 +138,24 @@ this.setState({GoalinNum:15})
 <button onClick={this.submitdata}>Submit</button>
 </div>
 <br></br>
+<div style={fullhalfStyle}>
 <TennisTitle>Full Time Result</TennisTitle>
 <TennisTitleSub id='3' onClick={this.betclick}>{FB_T_A}</TennisTitleSub>
 <TennisTitleSub id='4' onClick={this.betclick}>{FB_T_B}</TennisTitleSub>
 <TennisTitleSub id='5' onClick={this.betclick}>Draw</TennisTitleSub>
+</div>
 <br></br>
+<div style={totalGoalStyle}>
 <TennisTitle>Total Goal of Match</TennisTitle>
 <TennisTitleSub id='6' onClick={this.betclick}>Even</TennisTitleSub>
 <TennisTitleSub id='7' onClick={this.betclick}>Odd</TennisTitleSub><br></br>
+</div>
+<div style={PenaltyMadeStyle}>
 <TennisTitle>Penalty Match</TennisTitle>
 <TennisTitleSub id='8' onClick={this.betclick}>Yes</TennisTitleSub>
 <TennisTitleSub id='9' onClick={this.betclick}>No</TennisTitleSub><br></br>
+</div>
+<div style={totalmatchGoalStyle}>
 <TennisTitle>Total Match Goal</TennisTitle>
 <TennisTitleSub id='10' onClick={this.betclick}>One</TennisTitleSub>
 <TennisTitleSub id='11' onClick={this.betclick}>Two</TennisTitleSub>
@@ -143,6 +164,7 @@ this.setState({GoalinNum:15})
 <TennisTitleSub id='13' onClick={this.betclick}>Four</TennisTitleSub>
 <TennisTitleSub id='14' onClick={this.betclick}>Five</TennisTitleSub>
 <TennisTitleSub id='15' onClick={this.betclick}>Five+</TennisTitleSub><br></br>
+</div>
 <button onClick={this.submitdataFull}>Submit</button>
 <button style={{margin:"100px", padding:"10px",backgroundColor:"orangered"}} onClick={this.deletetennis}>Delete This Bet</button>
       </TennisDIV>
