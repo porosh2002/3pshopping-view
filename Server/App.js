@@ -121,11 +121,11 @@ app.post("/api/balanceEdit", (req, res) => {
     }
   );
 });
-app.post("/api/tennisResult", (req, res) => {
+app.post("/api/tennisResult", async(req, res) => {
   const { betid, matchwin, pointE_O, matchPointO_U } = req.body;
   TennisBetModel.find({ betid: betid }, (err, result) => {
     if (result) {
-      result.map((data) => {
+    result.map((data) => {
         if (
           Number(data.betProject_id) === matchwin ||
           Number(data.betProject_id) === pointE_O ||
@@ -142,12 +142,15 @@ app.post("/api/tennisResult", (req, res) => {
                   if (err) {
                     console.log(err);
                   }
+                  if(docs){
+                    console.log('ok');
+                  }
                 }
               );
             }
           });
         }
-      });
+      })
     }
   });
 });
