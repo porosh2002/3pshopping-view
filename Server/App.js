@@ -544,6 +544,7 @@ app.post('/api/fthfRes',(req,res)=>{
           RegisterUserModel.find({email:HashedEmail},(err,result)=>{
             if(result){
               const newBalance = result[0].balance + (BetPrice*Betamount);
+          
               RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
                 if(result){
                   console.log('ok');
