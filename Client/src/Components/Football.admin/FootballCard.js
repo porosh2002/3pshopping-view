@@ -107,18 +107,22 @@ this.setState({GoalinNum:15})
     const {
       FB_T_A,
       FB_T_B,
+      halfdone
     } = this.props.data
+    const halfStyle = halfdone ?  { display: "none" } : null;
     return (
       <div>
       <TennisDIV style={{backgroundColor:"lightgreen"}}>
       <TennisTitle>{FB_T_A}</TennisTitle>
       VS
 <TennisTitle>{FB_T_B}</TennisTitle>
+<div style={halfStyle}>
 <TennisTitle>First Half Time Result</TennisTitle>
 <TennisTitleSub id='0' onClick={this.betclickHalf}>{FB_T_A}</TennisTitleSub>
 <TennisTitleSub id='1' onClick={this.betclickHalf}>{FB_T_B}</TennisTitleSub>
 <TennisTitleSub id='2' onClick={this.betclickHalf}>Draw</TennisTitleSub><br></br>
 <button onClick={this.submitdata}>Submit</button>
+</div>
 <br></br>
 <TennisTitle>Full Time Result</TennisTitle>
 <TennisTitleSub id='3' onClick={this.betclick}>{FB_T_A}</TennisTitleSub>

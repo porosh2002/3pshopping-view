@@ -545,28 +545,35 @@ app.post('/api/finalcricket',(req,res)=>{
 })
 app.post('/api/fthfRes',(req,res)=>{
   const {betid,halfValue} = req.body;
-  FootballBetModel.find({betid:betid},(err,result)=>{
-    if(result){
-      result.map(data=>{
-        if(Number(data.betProject_id)===Number(halfValue)){
-          const BetPrice = data.betPrice;
-          const Betamount = data.betamount;
-          const HashedEmail = md5(data.userid)
-          RegisterUserModel.find({email:HashedEmail},(err,result)=>{
-            if(result){
-              const newBalance = result[0].balance + (BetPrice*Betamount);
-          
-              RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
-                if(result){
-                  console.log('ok');
-                }
-              })
-            }
-          })
-        }
-      })
-    }
-  })
+        FootballModel.updateOne({_id:betid},{halfdone:true},(err,doc)=>{
+          if(err){
+            console.log(err);
+          }
+          if(doc){
+            FootballBetModel.find({betid:betid},(err,result)=>{
+              if(result){
+                result.map(data=>{
+                  if(Number(data.betProject_id)===Number(halfValue)){
+                    const BetPrice = data.betPrice;
+                    const Betamount = data.betamount;
+                    const HashedEmail = md5(data.userid)
+                    RegisterUserModel.find({email:HashedEmail},(err,result)=>{
+                      if(result){
+                        const newBalance = result[0].balance + (BetPrice*Betamount);
+                    
+                        RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+                          if(result){
+                            console.log('ok');
+                          }
+                        })
+                      }
+                    })
+                  }
+                })
+              }
+            })
+          }
+        });
 })
 app.post('/api/tossCricket',(req,res)=>{
   const {betid,tossResult} = req.body;
