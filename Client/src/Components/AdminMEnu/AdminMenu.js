@@ -14,7 +14,7 @@ export default function Adminmenu() {
     return (
         <AdminMenu>
           <FooterLink>
-            <FooterLinkStyle to="">
+            <FooterLinkStyle to="/admin">
               Add Match{" "}
               <div>
                 <VscAdd />
@@ -22,7 +22,7 @@ export default function Adminmenu() {
             </FooterLinkStyle>
           </FooterLink>
           <FooterLink>
-            <FooterLinkStyle to="">
+            <FooterLinkStyle to="/result">
               Add Match Result
               <div>
                 <VscLoading />
@@ -30,7 +30,7 @@ export default function Adminmenu() {
             </FooterLinkStyle>
           </FooterLink>
           <FooterLink>
-            <FooterLinkStyle to="">
+            <FooterLinkStyle to="/deposite">
               Confirm Payment
               <div>
                 <VscCheck />
@@ -38,7 +38,7 @@ export default function Adminmenu() {
             </FooterLinkStyle>
           </FooterLink>
           <FooterLink>
-            <FooterLinkStyle to="">
+            <FooterLinkStyle to="/payment">
               Make Payment
               <div>
                 <VscCreditCard />

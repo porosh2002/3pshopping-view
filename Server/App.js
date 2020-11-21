@@ -734,6 +734,13 @@ app.post('/api/CricketDelete',(req,res)=>{
     }
   })
 })
+app.get('/api/deposite',(req,res)=>{
+  AddmoneyModel.find({done:false},(err,data)=>{
+    if(data){
+      res.json(data)
+    }
+  })
+})
 app.get('/api/cricket',(req,res)=>{
   CricketModel.find({},(err,result)=>{
     if(result){

@@ -14,12 +14,13 @@ const Football = React.lazy(() => import("./Pages/Football"));
 const Cricket = React.lazy(() => import("./Pages/Cricket"));
 const Tennis = React.lazy(() => import("./Pages/Tennis"));
 const MatchResult = React.lazy(() => import("./Pages/MatchResult"));
+const Deposite = React.lazy(() => import("./Pages/Deposite"));
+const Payment = React.lazy(() => import("./Pages/Payment"));
 class App extends Component {
   render() {
 
     // !!!!!!!!!! 
     const { userID } = this.props;
-    // console.log(userID);
     // !!!!!!!!!! 
 
     return (
@@ -35,6 +36,8 @@ class App extends Component {
             <Route exact path="/football" component={Football} />
             <Route exact path="/cricket" component={Cricket} />
             <Route exact path="/tennis" component={Tennis} />
+            <Route exact path="/payment" component={Payment} />
+            <Route exact path="/deposite" component={Deposite} />
             <Route exact path="/result" component={MatchResult} />
             <Route component={Error} />
           </Switch>
