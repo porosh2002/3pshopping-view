@@ -327,6 +327,11 @@ app.post("/api/cricketMatchAdd", (req, res) => {
     T_M_S_UN,
     T_M_F_OV,
     T_M_F_UN,
+  TossCricket:false,
+  firstballCricket:false,
+  firstOverCricket:false,
+  firstwicketandmethfull:false,
+  powerplayCricket:false
   });
   cricket_match.save((err, noerr) => {
     if (err) {
@@ -474,22 +479,27 @@ app.post('/api/footballfull',(req,res)=>{
   })
 })
 app.post('/api/firstwicketandmethfull',(req,res)=>{
-  console.log(req.body);
   const {betid,firstWicket,firstWicketMethod} = req.body;
-  CricketBetModel.find({betid:betid},(err,result)=>{
-    if(result){
-      result.map(data=>{
-        // console.log(Number(data.betProject_id) === 5);
-        if(Number(data.betProject_id)===firstWicket || Number(data.betProject_id)===firstWicketMethod){
-          const BetPrice = data.betPrice;
-          const Betamount = data.betamount;
-          const HashedEmail = md5(data.userid)
-          RegisterUserModel.find({email:HashedEmail},(err,result)=>{
-            if(result){
-              const newBalance = result[0].balance + (BetPrice*Betamount);
-              RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+  CricketModel.updateOne({_id:betid},{firstwicketandmethfull:true},(err,doc)=>{
+    if(err){
+      console.log(err);
+    }
+    if(doc){
+      CricketBetModel.find({betid:betid},(err,result)=>{
+        if(result){
+          result.map(data=>{
+            if(Number(data.betProject_id)===firstWicket || Number(data.betProject_id)===firstWicketMethod){
+              const BetPrice = data.betPrice;
+              const Betamount = data.betamount;
+              const HashedEmail = md5(data.userid)
+              RegisterUserModel.find({email:HashedEmail},(err,result)=>{
                 if(result){
-                  console.log('ok');
+                  const newBalance = result[0].balance + (BetPrice*Betamount);
+                  RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+                    if(result){
+                      console.log('ok');
+                    }
+                  })
                 }
               })
             }
@@ -577,19 +587,26 @@ app.post('/api/fthfRes',(req,res)=>{
 })
 app.post('/api/tossCricket',(req,res)=>{
   const {betid,tossResult} = req.body;
-  CricketBetModel.find({betid:betid},(err,result)=>{
-    if(result){
-      result.map(data=>{
-        if(Number(data.betProject_id)===Number(tossResult)){
-          const BetPrice = data.betPrice;
-          const Betamount = data.betamount;
-          const HashedEmail = md5(data.userid)
-          RegisterUserModel.find({email:HashedEmail},(err,result)=>{
-            if(result){
-              const newBalance = result[0].balance + (BetPrice*Betamount);
-              RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+  CricketModel.updateOne({_id:betid},{TossCricket:true},(err,doc)=>{
+    if(err){
+      console.log(err);
+    }
+    if(doc){
+      CricketBetModel.find({betid:betid},(err,result)=>{
+        if(result){
+          result.map(data=>{
+            if(Number(data.betProject_id)===Number(tossResult)){
+              const BetPrice = data.betPrice;
+              const Betamount = data.betamount;
+              const HashedEmail = md5(data.userid)
+              RegisterUserModel.find({email:HashedEmail},(err,result)=>{
                 if(result){
-                  console.log('ok');
+                  const newBalance = result[0].balance + (BetPrice*Betamount);
+                  RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+                    if(result){
+                      console.log('ok');
+                    }
+                  })
                 }
               })
             }
@@ -601,19 +618,26 @@ app.post('/api/tossCricket',(req,res)=>{
 })
 app.post('/api/firstballCricket',(req,res)=>{
   const {betid,firstballres} = req.body;
-  CricketBetModel.find({betid:betid},(err,result)=>{
-    if(result){
-      result.map(data=>{
-        if(Number(data.betProject_id)===Number(firstballres)){
-          const BetPrice = data.betPrice;
-          const Betamount = data.betamount;
-          const HashedEmail = md5(data.userid)
-          RegisterUserModel.find({email:HashedEmail},(err,result)=>{
-            if(result){
-              const newBalance = result[0].balance + (BetPrice*Betamount);
-              RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+  CricketModel.updateOne({_id:betid},{firstballCricket:true},(err,doc)=>{
+    if(err){
+      console.log(err);
+    }
+    if(doc){
+      CricketBetModel.find({betid:betid},(err,result)=>{
+        if(result){
+          result.map(data=>{
+            if(Number(data.betProject_id)===Number(firstballres)){
+              const BetPrice = data.betPrice;
+              const Betamount = data.betamount;
+              const HashedEmail = md5(data.userid)
+              RegisterUserModel.find({email:HashedEmail},(err,result)=>{
                 if(result){
-                  console.log('ok');
+                  const newBalance = result[0].balance + (BetPrice*Betamount);
+                  RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+                    if(result){
+                      console.log('ok');
+                    }
+                  })
                 }
               })
             }
@@ -625,19 +649,26 @@ app.post('/api/firstballCricket',(req,res)=>{
 })
 app.post('/api/firstOverCricket',(req,res)=>{
   const {betid,firstovrRun} = req.body;
-  CricketBetModel.find({betid:betid},(err,result)=>{
-    if(result){
-      result.map(data=>{
-        if(Number(data.betProject_id)===Number(firstovrRun)){
-          const BetPrice = data.betPrice;
-          const Betamount = data.betamount;
-          const HashedEmail = md5(data.userid)
-          RegisterUserModel.find({email:HashedEmail},(err,result)=>{
-            if(result){
-              const newBalance = result[0].balance + (BetPrice*Betamount);
-              RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+  CricketModel.updateOne({_id:betid},{firstOverCricket:true},(err,doc)=>{
+    if(err){
+      console.log(err);
+    }
+    if(doc){
+      CricketBetModel.find({betid:betid},(err,result)=>{
+        if(result){
+          result.map(data=>{
+            if(Number(data.betProject_id)===Number(firstovrRun)){
+              const BetPrice = data.betPrice;
+              const Betamount = data.betamount;
+              const HashedEmail = md5(data.userid)
+              RegisterUserModel.find({email:HashedEmail},(err,result)=>{
                 if(result){
-                  console.log('ok');
+                  const newBalance = result[0].balance + (BetPrice*Betamount);
+                  RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+                    if(result){
+                      console.log('ok');
+                    }
+                  })
                 }
               })
             }
@@ -649,19 +680,26 @@ app.post('/api/firstOverCricket',(req,res)=>{
 })
 app.post('/api/powerplayCricket',(req,res)=>{
   const {betid,WicketInPowerolay} = req.body;
-  CricketBetModel.find({betid:betid},(err,result)=>{
-    if(result){
-      result.map(data=>{
-        if(Number(data.betProject_id)===Number(WicketInPowerolay)){
-          const BetPrice = data.betPrice;
-          const Betamount = data.betamount;
-          const HashedEmail = md5(data.userid)
-          RegisterUserModel.find({email:HashedEmail},(err,result)=>{
-            if(result){
-              const newBalance = result[0].balance + (BetPrice*Betamount);
-              RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+  CricketModel.updateOne({_id:betid},{powerplayCricket:true},(err,doc)=>{
+    if(err){
+      console.log(err);
+    }
+    if(doc){
+      CricketBetModel.find({betid:betid},(err,result)=>{
+        if(result){
+          result.map(data=>{
+            if(Number(data.betProject_id)===Number(WicketInPowerolay)){
+              const BetPrice = data.betPrice;
+              const Betamount = data.betamount;
+              const HashedEmail = md5(data.userid)
+              RegisterUserModel.find({email:HashedEmail},(err,result)=>{
                 if(result){
-                  console.log('ok');
+                  const newBalance = result[0].balance + (BetPrice*Betamount);
+                  RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,result)=>{
+                    if(result){
+                      console.log('ok');
+                    }
+                  })
                 }
               })
             }

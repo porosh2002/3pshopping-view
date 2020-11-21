@@ -221,6 +221,27 @@ T_M_F_UN:{
     type:Number,
     required:true
 },
+// 
+TossCricket:{
+    type:Boolean,
+    required:true
+},
+firstballCricket:{
+    type:Boolean,
+    required:true
+},
+firstOverCricket:{
+    type:Boolean,
+    required:true
+},
+firstwicketandmethfull:{
+    type:Boolean,
+    required:true
+},
+powerplayCricket:{
+    type:Boolean,
+    required:true
+},
 });
 const CricketModel = mongoose.model("cricket",cricketSchema);
 module.exports = CricketModel;
