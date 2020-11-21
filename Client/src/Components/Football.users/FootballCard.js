@@ -91,17 +91,21 @@ else{
       FB_T_M_G_3,
       FB_T_M_G_4,
       FB_T_M_G_5,
-      FB_T_M_G_5_M
+      FB_T_M_G_5_M,
+      halfdone
     } = this.props.data
+    console.log(halfdone === true);
     const { getAmount } = this.state;
     const getAmountStyle = getAmount ? null : { display: "none" };
+    const halfStyle = halfdone ?  { display: "none" } : null;
     return (
       <div>
       <TennisDIV style={{backgroundColor:"lightgreen"}}>
       <TennisTitle>{FB_T_A}</TennisTitle>
       VS
 <TennisTitle>{FB_T_B}</TennisTitle>
-<TennisTitle>First Half Time Result</TennisTitle>
+<div style={halfStyle}>
+  <TennisTitle>First Half Time Result</TennisTitle>
 <TennisTitleSub>{FB_T_A}</TennisTitleSub>
 <TennisTitleSub>{FB_T_B}</TennisTitleSub>
 <TennisTitleSub>Draw</TennisTitleSub>
@@ -109,6 +113,8 @@ else{
 <TennisTitleSub id="0" onClick={this.betclick}>{FB_T_A_R}</TennisTitleSub>
 <TennisTitleSub id="1" onClick={this.betclick}>{FB_T_B_R}</TennisTitleSub>
 <TennisTitleSub id="2" onClick={this.betclick}>{FB_T_Half_D}</TennisTitleSub>
+  </div>
+
 <TennisTitle>Full Time Result</TennisTitle>
 <TennisTitleSub>{FB_T_A}</TennisTitleSub>
 <TennisTitleSub>{FB_T_B}</TennisTitleSub>

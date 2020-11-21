@@ -71,6 +71,10 @@ const FootballSchema = new mongoose.Schema({
   FB_T_M_G_5_M: {
     type: Number,
     required: true,
+  },
+  halfdone:{
+    type:Boolean,
+    required:true,
   }
 });
 const FootballModel = mongoose.model("Football", FootballSchema);

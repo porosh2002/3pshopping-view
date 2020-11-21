@@ -113,7 +113,6 @@ export default class Admin extends Component {
     }
   };
   submitFootballMatch = (event) => {
-    event.preventDefault();
     const {
       FB_T_A,
       FB_T_B,

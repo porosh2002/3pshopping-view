@@ -409,6 +409,7 @@ app.post("/api/footballMatchAdd", (req, res) => {
     FB_T_M_G_4,
     FB_T_M_G_5,
     FB_T_M_G_5_M,
+    halfdone:false
   });
   Football_Match.save((err, noerr) => {
     if (err) {
