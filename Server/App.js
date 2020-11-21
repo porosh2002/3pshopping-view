@@ -170,22 +170,32 @@ app.post("/api/addmoney", (req, res) => {
     }
   });
 });
-app.post("/api/outmoney", (req, res) => {
-  const { userid, tid, withamount } = req.body;
-  const out_balance = new AddmoneyModel({
-    userid,
+app.post("/api/outmoney", (req, response) => {
+  const { userID, tid, withamount } = req.body;
+  const HashEmail= md5(userID)
+  RegisterUserModel.findOne({email:HashEmail},(err,res)=>{
+    if(res){
+      const newBalance = res.balance - withamount
+      RegisterUserModel.updateOne({email:HashEmail},{balance:newBalance},(err,res)=>{
+        if(res){
+      const out_balance = new outmoneyModel({
+    userid:userID,
     tid,
     withamount,
     done: false,
   });
   out_balance.save((err, noerr) => {
     if (err) {
-      res.sendStatus(400);
+      response.sendStatus(400);
     }
     if (noerr) {
-      res.sendStatus(200);
+      response.sendStatus(200);
     }
   });
+        }
+      })
+    }
+  })
 });
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;

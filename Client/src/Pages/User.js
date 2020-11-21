@@ -14,6 +14,8 @@ class User extends Component {
     outBkashNumber: "",
     outAmmount: "",
     Balance:0,
+    withamount:null,
+    tid:null
   };
   componentDidMount() {
       const{userID} = this.props
@@ -37,7 +39,16 @@ class User extends Component {
     })
   }
   withdrawaddBalance=()=>{
-
+    const{userID} = this.props;
+    const {withamount,tid}= this.state;
+    fetch(`${URL}api/outmoney`, {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            userID,withamount,
+            tid
+        }),
+      })
   }
   render() {
     const { addbalance, withdrawbalance } = this.state;
@@ -54,7 +65,7 @@ class User extends Component {
             }}
             to="#"
           >
-            Add Balance
+            Add Coin(min 200)
           </Link>
         </UserCard>
         <UserCard>
@@ -66,19 +77,20 @@ class User extends Component {
             }}
             to="#"
           >
-            Withdraw Balance (min-500 max-20,000)
+            Withdraw Coin
           </Link>
         </UserCard>
         <UserCard onClick={()=>{this.props.setUserID(undefined)}} style={{ cursor: "pointer" }}>Logout</UserCard>
         <form onSubmit={this.addBalance} style={addstyle}>
-          <AdminCTitle style={{ marginTop: "100px" }}>Add Balance</AdminCTitle>
+          <AdminCTitle style={{ marginTop: "100px" }}>Add Coin</AdminCTitle>
           <Input onChange={(e)=>{this.setState({addbkashid:e.target.value})}} required placeholder="Enter Bkash Transition ID"></Input>
+          <p style={{fontSize:"20px",color:"orangered"}}> Send Money to 01944752947 (BKASH Personal) and Enter Transition ID in upper box and submit || 1 Taka = 1 Coin || Contact with this number before pay</p>
           <Button value="Submit" type="submit"></Button>
         </form>
         <form onSubmit={this.withdrawaddBalance} style={outstyle}>
-          <AdminCTitle style={{ marginTop: "100px" }}>Withdrawal</AdminCTitle>
-          <Input required placeholder="Enter Withdrawal amount"></Input>
-          <Input required placeholder="Enter Your Bkash Number"></Input>
+          <AdminCTitle style={{ marginTop: "100px" }}>Withdrawal(min-500 , max-20,000)</AdminCTitle>
+          <Input onChange={e=>{this.setState({withamount:e.target.value})}} min='500' max='20000' type='number' required placeholder="Enter Withdrawal amount"></Input>
+          <Input onChange={e=>{this.setState({tid:e.target.value})}} min='11' type='number' required placeholder="+880**********(your Bkash Number)"></Input>
           <Button value="Submit" type="submit"></Button>
         </form>
       </AdminContent>
