@@ -34,12 +34,12 @@ class TennisCard extends PureComponent {
     firstballinnings:false,
     firstoverinnings:false,
     firstwicketfallinRun:false,
-    firstwicketmethod:false,
+    firstwicketmethodRes:false,
     wicketinpowerplay:false,
-    finalResult:false,
+    finalResultRES:false,
     heightRunin1stovr:false,
     heightsix:false,
-    heightfour:false,
+    // heightfour:false,
     heightpatnership:false,
     topBatsman:false,
     topBowler:false,
@@ -58,163 +58,163 @@ class TennisCard extends PureComponent {
   betclick = (event) => {
 const {id} = event.target;
 if(id === '0'){
-  this.setState({tossResult:0})
+  this.setState({tossResult:0,tossWin:true})
 }
 if(id === '1'){
-  this.setState({tossResult:1})
+  this.setState({tossResult:1,tossWin:true})
 }
 if(id === '2'){
-  this.setState({finalresult:2})
+  this.setState({finalresult:2,finalResultRES:true})
 }
 if(id === '3'){
-  this.setState({finalresult:3})
+  this.setState({finalresult:3,finalResultRES:true})
 }
 if(id==='4'){
-  this.setState({firstballres:4})
+  this.setState({firstballres:4,firstballinnings:true})
 }
 if(id==='5'){
-  this.setState({firstballres:5})
+  this.setState({firstballres:5,firstballinnings:true})
 }
 if(id==='6'){
-  this.setState({firstballres:6})
+  this.setState({firstballres:6,firstballinnings:true})
 }
 if(id==='7'){
-  this.setState({firstballres:7})
+  this.setState({firstballres:7,firstballinnings:true})
 }
 if(id==='8'){
-  this.setState({firstballres:8})
+  this.setState({firstballres:8,firstballinnings:true})
 }
 if(id==='9'){
-  this.setState({firstballres:9})
+  this.setState({firstballres:9,firstballinnings:true})
 }
 if(id==='10'){
-  this.setState({firstballres:10})
+  this.setState({firstballres:10,firstballinnings:true})
 }
 if(id==='11'){
-  this.setState({firstovrRun:11})
+  this.setState({firstovrRun:11,firstoverinnings:true})
 }
 if(id==='12'){
-  this.setState({firstovrRun:12})
+  this.setState({firstovrRun:12,firstoverinnings:true})
 }
 if(id==='13'){
-  this.setState({firstovrRun:13})
+  this.setState({firstovrRun:13,firstoverinnings:true})
 }
 if(id==='14'){
-  this.setState({firstovrRun:14})
+  this.setState({firstovrRun:14,firstoverinnings:true})
 }
 if(id==='15'){
-  this.setState({firstWicket:15})
+  this.setState({firstWicket:15,firstwicketfallinRun:true})
 }
 if(id==='16'){
-  this.setState({firstWicket:16})
+  this.setState({firstWicket:16,firstwicketfallinRun:true})
 }
 if(id==='17'){
-  this.setState({firstWicketMethod:17})
+  this.setState({firstwicketmethod:17,firstwicketmethodRes:true})
 }
 if(id==='18'){
-  this.setState({firstWicketMethod:18})
+  this.setState({firstwicketmethod:18,firstwicketmethodRes:true})
 }
 if(id==='19'){
-  this.setState({firstWicketMethod:19})
+  this.setState({firstwicketmethod:19,firstwicketmethodRes:true})
 }
 if(id==='20'){
-  this.setState({firstWicketMethod:20})
+  this.setState({firstwicketmethod:20,firstwicketmethodRes:true})
 }
 if(id==='21'){
-  this.setState({firstWicketMethod:21})
+  this.setState({firstwicketmethod:21,firstwicketmethodRes:true})
 }
 if(id==='22'){
-  this.setState({firstWicketMethod:22})
+  this.setState({firstwicketmethod:22,firstwicketmethodRes:true})
 }
 if(id==='23'){
-  this.setState({WicketInPowerolay:23})
+  this.setState({WicketInPowerolay:23,wicketinpowerplay:true})
 }
 if(id==='24'){
-  this.setState({WicketInPowerolay:24})
+  this.setState({WicketInPowerolay:24,wicketinpowerplay:true})
 }
 if(id==='25'){
-  this.setState({WicketInPowerolay:25})
+  this.setState({WicketInPowerolay:25,wicketinpowerplay:true})
 }
 if(id==='26'){
-  this.setState({Heightrunin1stover:26})
+  this.setState({Heightrunin1stover:26,heightRunin1stovr:true})
 }
 if(id==='27'){
-  this.setState({Heightrunin1stover:27})
+  this.setState({Heightrunin1stover:27,heightRunin1stovr:true})
 }
 if(id==='28'){
-  this.setState({Heightrunin1stover:28})
+  this.setState({Heightrunin1stover:28,heightRunin1stovr:true})
 }
 if(id==='29'){
-  this.setState({Hsix:29})
+  this.setState({Hsix:29,heightsix:true})
 }
 if(id==='30'){
-  this.setState({Hsix:30})
+  this.setState({Hsix:30,heightsix:true})
 }
 if(id==='31'){
-  this.setState({Hsix:31})
+  this.setState({Hsix:31,heightsix:true})
 }
 if(id==='32'){
-  this.setState({Hpatner:32})
+  this.setState({Hpatner:32,heightpatnership:true})
 }
 if(id==='33'){
-  this.setState({Hpatner:33})
+  this.setState({Hpatner:33,heightpatnership:true})
 }
 if(id==='34'){
-  this.setState({Hpatner:34})
+  this.setState({Hpatner:34,heightpatnership:true})
 }
 if(id==='35'){
-  this.setState({TopBatsman:35})
+  this.setState({TopBatsman:35,topBatsman:true})
 }
 if(id==='36'){
-  this.setState({TopBatsman:36})
+  this.setState({TopBatsman:36,topBatsman:true})
 }
 if(id==='37'){
-  this.setState({TopBowler:37})
+  this.setState({TopBowler:37,topBowler:true})
 }
 if(id==='38'){
-  this.setState({TopBowler:38})
+  this.setState({TopBowler:38,topBowler:true})
 }
 if(id==='39'){
-  this.setState({totalsix:39})
+  this.setState({totalsix:39,H_total_six:true})
 }
 if(id==='40'){
-  this.setState({totalsix:40})
+  this.setState({totalsix:40,H_total_six:true})
 }
 if(id==='41'){
-  this.setState({totalfour:41})
+  this.setState({totalfour:41,H_total_four:true})
 }
 if(id==='42'){
-  this.setState({totalfour:42})
+  this.setState({totalfour:42,H_total_four:true})
 }
 if(id==='43'){
-  this.setState({heightInvidualScore:43})
+  this.setState({heightInvidualScore:43,H_Own_score:true})
 }
 if(id==='44'){
-  this.setState({heightInvidualScore:44})
+  this.setState({heightInvidualScore:44,H_Own_score:true})
 }
 if(id==='45'){
-  this.setState({fifty:45})
+  this.setState({fifty:45,FiftyMade:true})
 }
 if(id==='46'){
-  this.setState({fifty:46})
+  this.setState({fifty:46,FiftyMade:true})
 }
 if(id==='47'){
-  this.setState({FirstinningsScore:47})
+  this.setState({FirstinningsScore:47,FirstInnScore:true})
 }
 if(id==='48'){
-  this.setState({FirstinningsScore:48})
+  this.setState({FirstinningsScore:48,FirstInnScore:true})
 }
 if(id==='49'){
-  this.setState({totalsixScore:49})
+  this.setState({totalsixScore:49,totalSix:true})
 }
 if(id==='50'){
-  this.setState({totalsixScore:50})
+  this.setState({totalsixScore:50,totalSix:true})
 }
 if(id==='51'){
-  this.setState({totalsixfour:51})
+  this.setState({totalsixfour:51,totalfour:true})
 }
 if(id==='52'){
-  this.setState({totalsixfour:52})
+  this.setState({totalsixfour:52,totalfour:true})
 }
   };
   submitdatatoss=()=>{
@@ -324,12 +324,12 @@ if(id==='52'){
       firstballinnings,
       firstoverinnings,
       firstwicketfallinRun,
-      firstwicketmethod,
+      firstwicketmethodRes,
       wicketinpowerplay,
-      finalResult,
+      finalResultRES,
       heightRunin1stovr,
       heightsix,
-      heightfour,
+      // heightfour,
       heightpatnership,
       topBatsman,
       topBowler,
@@ -344,9 +344,9 @@ if(id==='52'){
     const FirstBallINN = firstballinnings ? {display:"none"} :null
     const FirstOvrINN = firstoverinnings ? {display:"none"} :null
     const FirstwicketfallRUN = firstwicketfallinRun ? {display:"none"} :null
-    const FirstwicketMeth = firstwicketmethod ? {display:"none"} :null
+    const FirstwicketMeth = firstwicketmethodRes ? {display:"none"} :null
     const PowerplayWicket = wicketinpowerplay ? {display:"none"} :null
-    const FinalResult = finalResult ? {display:"none"} :null
+    const FinalResult = finalResultRES ? {display:"none"} :null
     const HeightRunFirstOvr =  heightRunin1stovr ? {display:"none"} :null
     const HeightSix = heightsix ? {display:"none"} :null
     // const HeightFour = heightfour ? {display:"none"} :null
