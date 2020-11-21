@@ -283,6 +283,18 @@ if(id==='52'){
       }),
     });
   }
+  deletetennis=()=>{
+    const {betid}= this.state;
+    console.log(betid);
+    fetch(`${URL}api/CricketDelete`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        betid
+      }),
+    });
+    window.location.reload(true);
+  }
   render() {
     const { 
         C_T_A,
@@ -374,6 +386,7 @@ if(id==='52'){
         <TennisTitleSub onClick={this.betclick} id="51">over 27.5</TennisTitleSub>
         <TennisTitleSub onClick={this.betclick} id="52">under 27.5</TennisTitleSub>
         <button onClick={this.finalcricket}>Submit</button>
+        <button style={{margin:"100px", padding:"10px",backgroundColor:"orangered"}} onClick={this.deletetennis}>Delete This Bet</button>
       </TennisDIV>
     );
   }
