@@ -131,24 +131,37 @@ else{
         T_M_S_UN,
         T_M_F_OV,
         T_M_F_UN,
+        TossCricket,
+      firstballCricket,
+      firstOverCricket,
+      firstwicketandmethfull,
+      powerplayCricket
     } = this.props.data;
+    const TossDone = TossCricket ? { display: "none" } :null;
+    const FirstBallDone = firstballCricket ? { display: "none" } :null;
+    const FirstOverDone = firstOverCricket ? { display: "none" } :null;
+    const FirstWicketMethodDone = firstwicketandmethfull ? { display: "none" } :null;
+    const PowerPlayDone = powerplayCricket ? { display: "none" } :null;
     return (
       <TennisDIV style={{backgroundColor:"#93abd3"}}>
         <TennisTitle>{C_T_A}</TennisTitle>
         VS
         <TennisTitle>{C_T_B}</TennisTitle>
-        <TennisTitle>To Win Toss</TennisTitle>
+<div style={TossDone}>
+<TennisTitle>To Win Toss</TennisTitle>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub><br></br>
         <TennisTitleSub id="0" onClick={this.betclick}>{C_T_A_T}</TennisTitleSub>
         <TennisTitleSub id="1" onClick={this.betclick}>{C_T_B_T}</TennisTitleSub>
+</div>
         <br></br>
         <TennisTitle>Final Result</TennisTitle>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub><br></br>
         <TennisTitleSub id="2" onClick={this.betclick}>{F_M_R_A}</TennisTitleSub>
         <TennisTitleSub id="3" onClick={this.betclick}>{F_M_R_B}</TennisTitleSub><br></br>
-        <TennisTitle>1st ball of the Innings</TennisTitle>
+<div style={FirstBallDone}>
+<TennisTitle>1st ball of the Innings</TennisTitle>
         <TennisTitleSub>Dot Ball</TennisTitleSub><br></br>
         <TennisTitleSub id="4" onClick={this.betclick}>{F_B_F_I_0}</TennisTitleSub><br></br>
         <TennisTitleSub>One</TennisTitleSub>
@@ -165,7 +178,9 @@ else{
         <TennisTitleSub id="9" onClick={this.betclick}>{F_B_F_I_6}</TennisTitleSub>
         <TennisTitleSub id="10" onClick={this.betclick}>{TS_T_A_R_more}</TennisTitleSub><br></br>
         {/*  */}
-        <TennisTitle>1st Over of the 1st Innings</TennisTitle>
+</div>
+<div style={FirstOverDone}>
+<TennisTitle>1st Over of the 1st Innings</TennisTitle>
         <TennisTitleSub>0-3 Run</TennisTitleSub>
         <TennisTitleSub>4-6 Run</TennisTitleSub>
         <TennisTitleSub>7-9 Run</TennisTitleSub><br></br>
@@ -174,7 +189,9 @@ else{
         <TennisTitleSub id="13" onClick={this.betclick}>{F_O_F_I_9}</TennisTitleSub><br></br>
         <TennisTitleSub>10+ Run</TennisTitleSub><br></br>
         <TennisTitleSub id="14" onClick={this.betclick}>{F_O_F_I_10}</TennisTitleSub><br></br>
-        <TennisTitle>Run at Fall of 1st wicket of 1st Innings</TennisTitle><br></br>
+</div>
+          <div style={FirstWicketMethodDone}>
+          <TennisTitle>Run at Fall of 1st wicket of 1st Innings</TennisTitle><br></br>
         <TennisTitleSub>over 23.5 </TennisTitleSub>
         <TennisTitleSub>under 23.5</TennisTitleSub><br></br>
         <TennisTitleSub id="15" onClick={this.betclick}>{F_W_F_I_O}</TennisTitleSub> 
@@ -192,13 +209,16 @@ else{
         <TennisTitleSub id="20" onClick={this.betclick}>{F_W_M_F_I_B}</TennisTitleSub>
         <TennisTitleSub id="21" onClick={this.betclick}>{F_W_M_F_I_LBW}</TennisTitleSub>
         <TennisTitleSub id="22" onClick={this.betclick}>{F_W_M_F_I_OTHR}</TennisTitleSub><br></br>
-        <TennisTitle>Wicket in Powerplay in 1st Innings</TennisTitle><br></br>
+          </div>
+<div style={PowerPlayDone}>
+<TennisTitle>Wicket in Powerplay in 1st Innings</TennisTitle><br></br>
         <TennisTitleSub>no Wickets</TennisTitleSub>
         <TennisTitleSub>1 Wickets</TennisTitleSub>
         <TennisTitleSub>2+ Wickets</TennisTitleSub><br></br>
         <TennisTitleSub id="23" onClick={this.betclick}>{W_P_P_N}</TennisTitleSub>
         <TennisTitleSub id="24" onClick={this.betclick}>{W_P_P_1}</TennisTitleSub>
         <TennisTitleSub id="25" onClick={this.betclick}>{W_P_P_N_2}</TennisTitleSub><br></br>
+</div>
         <TennisTitle>Height Run in 1st Over</TennisTitle><br></br>
         <TennisTitleSub>{C_T_A}</TennisTitleSub>
         <TennisTitleSub>{C_T_B}</TennisTitleSub>
