@@ -50,6 +50,27 @@ app.use(helmet());
 //
 app.post("/api/CricketBet", (req, res) => {
   const { betProject_id, betid, betprice, betamount, userid } = req.body;
+  const Hashedemail= md5(userid)
+RegisterUserModel.findOne({email:Hashedemail},(err,doc)=>{
+  if(doc.clubname !== null){
+    clubModel.findOne({name:doc.clubname},(err,res)=>{
+      if(err){
+        console.log(err);
+      }
+      if(res){
+        const newBalanceClub = res.balance + (betamount*0.02)
+        clubModel.updateOne({name:doc.clubname},{balance:newBalanceClub},(err,noerr)=>{
+          if(err){
+            console.log(err);
+          }
+          if(noerr){
+            console.log('no error found');
+          }
+        })
+      }
+    })
+  }
+})
   const Add_balance = new CricketBetModel({
     betProject_id,
     betid,
@@ -70,6 +91,27 @@ app.post("/api/CricketBet", (req, res) => {
 });
 app.post("/api/tenisBet", (req, res) => {
   const { betProject_id, betid, betprice, betamount, userid } = req.body;
+  const Hashedemail= md5(userid)
+  RegisterUserModel.findOne({email:Hashedemail},(err,doc)=>{
+    if(doc.clubname !== null){
+      clubModel.findOne({name:doc.clubname},(err,res)=>{
+        if(err){
+          console.log(err);
+        }
+        if(res){
+          const newBalanceClub = res.balance + (betamount*0.02)
+          clubModel.updateOne({name:doc.clubname},{balance:newBalanceClub},(err,noerr)=>{
+            if(err){
+              console.log(err);
+            }
+            if(noerr){
+              console.log('no error found');
+            }
+          })
+        }
+      })
+    }
+  })
   const Add_balance = new TennisBetModel({
     betProject_id,
     betid,
@@ -90,6 +132,27 @@ app.post("/api/tenisBet", (req, res) => {
 });
 app.post("/api/FootballBet", (req, res) => {
   const { betProject_id, betid, betprice, betamount, userid } = req.body;
+  const Hashedemail= md5(userid)
+  RegisterUserModel.findOne({email:Hashedemail},(err,doc)=>{
+    if(doc.clubname !== null){
+      clubModel.findOne({name:doc.clubname},(err,res)=>{
+        if(err){
+          console.log(err);
+        }
+        if(res){
+          const newBalanceClub = res.balance + (betamount*0.02)
+          clubModel.updateOne({name:doc.clubname},{balance:newBalanceClub},(err,noerr)=>{
+            if(err){
+              console.log(err);
+            }
+            if(noerr){
+              console.log('no error found');
+            }
+          })
+        }
+      })
+    }
+  })
   const Add_balance = new FootballBetModel({
     betProject_id,
     betid,
