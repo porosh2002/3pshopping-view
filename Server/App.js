@@ -718,6 +718,31 @@ app.post('/api/deleteMoney',(req,res)=>{
     }
   })
 })
+app.post('/api/addMoneyReq',(req,res)=>{
+  const {id,value} = req.body;
+  const HashedEmail = md5(id)
+  RegisterUserModel.findOne({email:HashedEmail},(err,done)=>{
+    if(err){
+      console.log(err);
+    }
+    if(done){
+      const newBalance = done.balance +Number(value);
+      console.log(newBalance);
+      RegisterUserModel.updateOne({email:HashedEmail},{balance:newBalance},(err,noerr)=>{
+        if(err){
+          console.log(err);
+        }
+        if(noerr){
+          AddmoneyModel.deleteOne({_id:id},(err,done)=>{
+            if(err){
+              console.log(err);
+            }
+          })
+        }
+      })
+    }
+  })
+})
 //
 app.post('/api/tennisDelete',(req,res)=>{
   const{betid} = req.body;

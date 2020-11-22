@@ -4,12 +4,13 @@ import { Input } from "../Styled";
 export default class Depositecard extends Component {
    thisClick=()=>{
      const {data} = this.props;
-    const id = data._id
-    fetch(`${URL}api/deleteMoney`, {
+    const id = data.userid;
+const value = this.state.inputValue
+    fetch(`${URL}api/addMoneyReq`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-      // id
+      id,value
       }),
     });
 }
