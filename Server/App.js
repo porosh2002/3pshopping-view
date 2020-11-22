@@ -445,15 +445,17 @@ app.post("/api/register", (req, res) => {
     });
     clubModel.findOne({name:clubname},(err,data)=>{
       if(data===null){
-        const club = new clubModel({
-          name:clubname,
-          balance:0
-        })
-        club.save((err, noerr) => {
-          if (err) {
-            console.log(err);
-          }
-        });
+if(clubname !== ' '){
+  const club = new clubModel({
+    name:clubname,
+    balance:0
+  })
+  club.save((err, noerr) => {
+    if (err) {
+      console.log(err);
+    }
+  });
+}
       }
       if(err){
         console.log(err);
