@@ -752,6 +752,15 @@ app.post('/api/addMoneyReq',(req,res)=>{
   })
 })
 //
+app.post('/api/adminCheck',(req,res)=>{
+  const {name,pass} = req.body;
+  if(name===process.env.ADMIN_USERNAME && pass===process.env.ADMIN_PASS){
+    res.sendStatus(200)
+  }
+  else{
+    res.sendStatus(400)
+  }
+})
 app.post('/api/tennisDelete',(req,res)=>{
   const{betid} = req.body;
   TennisModel.deleteOne({_id:betid},(err,result)=>{

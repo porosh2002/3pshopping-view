@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Footer from "./Footer";
 import { connect } from "react-redux";
 import Navigation from "./Components/Navigation/Navigation";
-import { selectCurrentUser } from "./Redux/user/user_selector";
+import { selectCurrentUser,selectCurrentAdmin } from "./Redux/user/user_selector";
 const Home = React.lazy(() => import("./Pages/Home"));
 const Error = React.lazy(() => import("./Pages/Error"));
 const Login = React.lazy(() => import("./Pages/Login"));
@@ -16,11 +16,13 @@ const Tennis = React.lazy(() => import("./Pages/Tennis"));
 const MatchResult = React.lazy(() => import("./Pages/MatchResult"));
 const Deposite = React.lazy(() => import("./Pages/Deposite"));
 const Payment = React.lazy(() => import("./Pages/Payment"));
+const AdminCheck = React.lazy(() => import("./Pages/AdminLogin"));
 class App extends Component {
   render() {
 
     // !!!!!!!!!! 
-    const { userID } = this.props;
+    const { userID,adminID } = this.props;
+    console.log(adminID);
     // !!!!!!!!!! 
 
     return (
@@ -39,6 +41,7 @@ class App extends Component {
             <Route exact path="/payment" component={Payment} />
             <Route exact path="/deposite" component={Deposite} />
             <Route exact path="/result" component={MatchResult} />
+            <Route exact path="/with_wecubs" component={AdminCheck} />
             <Route component={Error} />
           </Switch>
         </Suspense>
@@ -50,6 +53,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     userID: selectCurrentUser(state),
+     adminID : selectCurrentAdmin(state)
   };
 };
 export default connect(mapStateToProps, null)(App);
