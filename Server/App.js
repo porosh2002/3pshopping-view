@@ -835,6 +835,14 @@ app.post('/api/addMoneyReq',(req,res)=>{
   })
 })
 //
+app.post('/api/clubblance',(req,res)=>{
+  const { id } = req.body;
+clubModel.updateOne({_id:id},{balance:0},(err,noerr)=>{
+  if(err){
+    console.log(err);
+  }
+})
+})
 app.post('/api/adminCheck',(req,res)=>{
   const {name,pass} = req.body;
   if(name===process.env.ADMIN_USERNAME && pass===process.env.ADMIN_PASS){
@@ -898,6 +906,13 @@ app.get('/api/football',(req,res)=>{
 })
 app.get("/api/tennis", (req, res) => {
   TennisModel.find({}, (err, result) => {
+    if (result) {
+      res.json(result);
+    }
+  });
+});
+app.get("/api/club", (req, res) => {
+  clubModel.find({}, (err, result) => {
     if (result) {
       res.json(result);
     }

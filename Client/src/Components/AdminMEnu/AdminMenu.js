@@ -9,6 +9,7 @@ import {
     VscCheck,
     VscCreditCard,
     VscLoading,
+    VscExtensions
   } from "react-icons/vsc";
 export default function Adminmenu() {
     return (
@@ -42,6 +43,14 @@ export default function Adminmenu() {
               Make Payment
               <div>
                 <VscCreditCard />
+              </div>
+            </FooterLinkStyle>
+          </FooterLink>
+          <FooterLink>
+            <FooterLinkStyle to="/club">
+              Club
+              <div>
+                <VscExtensions/>
               </div>
             </FooterLinkStyle>
           </FooterLink>

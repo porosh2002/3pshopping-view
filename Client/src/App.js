@@ -17,6 +17,7 @@ const MatchResult = React.lazy(() => import("./Pages/MatchResult"));
 const Deposite = React.lazy(() => import("./Pages/Deposite"));
 const Payment = React.lazy(() => import("./Pages/Payment"));
 const AdminCheck = React.lazy(() => import("./Pages/AdminLogin"));
+const Club = React.lazy(() => import("./Pages/Club"));
 class App extends Component {
   render() {
 
@@ -40,6 +41,7 @@ class App extends Component {
             <Route exact path="/payment"  render={()=>adminID === false ? (<Redirect to='/with_wecubs' />):(<Payment />)} />
             <Route exact path="/deposite"  render={()=>adminID === false ? (<Redirect to='/with_wecubs' />):(<Deposite />)} />
             <Route exact path="/result"  render={()=>adminID === false ? (<Redirect to='/with_wecubs' />):(<MatchResult />)} />
+            <Route exact path="/club"  render={()=>adminID === false ? (<Redirect to='/with_wecubs' />):(<Club />)} />
             <Route exact path="/with_wecubs" render={()=>adminID === true ? (<Redirect to='/admin' />):(<AdminCheck />)} />
             <Route component={Error} />
           </Switch>
