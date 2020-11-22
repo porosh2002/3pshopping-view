@@ -38,6 +38,7 @@ class TennisCard extends PureComponent {
         betid,halfValue
       }),
     });
+    window.location.reload(true);
   }
   submitdataFull=()=>{
     const{betid,fw,g_E_O,Penalty,GoalinNum} = this.state;
@@ -48,6 +49,7 @@ class TennisCard extends PureComponent {
         betid,fw,g_E_O,Penalty,GoalinNum
       }),
     });
+    window.location.reload(true);
   }
   betclickHalf = (event) => {
     const {id} = event.target;

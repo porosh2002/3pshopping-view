@@ -40,15 +40,20 @@ class User extends Component {
   }
   withdrawaddBalance=()=>{
     const{userID} = this.props;
-    const {withamount,tid}= this.state;
-    fetch(`${URL}api/outmoney`, {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            userID,withamount,
-            tid
-        }),
-      })
+    const {withamount,tid,Balance}= this.state;
+    if(Balance - withamount > 1){
+      fetch(`${URL}api/outmoney`, {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+              userID,withamount,
+              tid
+          }),
+        })
+    }
+    else{
+      alert('Not Enough Balance')
+    }
   }
   render() {
     const { addbalance, withdrawbalance } = this.state;

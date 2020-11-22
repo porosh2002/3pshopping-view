@@ -59,6 +59,7 @@ class TennisCard extends Component {
           betid,matchwin,pointE_O,matchPointO_U
         }),
       });
+      window.location.reload(true);
   }
   render() {
     const {
