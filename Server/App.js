@@ -718,6 +718,14 @@ app.post('/api/deleteMoney',(req,res)=>{
     }
   })
 })
+app.post('/api/deletePayment',(req,res)=>{
+  const {id} = req.body;
+  outmoneyModel.deleteOne({_id:id},(err,done)=>{
+    if(err){
+      console.log(err);
+    }
+  })
+})
 app.post('/api/addMoneyReq',(req,res)=>{
   const {id,value} = req.body;
   const HashedEmail = md5(id)
@@ -770,6 +778,13 @@ app.post('/api/CricketDelete',(req,res)=>{
 })
 app.get('/api/deposite',(req,res)=>{
   AddmoneyModel.find({done:false},(err,data)=>{
+    if(data){
+      res.json(data)
+    }
+  })
+})
+app.get('/api/outmoney',(req,res)=>{
+  outmoneyModel.find({},(err,data)=>{
     if(data){
       res.json(data)
     }

@@ -13,6 +13,7 @@ const value = this.state.inputValue
       id,value
       }),
     });
+    window.location.reload(true);
 }
    thisClickDelete=()=>{
      const {data} = this.props;
