@@ -434,6 +434,7 @@ app.post("/api/register", (req, res) => {
       password: Passwordhash,
       name,
       balance: 0,
+      clubname:clubname
     });
     Register.save((err, noerr) => {
       if (err) {
