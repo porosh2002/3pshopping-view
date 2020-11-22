@@ -45,7 +45,7 @@ class TennisCard extends PureComponent {
     FiftyMade: false,
     FirstInnScore: false,
     totalSix: false,
-    totalfour: false,
+    totalfourRes: false,
   };
   componentDidMount() {
     const { data } = this.props;
@@ -207,10 +207,10 @@ class TennisCard extends PureComponent {
       this.setState({ totalsixScore: 50, totalSix: true });
     }
     if (id === "51") {
-      this.setState({ totalsixfour: 51, totalfour: true });
+      this.setState({ totalsixfour: 51, totalfourRes: true });
     }
     if (id === "52") {
-      this.setState({ totalsixfour: 52, totalfour: true });
+      this.setState({ totalsixfour: 52, totalfourRes: true });
     }
   };
   submitdatatoss = () => {
@@ -347,7 +347,7 @@ class TennisCard extends PureComponent {
       FiftyMade,
       FirstInnScore,
       totalSix,
-      totalfour,
+      totalfourRes,
     } = this.state;
     const TossStyle = tossWin ? { display: "none" } : null;
     const FirstBallINN = firstballinnings ? { display: "none" } : null;
@@ -370,7 +370,7 @@ class TennisCard extends PureComponent {
     const FiftyMadE = FiftyMade ? { display: "none" } : null;
     const FirstInnScorE = FirstInnScore ? { display: "none" } : null;
     const totalSiX = totalSix ? { display: "none" } : null;
-    const totalfouR = totalfour ? { display: "none" } : null;
+    const totalfouR = totalfourRes ? { display: "none" } : null;
     const TossDone = TossCricket ? { display: "none" } : null;
     const FirstBallDone = firstballCricket ? { display: "none" } : null;
     const FirstOverDone = firstOverCricket ? { display: "none" } : null;
