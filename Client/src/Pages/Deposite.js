@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import Menu from "../Components/AdminMEnu/AdminMenu";
 import DepoCard from './Depositecard'
+import { URL } from "../serverUrl";
 export default class Deposite extends PureComponent {
   state = {
     data: [],
