@@ -709,6 +709,18 @@ app.post('/api/powerplayCricket',(req,res)=>{
     }
   })
 })
+app.post('/api/deleteMoney',(req,res)=>{
+  const {_id} = req.body;
+  console.log(req.body);
+  // AddmoneyModel.deleteOne({_id:_id},(err,done)=>{
+  //   if(done){
+  //     console.log(_id);
+  //   }
+  //   if(err){
+  //     console.log(err);
+  //   }
+  // })
+})
 //
 app.post('/api/tennisDelete',(req,res)=>{
   const{betid} = req.body;
