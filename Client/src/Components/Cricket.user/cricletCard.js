@@ -21,14 +21,16 @@ class TennisCard extends PureComponent {
   };
   componentDidMount() {
     const { data, userID } = this.props;
-    fetch(`${URL}api/getuserdata`,{
-      method: "post",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({
-        userID
-      })
-    }).then(res=>res.json()).then(res=>this.setState({userBalance:res[0].balance}))
-    this.setState({ betid: data._id, userid: userID });
+   if(userID!==undefined){
+     fetch(`${URL}api/getuserdata`,{
+       method: "post",
+       headers: {"Content-Type": "application/json"},
+       body: JSON.stringify({
+         userID
+       })
+     }).then(res=>res.json()).then(res=>this.setState({userBalance:res[0].balance}))
+     this.setState({ betid: data._id, userid: userID });
+   }
   }
   closegetamount = (event) => {
     this.setState({ getAmount: false });

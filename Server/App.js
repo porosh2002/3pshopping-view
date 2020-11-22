@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const md5 = require("md5");
 const saltRounds = 10;
 require("dotenv").config();
+const path = require('path');
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const FootballModel = require("./Football");
@@ -46,8 +47,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(morgan('combined'))
 app.use(bodyParser.json());
-app.use(helmet());
+// app.use(helmet());
 //
+// app.get('*', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
 app.post("/api/CricketBet", (req, res) => {
   const { betProject_id, betid, betprice, betamount, userid } = req.body;
   const Hashedemail= md5(userid)
