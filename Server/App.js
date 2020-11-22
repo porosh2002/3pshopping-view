@@ -18,7 +18,8 @@ const AddmoneyModel = require("./addmoney");
 const outmoneyModel = require("./withmoney");
 const TennisBetModel = require("./Tennisbet");
 const FootballBetModel = require('./FootballBet');
-const CricketBetModel = require('./CricketBet')
+const CricketBetModel = require('./CricketBet');
+const clubModel = require('./Club')
 //
 // const whitelist = ['https://wecubs.com']
 // const corsOptions = {
@@ -426,7 +427,7 @@ app.post("/api/footballMatchAdd", (req, res) => {
   });
 });
 app.post("/api/register", (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password,clubname } = req.body
   bcrypt.hash(password, saltRounds).then(function (Passwordhash) {
     const Register = new RegisterUserModel({
       email: md5(email),
@@ -442,6 +443,22 @@ app.post("/api/register", (req, res) => {
         res.sendStatus(200);
       }
     });
+    clubModel.findOne({name:clubname},(err,data)=>{
+      if(data===null){
+        const club = new clubModel({
+          name:clubname,
+          balance:0
+        })
+        club.save((err, noerr) => {
+          if (err) {
+            console.log(err);
+          }
+        });
+      }
+      if(err){
+        console.log(err);
+      }
+    })
   });
 });
 app.post("/api/getuserdata", (req, res) => {
