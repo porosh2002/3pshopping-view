@@ -18,6 +18,7 @@ const Deposite = React.lazy(() => import("./Pages/Deposite"));
 const Payment = React.lazy(() => import("./Pages/Payment"));
 const AdminCheck = React.lazy(() => import("./Pages/AdminLogin"));
 const Club = React.lazy(() => import("./Pages/Club"));
+const ClubPage = React.lazy(() => import("./Pages/Clubpage"));
 class App extends Component {
   render() {
 
@@ -38,6 +39,7 @@ class App extends Component {
             <Route exact path="/football" component={Football} />
             <Route exact path="/cricket" component={Cricket} />
             <Route exact path="/tennis" component={Tennis} />
+            <Route exact path="/Admin/club/:id/betClubthis" component={ClubPage} />
             <Route exact path="/payment"  render={()=>adminID === false ? (<Redirect to='/with_wecubs' />):(<Payment />)} />
             <Route exact path="/deposite"  render={()=>adminID === false ? (<Redirect to='/with_wecubs' />):(<Deposite />)} />
             <Route exact path="/result"  render={()=>adminID === false ? (<Redirect to='/with_wecubs' />):(<MatchResult />)} />

@@ -923,6 +923,16 @@ app.get("/api/club", (req, res) => {
     }
   });
 });
+app.get("/api/club/:id", (req, res) => {
+  clubModel.find({name:req.params.id}, (err, result) => {
+    if (result) {
+      res.json(result);
+    }
+    // if (result === null) {
+    //   res.json([]);
+    // }
+  });
+});
 app.listen(process.env.DB_PORT, async () => {
   try {
     await mongoose.connect("mongodb://localhost:27017/BoilerPlate_DB", {
