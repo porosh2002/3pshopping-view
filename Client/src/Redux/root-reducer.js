@@ -6,7 +6,7 @@ import AdminSET from './Admin/reducers';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['user']
+  whitelist: ['user','admin']
 };
 const rootReducer = combineReducers({
   user:userSET,
