@@ -3,13 +3,10 @@ import { URL } from "../../serverUrl";
 import CricketCard from './cricletCard'
 export default class Tennis extends PureComponent {
   componentDidMount() {
-    fetch(`${URL}api/cricket`).then((res) => {
-      if (res.status === 200) {
-        res.json().then((res) => {
-          this.setState({ data: res });
-        });
-      }
-    });
+    fetch(`${URL}api/cricket`,{
+      method: "post",
+      headers: {"Content-Type": "application/json"},
+    }).then(res=>res.json()).then(res=>this.setState({data:res}))
   }
   state = {
     data: [],
