@@ -20,7 +20,7 @@ class TennisCard extends PureComponent {
     userBalance:null,
   };
   componentDidMount() {
-    const { data, userID } = this.props;
+    const {userID } = this.props;
     fetch(`${URL}api/getuserdata`,{
       method: "post",
       headers: {"Content-Type": "application/json"},
@@ -28,7 +28,7 @@ class TennisCard extends PureComponent {
         userID
       })
     }).then(res=>res.json()).then(res=>this.setState({userBalance:res[0].balance}))
-    this.setState({ betid: data._id, userid: userID });
+    this.setState({userid: userID,betid:this.props.data._id});
   }
   closegetamount = (event) => {
     this.setState({ getAmount: false });

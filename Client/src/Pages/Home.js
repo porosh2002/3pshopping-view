@@ -7,7 +7,7 @@ export default function Home() {
     return (
 <div>
 <Slider />
-<Cricket />
+ <Cricket />
 <Football />
 <Tennis />
 </div>

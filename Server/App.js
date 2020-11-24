@@ -49,10 +49,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // app.use(helmet());
 //
-// app.use(express.static(path.join(__dirname, 'build')));
-// app.get('/*', function (req, res) {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 app.post("/api/CricketBet", (req, res) => {
   const { betProject_id, betid, betprice, betamount, userid } = req.body;
   const Hashedemail= md5(userid)
@@ -895,21 +895,21 @@ app.get('/api/outmoney',(req,res)=>{
     }
   })
 })
-app.get('/api/cricket',(req,res)=>{
+app.post('/api/cricket',(req,res)=>{
   CricketModel.find({},(err,result)=>{
     if(result){
       res.json(result)
     }
   })
 })
-app.get('/api/football',(req,res)=>{
+app.post('/api/football',(req,res)=>{
   FootballModel.find({},(err,result)=>{
     if(result){
       res.json(result)
     }
   })
 })
-app.get("/api/tennis", (req, res) => {
+app.post("/api/tennis", (req, res) => {
   TennisModel.find({}, (err, result) => {
     if (result) {
       res.json(result);
