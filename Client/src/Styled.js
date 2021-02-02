@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {Link} from 'react-router-dom'
 export const Div = styled.div`
   text-align: center;
   margin:70px 0px;
@@ -9,8 +8,7 @@ export const Input = styled.input`
   display:block;
 margin:10px auto;
   width: 310px;
-  text-align:center;
-  padding: 0.5rem 5px;
+  padding: 0.375rem 5px;
   border: 1px solid grey;
   outline: none;
   border-radius: 3px;
@@ -26,11 +24,11 @@ border:none;
 display:block;
 margin:30px auto;
 font-size:18px;
-width:180px;
+width:150px;
 color:#f7f7f7;
-background-color:#7344f5;
+background-color:royalblue;
 cursor:pointer;
-padding:7px 0px;
+padding:5px 0px;
 border-radius:3px;
 transition:.3s;
 &:hover {
@@ -60,73 +58,4 @@ position:absolute;
 top:20px;
 right:30px;
 cursor:pointer;
-`;
-export const Footer = styled.div`
-padding:30px 0px;
-background-color:#29303b;
-text-align:center;
-`;
-export const FooterLink = styled.div`
-display:inline-block;
-margin:20px;
-`;
-export const FooterLinkStyle = styled(Link)`
-text-decoration:none;
-font-size:1rem;
-color:#d2d2d2;
-`;
-export const FooterLinkStyleSocial = styled(Link)`
-color:#d2d2d2;
-font-size:2rem;
-`;
-export const AdminMenu = styled.div`
-background-color:#444;
-text-align:center;
-padding-top:20px;
-`;
-export const AdminContent = styled.div`
-padding:50px 0px;
-text-align:center;
-`;
-export const AdminCTitle = styled.div`
-font-size:20px;
-color:#444;
-`;
-export const Select = styled.select`
-font-size:15px;
-outline:none;
-padding:5px 10px;
-color:#444;
-margin:30px 0px;
-border:1px solid #444;
-border-radius:3px;
-`;
-export const UserCard = styled.div`
-font-size:20px;
-color:#f7f7f7;
-padding:20px;
-display:inline-block;
-margin:30px;
-border-radius:3px;
-background-color:#29303b;
-`;
-export const TennisDIV = styled.div`
-background-color:#7344f580;
-text-align:center;
-padding:50px 20px;
-border:2px solid #000;
-`;
-export const TennisTitle = styled.p`
-font-size:2rem;
-color:#29303b;
-`;
-export const TennisTitleSub = styled.p`
-font-size:1.4rem;
-cursor:pointer;
-color:#f7f7f7;
-display:inline-block;
-margin:10px;
-width:120px;
-border-radius:3px;
-background-color:#29303b
 `;

@@ -16,13 +16,6 @@ const RegisterUserSchema = new mongoose.Schema({
         required:true,
         minlength:2,
     }
-    ,balance:{
-        type:Number,
-        required:true
-    }
-    ,clubname:{
-        type:String,
-    }
 });
 const RegisterUserModel = mongoose.model('User', RegisterUserSchema);
 module.exports = RegisterUserModel;

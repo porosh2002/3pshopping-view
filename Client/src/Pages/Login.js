@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Button, Input } from "../Styled";
 import { URL } from "../serverUrl";
-import {Link} from 'react-router-dom';
 import validator from "validator";
 import { connect } from "react-redux";
-import { setUser } from "../Redux/user/actions";
 import Error from "../Components/Error/Error";
+const mapDispatchToProps = (state) => {
+  return {};
+};
 class Login extends Component {
   constructor() {
     super();
@@ -33,12 +34,13 @@ class Login extends Component {
             password: password,
           }),
         }).then((res) => {
-          if (res.status === 200) {
-            res.json().then((res) => {
-              this.props.setUserID(res)
-            });
-          } else {
-            this.setState({ errorHappend: true });
+          if(res.status ===200){
+            res.json().then(res=>{
+              //! getting data succesfully
+            })
+          }
+          else{
+            this.setState({errorHappend:true})
           }
         });
       }
@@ -57,8 +59,8 @@ class Login extends Component {
         <div style={styleError}>
           <Error
             onClick={this.closeErrorDialog}
-            message0={" you submitted "}
-            message1={" incorrect information "}
+            message0={"something went ,"}
+            message1={" wrong "}
           />
         </div>
         <p className="title title-b">Login</p>
@@ -82,17 +84,9 @@ class Login extends Component {
             maxLength="32"
           />
           <Button type="submit" value="Login" />
-          <div style={{textAlign:"center"}}>
-          <Link to='/signup'>create new Account</Link>
-          </div>
         </form>
       </div>
     );
   }
 }
-const mapDispatchToProps = dispatch => {
-  return {
-    setUserID: (user) => dispatch(setUser(user)),
-  };
-};
 export default connect(null, mapDispatchToProps)(Login);

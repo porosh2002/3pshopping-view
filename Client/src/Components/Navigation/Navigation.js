@@ -1,21 +1,9 @@
-import React, { Component, Suspense } from "react";
-import './Navigation.css'
-const NavDesk = React.lazy(() => import("./NavDesk"));
-const NavMob = React.lazy(() => import("./NavMob"));
-export default class Navigation extends Component {
-render() {
+import React from 'react'
+
+export default function Navigation() {
     return (
-      <div className='navigation'>
-        {window.innerWidth >800 ? (
-          <Suspense fallback={<div></div>}>
-            <NavDesk />
-          </Suspense>
-        ) : (
-          <Suspense fallback={<div></div>}>
-            <NavMob />
-          </Suspense>
-        )}
-      </div>
+        <div>
+            <h1>Navigation</h1>
+        </div>
     )
-  }
 }
