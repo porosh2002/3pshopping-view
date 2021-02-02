@@ -5,8 +5,6 @@ import {connect} from 'react-redux';
 import Navigation from './Components/Navigation/Navigation';
 const Home = React.lazy(() => import("./Pages/Home"));
 const Error = React.lazy(() => import("./Pages/Error"));
-const Login = React.lazy(() => import("./Pages/Login"));
-const Signup = React.lazy(() => import("./Pages/Signup"));
 const mapStateToProps=state=>{
   return{
     userID:state.userID
@@ -20,8 +18,6 @@ class App extends Component {
         <Suspense fallback={<p>Loading...</p>}>
        <Switch>
        <Route exact path="/" component={Home}/>
-       <Route exact path="/Login" component={Login}/>
-       <Route exact path="/Signup" component={Signup}/>
        <Route component={Error}/>
       </Switch>
      </Suspense>
