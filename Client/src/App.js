@@ -8,7 +8,7 @@ const Error = React.lazy(() => import("./Pages/Error"));
 class App extends Component {
   render() {
     return (
-      <div>
+      <>
         <Navigation />
         <Suspense fallback={<p>Loading...</p>}>
        <Switch>
@@ -17,7 +17,7 @@ class App extends Component {
       </Switch>
      </Suspense>
      <Footer />
-      </div>
+      </>
     )
   }
 }
