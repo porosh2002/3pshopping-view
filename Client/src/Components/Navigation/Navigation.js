@@ -1,9 +1,21 @@
-import React from 'react'
-
-export default function Navigation() {
+import React, { Component, Suspense } from "react";
+import Loading from '../Loader/Loading'
+const NavDesk = React.lazy(() => import("./Desk"));
+const NavMob = React.lazy(() => import("./Mob"));
+export default class Navigation extends Component {
+render() {
     return (
-        <div>
-            <h1>Navigation</h1>
-        </div>
+      <>
+        {window.innerWidth >900 ? (
+          <Suspense fallback={<Loading />}>
+            <NavDesk />
+          </Suspense>
+        ) : (
+          <Suspense fallback={<Loading />}>
+            <NavMob />
+          </Suspense>
+        )}
+      </>
     )
+  }
 }
