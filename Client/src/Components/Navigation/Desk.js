@@ -10,18 +10,17 @@ export default function Desk() {
             <Link className='LogoLink' to='/'>
             Film Views
             </Link>
-            <nav>
-                <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/'>Movies</Link></li>
-                    <li><Link to='/'>Contact</Link></li>
-                    <li><Link to='/'>Advertise </Link></li>
-                    <li><Link to='/'>More</Link></li>
+                <ul className='NavContentUL'>
+                    <li><Link className='NavLinkDesk' to='/'>Home</Link></li>
+                    <li><Link className='NavLinkDesk' to='/'>Movies</Link></li>
+                    <li><Link className='NavLinkDesk' to='/'>Live Tv</Link></li>
+                    <li><Link className='NavLinkDesk' to='/'>Contact us</Link></li>
+                    <li><Link className='NavLinkDesk' to='/'>Advertise </Link></li>
+                    <li><Link className='NavLinkDesk' to='/'>More</Link></li>
                 </ul>
-            </nav>
             <div className='SearchWrap'>
 <div className='SearchContent'>
-<input className='SearchBox' type='search' placeholder='search...' />
+<input className='SearchBox' type='text' placeholder='search...' spellCheck='false' />
                 <div className='SearchIcon'>
                 <div className='SearchIconWrap'>
                 <BiSearchAlt />

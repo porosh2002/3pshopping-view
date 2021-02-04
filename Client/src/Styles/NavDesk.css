@@ -3,18 +3,22 @@
     width: 450px;
 }
 .SearchBox{
-    height:40px;
-    font-size:15px;
+    height:45px;
+    font-size:17px;
     padding: 0px 15px;
     outline: none;
-    width:400px;
+    width:350px;
     border: none;
     border-top-left-radius:3px;
     border-bottom-left-radius:3px;
-    color: #343a40;
-    font-weight:bold;
+    color: #fff;
+    background-color: #7980884d;
 }
-.SearchContent{
+.SearchBox::placeholder{
+    color: rgba(255, 255, 255, 0.555);
+    font-weight: normal;
+}
+.SearchContent,.NavContentUL{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +28,7 @@
     border-top-right-radius:3px;
     border-bottom-right-radius:3px;
     font-size:22px;
-    height:40px;
+    height:45px;
     color: #343a40;
     background-color: springgreen;
     padding:0px 15px;
@@ -34,5 +38,13 @@
     opacity:.8;
 }
 .SearchIconWrap{
-    margin-top:8px;
+    margin-top:10px;
+}
+.NavLinkDesk{
+    font-size:18px;
+    color: #ffff;
+    margin: 0px 15px;
+}
+.NavLinkDesk:hover{
+color: springgreen;
 }

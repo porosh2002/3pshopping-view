@@ -5,6 +5,7 @@
   font-family: 'Baloo 2', cursive;
   letter-spacing:.5px;
   list-style: none;
+  text-decoration: none;
 }
 body{
   background-color: #343a40;
@@ -25,7 +26,7 @@ justify-content: center;
 /* ** Navigation */
 @media screen and (min-width:900px){
   .Navigation{
-    padding:0px 50px;
+    padding:0px 30px;
   }
 }
 @media screen and (max-width:899px){
