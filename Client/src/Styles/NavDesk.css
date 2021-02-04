@@ -1,0 +1,39 @@
+/* Search Content */
+.SearchWrap{
+    width: 450px;
+}
+.SearchBox{
+    height:40px;
+    font-size:15px;
+    padding: 0px 15px;
+    outline: none;
+    width:400px;
+    border: none;
+    border-top-left-radius:3px;
+    border-bottom-left-radius:3px;
+    background-color: #3a3a3a;
+    color: #fff;
+}
+.SearchContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SearchIcon{
+    border: none;
+    border-top-right-radius:3px;
+    border-bottom-right-radius:3px;
+    font-size:22px;
+    height:40px;
+    color: #343a40;
+    background-color: springgreen;
+    padding:0px 15px;
+    cursor: pointer;
+}
+.SearchIcon:hover{
+    color:springgreen;
+    background-color: transparent;
+}
+.SearchIconWrap{
+    margin-top:8px;
+}
