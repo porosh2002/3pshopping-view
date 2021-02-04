@@ -4,6 +4,7 @@
   padding:0;
   font-family: 'Baloo 2', cursive;
   letter-spacing:.5px;
+  list-style: none;
 }
 body{
   background-color: #343a40;
@@ -34,10 +35,21 @@ justify-content: center;
 }
 /* ** Logo */
 @media screen and (min-width:900px){
-  .Logo{
-    height:60px;
-  }
-  .LogoLink{
-    height:60px;
-  }
+.LogoLink{
+  text-decoration: none;
+  padding:5px 20px;
+  border: 2px solid #00ff7f;
+  font-size:18px;
+  border-top-left-radius:3px;
+  border-bottom-left-radius:3px;
+  border-top-right-radius:20px;
+  border-bottom-right-radius:20px;
+  color: #fff;
+  transition:.3s;
+}
+.LogoLink:hover{
+  border: 2px solid #fff;
+  color: #00ff7f;
+  transition:.3s;
+}
 }
