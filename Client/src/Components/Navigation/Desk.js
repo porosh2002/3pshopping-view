@@ -14,8 +14,6 @@ export default function Desk() {
                     <li><Link className='NavLinkDesk' to='/'>Home</Link></li>
                     <li><Link className='NavLinkDesk' to='/'>Movies</Link></li>
                     <li><Link className='NavLinkDesk' to='/'>Live Tv</Link></li>
-                    <li><Link className='NavLinkDesk' to='/'>Contact us</Link></li>
-                    <li><Link className='NavLinkDesk' to='/'>Advertise </Link></li>
                     <li><Link className='NavLinkDesk' to='/'>More</Link></li>
                 </ul>
             <div className='SearchWrap'>
