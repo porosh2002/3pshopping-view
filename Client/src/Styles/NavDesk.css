@@ -1,13 +1,13 @@
 /* Search Content */
 .SearchWrap{
-    width: 650px;
+    width: 600px;
 }
 .SearchBox{
     height:42px;
     font-size:17px;
     padding: 0px 15px;
     outline: none;
-    width:650px;
+    width:600px;
     border: none;
     border-top-left-radius:3px;
     border-bottom-left-radius:3px;
@@ -47,4 +47,27 @@
 }
 .NavLinkDesk:hover{
 color: springgreen;
+}
+/* Movies Modal */
+.MoviesModal{
+    position: absolute;
+    padding: 30px 10px;
+    width:500px;
+    background-color: #282c34;
+    top: 100px;
+    left: 100px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+.ModalLink{
+    display: inline-block;
+    margin:5px 10px;
+}
+.ModalLink{
+    font-size: 17px;
+    color: #dfdfdf;
+    text-decoration: none;
+}
+.ModalLink:hover{
+    color:springgreen;
 }
