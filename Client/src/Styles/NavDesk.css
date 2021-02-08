@@ -1,13 +1,13 @@
 /* Search Content */
 .SearchWrap{
-    width: 600px;
+    width: 450px;
 }
 .SearchBox{
     height:42px;
     font-size:17px;
     padding: 0px 15px;
     outline: none;
-    width:600px;
+    width:450px;
     border: none;
     border-top-left-radius:3px;
     border-bottom-left-radius:3px;
@@ -41,7 +41,7 @@
     margin-top:9px;
 }
 .NavLinkDesk{
-    font-size:18px;
+    font-size:17px;
     color: #ffff;
     margin: 0px 15px;
 }
