@@ -1,13 +1,12 @@
 /* Search Content */
-.SearchWrap{
-    width: 450px;
+.SearchWrap,.SearchBox{
+    width: 550px;
 }
 .SearchBox{
-    height:42px;
+    height:40px;
     font-size:17px;
     padding: 0px 15px;
     outline: none;
-    width:450px;
     border: none;
     border-top-left-radius:3px;
     border-bottom-left-radius:3px;
@@ -28,17 +27,17 @@
     border-top-right-radius:3px;
     border-bottom-right-radius:3px;
     font-size:22px;
-    height:42px;
+    height:40px;
     color: #343a40;
-    background-color: springgreen;
-    padding:0px 15px;
+    background-color: mediumspringgreen;
+    padding:0px 20px;
     cursor: pointer;
 }
 .SearchIcon:hover{
-    opacity:.8;
+opacity:.8;
 }
 .SearchIconWrap{
-    margin-top:9px;
+    margin-top:8px;
 }
 .NavLinkDesk{
     font-size:17px;
@@ -46,7 +45,7 @@
     margin: 0px 15px;
 }
 .NavLinkDesk:hover{
-color: springgreen;
+color: mediumspringgreen;
 }
 /* Movies Modal */
 .MoviesModal{
@@ -69,5 +68,5 @@ color: springgreen;
     text-decoration: none;
 }
 .ModalLink:hover{
-    color:springgreen;
+    color:mediumspringgreen;
 }

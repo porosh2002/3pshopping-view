@@ -39,18 +39,13 @@ justify-content: center;
 .LogoLink{
   text-decoration: none;
   padding:5px 20px;
-  border: 2px solid #00ff7f;
+  border: 2px solid mediumspringgreen;
   font-size:18px;
   border-top-left-radius:3px;
   border-bottom-left-radius:3px;
   border-top-right-radius:20px;
   border-bottom-right-radius:20px;
   color: #fff;
-  transition:.3s;
-}
-.LogoLink:hover{
-  border: 2px solid #fff;
-  color: #00ff7f;
   transition:.3s;
 }
 }
