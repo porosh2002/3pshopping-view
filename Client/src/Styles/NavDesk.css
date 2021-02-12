@@ -29,7 +29,7 @@
     font-size:22px;
     height:40px;
     color: #343a40;
-    background-color: mediumspringgreen;
+    background-color: #00fa9a;
     padding:0px 20px;
     cursor: pointer;
 }
@@ -46,27 +46,4 @@ opacity:.8;
 }
 .NavLinkDesk:hover{
 color: mediumspringgreen;
-}
-/* Movies Modal */
-.MoviesModal{
-    position: absolute;
-    padding: 30px 10px;
-    width:500px;
-    background-color: #282c34;
-    top: 100px;
-    left: 100px;
-    border-bottom-left-radius:5px;
-    border-bottom-right-radius:5px;
-}
-.ModalLink{
-    display: inline-block;
-    margin:5px 10px;
-}
-.ModalLink{
-    font-size: 17px;
-    color: #dfdfdf;
-    text-decoration: none;
-}
-.ModalLink:hover{
-    color:mediumspringgreen;
 }

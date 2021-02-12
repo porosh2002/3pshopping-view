@@ -38,14 +38,12 @@ justify-content: center;
 @media screen and (min-width:900px){
 .LogoLink{
   text-decoration: none;
-  padding:5px 20px;
-  border: 2px solid mediumspringgreen;
-  font-size:18px;
-  border-top-left-radius:3px;
-  border-bottom-left-radius:3px;
-  border-top-right-radius:20px;
-  border-bottom-right-radius:20px;
+  font-size:25px;
   color: #fff;
-  transition:.3s;
+  display: flex;
+  align-items: center; 
+  color: #00fa9a;
+}.LogoIcon{
+  font-size:50px;
 }
 }
