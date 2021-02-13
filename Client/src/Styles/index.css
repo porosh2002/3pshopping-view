@@ -23,18 +23,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* ** Navigation */
-/* @media screen and (min-width:1100px){
-  .Navigation{
-    padding:0px 30px;
-  }
-}
-@media screen and (max-width:1099px){
-  .Navigation{
-    padding:0px 50px;
-  }
-} */
-/* ** Logo */
+/* Logo */
 .LogoLink {
   text-decoration: none;
   color: #fff;
@@ -56,8 +45,5 @@ body {
   }
   .LogoIcon {
     font-size: 35px;
-  }
-  .Bars {
-    font-size: 22px;
   }
 }

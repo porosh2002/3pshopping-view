@@ -23,3 +23,14 @@ export const Navigation = styled.div`
     top:0;
     padding:0px 30px;
 `;
+// Mobile Menu
+export const MobileMenu = styled.div`
+height:300px;
+width:100vw;
+position:fixed;
+top:90px;
+left:0;
+border-bottom-right-radius:10px;
+border-bottom-left-radius:10px;
+`;
+
