@@ -1,7 +1,7 @@
-@media screen and (min-width:1100px){
+@media screen and (min-width:1280px){
 /* Search Content */
 .SearchWrap,.SearchBox{
-    width: 400px;
+    width: 380px;
 }
 .SearchBox{
     height:40px;
@@ -41,7 +41,7 @@ opacity:.8;
     margin-top:8px;
 }
 .NavLinkDesk{
-    font-size:17px;
+    font-size:19px;
     color: #ffff;
     margin: 0px 15px;
 }
