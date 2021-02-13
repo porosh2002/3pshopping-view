@@ -1,6 +1,6 @@
 /* Search Content */
 .SearchWrap,.SearchBox{
-    width: 550px;
+    width: 400px;
 }
 .SearchBox{
     height:40px;
@@ -30,7 +30,7 @@
     height:40px;
     color: #343a40;
     background-color: #00fa9a;
-    padding:0px 20px;
+    padding:0px 15px;
     cursor: pointer;
 }
 .SearchIcon:hover{
