@@ -6,7 +6,7 @@ export default class Navigation extends Component {
 render() {
     return (
       <>
-        {window.innerWidth >900 ? (
+        {window.innerWidth >1099 ? (
           <Suspense fallback={<Loading />}>
             <NavDesk />
           </Suspense>

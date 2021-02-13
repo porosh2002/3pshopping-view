@@ -19,4 +19,7 @@ export const Navigation = styled.div`
     display:flex;
     justify-content:space-between;
     align-items:center;
+    position:sticky;
+    top:0;
+    padding:0px 30px;
 `;

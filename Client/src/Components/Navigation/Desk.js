@@ -3,17 +3,12 @@ import "../../Styles/NavDesk.css";
 import { Navigation } from "../../Styles/Styled";
 import { Link } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
-import { GiFilmProjector } from "react-icons/gi";
+import Logo from '../Logo/Logo'
 export default class Desk extends Component {
   render() {
     return (
       <Navigation className="Navigation">
-        <Link className="LogoLink" to="/">
-          <div className="LogoIcon">
-            <GiFilmProjector />
-          </div>
-          Film Views
-        </Link>
+<Logo />
         <ul className="NavContentUL">
           <li>
             <Link className="NavLinkDesk" to="/">
