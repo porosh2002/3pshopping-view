@@ -18,7 +18,7 @@
     color: rgba(255, 255, 255, 0.555);
     font-weight: normal;
 }
-.SearchContent,.NavContentUL{
+.SearchContent,.mainLink{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,5 +47,18 @@ opacity:.8;
 }
 .NavLinkDesk:hover{
 color: mediumspringgreen;
+}
+/* More Menu */
+.MoreMenu{
+display: block;
+margin:0px auto;
+text-align: right;
+background-color: #444;
+}
+.MoreMenu li{
+margin: 5px 0px;
+}
+.NavContentUL{
+    margin:110px 0px 0px 0px;
 }
 }

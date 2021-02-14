@@ -10,7 +10,8 @@ export default class Desk extends Component {
       <Navigation className="Navigation">
 <Logo />
         <ul className="NavContentUL">
-          <li>
+<div className='mainLink'>
+<li>
             <Link className="NavLinkDesk" to="/">
               Home
             </Link>
@@ -40,6 +41,24 @@ export default class Desk extends Component {
               More
             </Link>
           </li>
+</div>
+        <div className='MoreMenu'>
+          <li>
+            <Link className="NavLinkDesk" to="/">
+              Request
+            </Link>
+          </li>
+<li>
+            <Link className="NavLinkDesk" to="/">
+              About us
+            </Link>
+          </li>
+          <li>
+            <Link className="NavLinkDesk" to="/">
+              Contact us
+            </Link>
+          </li>
+</div>
         </ul>
         <div className="SearchWrap">
           <div className="SearchContent">
