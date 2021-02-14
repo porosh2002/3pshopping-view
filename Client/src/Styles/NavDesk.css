@@ -50,15 +50,19 @@ color: mediumspringgreen;
 }
 /* More Menu */
 .MoreMenu{
-display: block;
-margin:0px auto;
-text-align: right;
+display: flex;
+justify-content:center;
+background: url('../Images/black-linen.png');
 background-color: #444;
+padding:10px 0px;
+margin: 10px 0px;
+border-radius:5px;
 }
 .MoreMenu li{
-margin: 5px 0px;
+margin:5px;
+align-items: right;
 }
 .NavContentUL{
-    margin:110px 0px 0px 0px;
+    margin:85px 0px 0px 0px;
 }
 }

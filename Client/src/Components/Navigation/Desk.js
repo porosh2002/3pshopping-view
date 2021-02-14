@@ -45,6 +45,16 @@ export default class Desk extends Component {
         <div className='MoreMenu'>
           <li>
             <Link className="NavLinkDesk" to="/">
+              Subtitle
+            </Link>
+          </li>
+          <li>
+            <Link className="NavLinkDesk" to="/">
+              DMCA
+            </Link>
+          </li>
+          <li>
+            <Link className="NavLinkDesk" to="/">
               Request
             </Link>
           </li>
