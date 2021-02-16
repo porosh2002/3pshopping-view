@@ -5,6 +5,7 @@
     }
     .Bars {
       font-size: 25px;
+      margin-top:15px;
     }
     .MobileMenu{
         display: block;
@@ -14,6 +15,7 @@
     }
     .SearchIcon{
       font-size:30px;
+      margin-top:20px;
     }
   }
   

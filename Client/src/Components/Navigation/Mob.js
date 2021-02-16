@@ -20,10 +20,10 @@ export default class Mob extends Component {
         const NavStyle = NavOpen ? null : ({display:"none"})
         return (
             <Navigation>
-            <Logo />
         <div onClick={this.ChnageNavStatus} className='Bars'>
         {NavOpen ? <FaTimes /> : <FaBars />}
         </div>
+            <Logo />
         <div className='SearchIcon'><BiSearchAlt /></div>
         <MobileMenu style={NavStyle} className='MobileMenu'>
         <div className='CenterAbs'>
