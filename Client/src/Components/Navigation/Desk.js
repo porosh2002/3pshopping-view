@@ -6,6 +6,7 @@ import { BiSearchAlt } from "react-icons/bi";
 import Logo from '../Logo/Logo'
 export default class Desk extends Component {
   render() {
+
     return (
       <Navigation className="Navigation">
 <Logo />
@@ -18,7 +19,6 @@ export default class Desk extends Component {
           </li>
           <li>
             <Link
-              onMouseEnter={this.ChangeMenuStatus}
               className="NavLinkDesk"
               to="/"
             >
@@ -38,34 +38,7 @@ export default class Desk extends Component {
           </li>
           <li>
             <Link className="NavLinkDesk" to="/">
-              More
-            </Link>
-          </li>
-</div>
-        <div className='MoreMenu'>
-          <li>
-            <Link className="NavLinkDesk" to="/">
-              Subtitle
-            </Link>
-          </li>
-          <li>
-            <Link className="NavLinkDesk" to="/">
-              DMCA
-            </Link>
-          </li>
-          <li>
-            <Link className="NavLinkDesk" to="/">
               Request
-            </Link>
-          </li>
-<li>
-            <Link className="NavLinkDesk" to="/">
-              About us
-            </Link>
-          </li>
-          <li>
-            <Link className="NavLinkDesk" to="/">
-              Contact us
             </Link>
           </li>
 </div>

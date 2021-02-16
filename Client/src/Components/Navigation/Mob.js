@@ -4,7 +4,7 @@ import {FaBars,FaTimes} from 'react-icons/fa'
 import Logo from '../Logo/Logo'
 import '../../Styles/NavMob.css'
 import { Link } from 'react-router-dom';
-
+import {BiSearchAlt} from 'react-icons/bi'
 export default class Mob extends Component {
     ChnageNavStatus=()=>{
         this.setState({NavOpen:!this.state.NavOpen})
@@ -24,13 +24,14 @@ export default class Mob extends Component {
         <div onClick={this.ChnageNavStatus} className='Bars'>
         {NavOpen ? <FaTimes /> : <FaBars />}
         </div>
+        <div className='SearchIcon'><BiSearchAlt /></div>
         <MobileMenu style={NavStyle} className='MobileMenu'>
         <div className='CenterAbs'>
             <Link to='#' className='MobileMenu'>Home</Link>
             <Link to='#' className='MobileMenu'>Browse Movies</Link>
             <Link to='#' className='MobileMenu'>Tv Series</Link>
             <Link to='#' className='MobileMenu'>Live Tv</Link>
-            <Link to='#' className='MobileMenu'>More</Link>
+            <Link to='#' className='MobileMenu'>Request</Link>
         </div>
         </MobileMenu>
                 </Navigation>
