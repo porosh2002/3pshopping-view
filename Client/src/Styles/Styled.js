@@ -22,6 +22,7 @@ export const Navigation = styled.div`
     position:sticky;
     top:0;
     padding:0px 30px;
+    z-index:999999;
 `;
 // Mobile Menu
 export const MobileMenu = styled.div`
@@ -33,4 +34,11 @@ left:0;
 border-bottom-right-radius:10px;
 border-bottom-left-radius:10px;
 `;
+// error Image & Div
+export const ErrorDiv = styled.div`
+text-align:center;
+background-color: #fff;
+padding:100px 0px;
+`;
+
 

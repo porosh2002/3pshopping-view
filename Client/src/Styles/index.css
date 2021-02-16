@@ -47,4 +47,20 @@ body {
   .LogoIcon {
     font-size: 35px;
   }
+  /* Error Image */
+  .ErrorImage{
+    height: 300px;
+  }
+}
+/* Error BTN */
+.ErrorBtn{
+  padding: 10px 50px;
+  border-radius:3px;
+  background-color: #282c34;
+  color: #fff;
+  font-weight:500;
+  font-size:17px;
+}
+.ErrorBtn:hover{
+opacity: .9;
 }
