@@ -22,7 +22,6 @@ export default class Desk extends Component {
               className="NavLinkDesk"
               to="/"
             >
-              {" "}
               Browse Movies
             </Link>
           </li>
