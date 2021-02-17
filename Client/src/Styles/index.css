@@ -64,3 +64,13 @@ body {
 .ErrorBtn:hover{
 opacity: .9;
 }
+/* Title */
+.TitleDiv{
+  padding:30px 35px;
+  font-size: 25px;
+  letter-spacing:.5px;
+}
+.TitleText{
+  padding-bottom: 5px;
+  border-bottom: 2px solid springgreen;
+}
