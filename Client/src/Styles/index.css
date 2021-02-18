@@ -76,18 +76,16 @@ opacity: .9;
 }
 /* Footer */
 .Footer{
-  padding:10px 30px;
+  padding:20px 30px;
   text-align: center;
   background-color: #282c34;
   color: #cfcfcf;
 }
 .FooterContent{
   display: inline-block;
-  margin: 30px 50px;
+  margin: 30px;
 }
-.FooterLinkContent{
-  max-width: 400px;
-}
+
 .NavLinkFooter{
   font-size: 17px;
   text-decoration: none;
@@ -112,4 +110,18 @@ opacity: .9;
   display: inline-block;
   margin:15px 10px;
   color: #cfcfcf;
+}
+@media screen and (max-width: 1279px) {
+  .FooterTitle{
+  text-align: center;
+  }
+  .NavLinkFooter{
+    margin:5px;
+  }
+  .FooterContent{
+    margin:20px 10px;
+ }
+ .FooterLinkContent{
+   width:85vw;
+ }
 }
