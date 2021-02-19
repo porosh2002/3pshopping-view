@@ -5,7 +5,7 @@ export default class Browse extends Component {
         return (
             <div>
                 <form className='BrowseSearch'>
-                <input spellCheck='false' className='BrowseSearchInput' type='text'/>
+                <input spellCheck='false' placeholder='Movie name' className='BrowseSearchInput' type='text'/>
                 <input value='Search' className='BrowseSearchBtn' type='submit' />
                 </form>
             </div>

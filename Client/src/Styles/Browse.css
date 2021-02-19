@@ -18,6 +18,9 @@
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
+.BrowseSearchInput::placeholder{
+    color: rgba(68, 68, 68, 0.589);
+}
 .BrowseSearchBtn {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
