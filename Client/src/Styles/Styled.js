@@ -23,6 +23,7 @@ export const Navigation = styled.div`
     top:0;
     padding:0px 30px;
     z-index:999999;
+    background-color: #343a40;
 `;
 // Mobile Menu
 export const MobileMenu = styled.div`
