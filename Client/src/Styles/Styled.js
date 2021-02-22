@@ -43,16 +43,14 @@ padding:100px 0px;
 `;
 // Input
 export const Input = styled.input`
-margin:10px auto;
+margin-bottom:10px;
 font-size:15px;
 padding:10px;
-border-radius:3px;
 border:none;
 outline:none;
-border:1.5px solid #444;
+border:1.5px solid #aaa;
 font-weight:600;
 letter-spacing:0.5px;
-display:block;
 `;
 
 

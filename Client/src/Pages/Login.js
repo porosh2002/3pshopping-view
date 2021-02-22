@@ -10,8 +10,10 @@ class Login extends Component {
             <div className='LoginDiv'>
                 <p className='FormHeader'>Login</p>
                 <form className='LoginForm'>
-                    <Form placeHolder='Email :' name='LoginEmail'/>
-                    <Form placeHolder='password :' name='LoginPassword'/>
+                    <p className='FormLabel'>Email : </p>
+                    <Form placeHolder='email here' name='LoginEmail'/>
+                    <p className='FormLabel'>password : </p>
+                    <Form placeHolder='password' name='LoginPassword'/>
                 </form>
             </div>
         )

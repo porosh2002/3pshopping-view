@@ -4,3 +4,9 @@
     color: #343a40  !important;
     text-align: center;
 }
+.FormLabel{
+    text-align: left;
+    font-weight:600;
+    color: #444;
+    margin-bottom:2px;
+}
