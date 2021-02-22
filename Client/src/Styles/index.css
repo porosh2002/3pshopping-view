@@ -141,3 +141,11 @@ opacity: .9;
   width:375px;
   margin: 70px auto;
 }
+@media screen and (max-width:1279px){
+  .Form{
+    width:260px;
+  }
+  .LoginForm{
+    width:285px
+  }
+}

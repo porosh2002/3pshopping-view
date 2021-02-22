@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Button from '../Components/Button/Button';
 import Form from '../Components/Form/Form'
 import '../Styles/Login.css'
 class Login extends Component {
@@ -11,9 +12,10 @@ class Login extends Component {
                 <p className='FormHeader'>Login</p>
                 <form className='LoginForm'>
                     <p className='FormLabel'>Email : </p>
-                    <Form placeHolder='email here' name='LoginEmail'/>
+                    <Form placeHolder='email here' type='email' name='LoginEmail'/>
                     <p className='FormLabel'>password : </p>
-                    <Form placeHolder='password' name='LoginPassword'/>
+                    <Form placeHolder='password' type='password' name='LoginPassword'/>
+                    <Button value='Login'/>
                 </form>
             </div>
         )

@@ -8,10 +8,10 @@ export const Loader = styled.div`
     font-size:25px;
     color:#fff;
     text-align:center;
-    `;
+    `
 export const LoaderImage = styled.img`
     height:90px;
-    `;
+    `
 // ** Navigation
 export const Navigation = styled.div`
     height:100px;
@@ -24,7 +24,7 @@ export const Navigation = styled.div`
     padding:0px 30px;
     z-index:999999;
     background-color: #343a40;
-`;
+`
 // Mobile Menu
 export const MobileMenu = styled.div`
 height:300px;
@@ -34,13 +34,13 @@ top:90px;
 left:0;
 border-bottom-right-radius:10px;
 border-bottom-left-radius:10px;
-`;
+`
 // error Image & Div
 export const ErrorDiv = styled.div`
 text-align:center;
 background-color: #fff;
 padding:100px 0px;
-`;
+`
 // Input
 export const Input = styled.input`
 margin-bottom:10px;
@@ -51,6 +51,22 @@ outline:none;
 border:1.5px solid #aaa;
 font-weight:600;
 letter-spacing:0.5px;
-`;
+`
+// Submit Button
+export const Button = styled.input`
+margin:20px 0px;
+font-size:17px;
+background-color:#343a40;
+color:#fff;
+width:100%;
+padding:10px 0px;
+outline:none;
+border:none;
+cursor: pointer;
+border-radius:2px;
+&:hover{
+    opacity:.9;
+}
+`
 
 
