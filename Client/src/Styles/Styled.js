@@ -41,5 +41,18 @@ text-align:center;
 background-color: #fff;
 padding:100px 0px;
 `;
+// Input
+export const Input = styled.input`
+margin:10px auto;
+font-size:15px;
+padding:10px;
+border-radius:3px;
+border:none;
+outline:none;
+border:1.5px solid #444;
+font-weight:600;
+letter-spacing:0.5px;
+display:block;
+`;
 
 

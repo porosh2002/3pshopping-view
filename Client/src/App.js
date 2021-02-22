@@ -4,8 +4,11 @@ import Footer from './Components/Footer/Footer';
 import Navigation from './Components/Navigation/Navigation';
 import Loading from './Components/Loader/Loading'
 const Home = React.lazy(() => import("./Pages/Home"));
-const Error = React.lazy(() => import("./Pages/Error"));
+const ErrorPage = React.lazy(() => import("./Pages/Error"));
 const BrowseMovie = React.lazy(() => import("./Pages/BrowseMovie"));
+const Upload = React.lazy(() => import("./Pages/Upload"));
+const Login = React.lazy(() => import("./Pages/Login"));
+const Signup = React.lazy(() => import("./Pages/Signup"));
 
 class App extends Component {
   render() {
@@ -16,7 +19,10 @@ class App extends Component {
        <Switch>
        <Route exact path="/" component={Home}/>
        <Route exact path="/browse" component={BrowseMovie}/>
-       <Route component={Error}/>
+       <Route exact path="/upload" component={Upload}/>
+       <Route exact path="/login" component={Login}/>
+       <Route exact path="/signup" component={Signup}/>
+       <Route component={ErrorPage}/>
       </Switch>
      </Suspense>
      <Footer />
