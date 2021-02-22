@@ -1,7 +1,7 @@
 @media screen and (max-width:1279px) {
     .MobileMenu{
         background: url('../Images/black-linen.png');
-        background-color: #444;
+        background-color: #343a40;
     }
     .Bars {
       font-size: 25px;

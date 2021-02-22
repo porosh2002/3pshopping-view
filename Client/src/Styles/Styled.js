@@ -27,13 +27,11 @@ export const Navigation = styled.div`
 `
 // Mobile Menu
 export const MobileMenu = styled.div`
-height:300px;
+height:450px;
 width:100vw;
 position:fixed;
 top:90px;
 left:0;
-border-bottom-right-radius:10px;
-border-bottom-left-radius:10px;
 `
 // error Image & Div
 export const ErrorDiv = styled.div`

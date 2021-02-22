@@ -32,6 +32,8 @@ export default class Mob extends Component {
             <Link to='#' className='MobileMenu'>Tv Series</Link>
             <Link to='#' className='MobileMenu'>Live Tv</Link>
             <Link to='#' className='MobileMenu'>Request</Link>
+            <Link to='/login' className='MobileMenu'>Login</Link>
+            <Link to='#' className='MobileMenu'>Signup</Link>
         </div>
         </MobileMenu>
                 </Navigation>
