@@ -27,13 +27,13 @@ export default class Mob extends Component {
         <div className='SearchIcon'><BiSearchAlt /></div>
         <MobileMenu style={NavStyle} className='MobileMenu'>
         <div className='CenterAbs'>
-            <Link to='#' className='MobileMenu'>Home</Link>
-            <Link to='#' className='MobileMenu'>Browse Movies</Link>
-            <Link to='#' className='MobileMenu'>Tv Series</Link>
-            <Link to='#' className='MobileMenu'>Live Tv</Link>
-            <Link to='#' className='MobileMenu'>Request</Link>
-            <Link to='/login' className='MobileMenu'>Login</Link>
-            <Link to='#' className='MobileMenu'>Signup</Link>
+            <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Home</Link>
+            <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Browse Movies</Link>
+            <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Tv Series</Link>
+            <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Live Tv</Link>
+            <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Request</Link>
+            <Link to='/login' onClick={this.LinkClicked} className='MobileMenu'>Login</Link>
+            <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Signup</Link>
         </div>
         </MobileMenu>
                 </Navigation>
