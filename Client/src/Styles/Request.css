@@ -1,0 +1,22 @@
+.Request{
+    padding:70px 0px;
+    margin:0px 5vw;
+}
+.Request p{
+margin: 15px 0px;
+font-size:25px;
+}
+.Request textarea{
+    height: 40px;
+    padding:15px;
+    width:90%;
+    outline: none;
+    border-radius:3px;
+    font-weight:600;
+}
+.Request input{
+    background-color: springgreen;
+    color: #343a40;
+    font-weight: 600;
+    width: 250px;
+}

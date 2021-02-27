@@ -9,6 +9,7 @@ const BrowseMovie = React.lazy(() => import("./Pages/BrowseMovie"));
 const Upload = React.lazy(() => import("./Pages/Upload"));
 const Login = React.lazy(() => import("./Pages/Login"));
 const Signup = React.lazy(() => import("./Pages/Signup"));
+const Request = React.lazy(() => import("./Pages/Request"));
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
        <Route exact path="/browse" component={BrowseMovie}/>
        <Route exact path="/upload" component={Upload}/>
        <Route exact path="/login" component={Login}/>
+       <Route exact path="/Request" component={Request}/>
        <Route exact path="/signup" component={Signup}/>
        <Route component={ErrorPage}/>
       </Switch>

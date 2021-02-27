@@ -36,7 +36,7 @@ export default class Desk extends Component {
             </Link>
           </li>
           <li>
-            <Link className="NavLinkDesk" to="/">
+            <Link className="NavLinkDesk" to="/Request">
               Request
             </Link>
           </li>

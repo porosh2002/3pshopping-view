@@ -31,7 +31,7 @@ export default class Mob extends Component {
             <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Browse Movies</Link>
             <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Tv Series</Link>
             <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Live Tv</Link>
-            <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Request</Link>
+            <Link to='/Request' onClick={this.LinkClicked} className='MobileMenu'>Request</Link>
             <Link to='/login' onClick={this.LinkClicked} className='MobileMenu'>Login</Link>
             <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Signup</Link>
         </div>
