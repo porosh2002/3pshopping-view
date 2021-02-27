@@ -12,9 +12,9 @@ class Login extends Component {
                 <p className='FormHeader'>Login</p>
                 <form className='LoginForm'>
                     <p className='FormLabel'>Email : </p>
-                    <Form placeHolder='email here' type='email' name='LoginEmail'/>
+                    <Form minlen='12' maxlen='50' placeHolder='email here' type='email' name='LoginEmail'/>
                     <p className='FormLabel'>password : </p>
-                    <Form placeHolder='password' type='password' name='LoginPassword'/>
+                    <Form minlen='12' maxlen='50' placeHolder='password' type='password' name='LoginPassword'/>
                     <Button value='Login'/>
                 </form>
             </div>
