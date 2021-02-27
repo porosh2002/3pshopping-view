@@ -148,3 +148,15 @@ opacity: .9;
     width:285px
   }
 }
+/* Signup Page Checkbox */
+.checkBoxSignup{
+  display: flex;
+  justify-content:space-between;
+}
+.checkBoxSignup input{
+margin: 7px 0px 0px 10px;
+}
+.checkBoxSignup p{
+font-weight: 600;
+width:90%;
+}

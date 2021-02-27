@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../Components/Button/Button';
+import {Link} from 'react-router-dom'
 import Form from '../Components/Form/Form'
 import '../Styles/Login.css'
 class Login extends Component {
@@ -19,6 +20,11 @@ class Login extends Component {
                     <Form minlen='7' maxlen='150' placeHolder='password' type='password' name='LoginPassword'/>
                     <p className='FormLabel'>confirm password : </p>
                     <Form minlen='7' maxlen='150' placeHolder='password' type='password' name='LoginPassword'/>
+                    <div className='checkBoxSignup'>
+                    <input required type='checkbox'/>
+                    <p>
+By clicking Register, you agree to our <Link to='#'>Terms and Conditions</Link></p>
+                    </div>
                     <Button value='Create Account'/>
                 </form>
             </div>
