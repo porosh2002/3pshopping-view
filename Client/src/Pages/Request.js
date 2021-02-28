@@ -7,10 +7,14 @@ export class Request extends Component {
             <div className='Request'>
                 <p>Request</p>
 <form>
-<textarea required placeholder='Name : ' autoFocus></textarea>
+<textarea required placeholder='movie name / tv series name / live tv channel name : ' autoFocus></textarea>
 <Button value='Request' />
 </form>
-            </div>
+<p>Other Ways to Request via Email</p>
+<span>jamilkashem@zoho.com</span>
+<span>asif1999@gmail.com</span>
+<span>xyz@outlook.com</span>
+</div>
         )
     }
 }
