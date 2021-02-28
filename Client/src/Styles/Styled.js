@@ -66,5 +66,3 @@ border-radius:2px;
     opacity:.9;
 }
 `
-
-

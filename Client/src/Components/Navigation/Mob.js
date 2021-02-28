@@ -28,7 +28,7 @@ export default class Mob extends Component {
         <MobileMenu style={NavStyle} className='MobileMenu'>
         <div className='CenterAbs'>
             <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Home</Link>
-            <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Browse Movies</Link>
+            <Link to='/browse' onClick={this.LinkClicked} className='MobileMenu'>Browse Movies</Link>
             <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Tv Series</Link>
             <Link to='#' onClick={this.LinkClicked} className='MobileMenu'>Live Tv</Link>
             <Link to='/Request' onClick={this.LinkClicked} className='MobileMenu'>Request</Link>

@@ -1,42 +1,40 @@
-.BrowseSearch {
-  margin: 70px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.BrowseSearchBar{
+  width:100%;
 }
-.BrowseSearchInput,
-.BrowseSearchBtn {
-  font-size: 16px;
-  padding: 0px 15px;
-  font-weight: 600;
+@media screen and (min-width:1280px){
+  .Browse{
+    margin:70px;
+  }
+}
+@media screen and (max-width:1279px){
+  .Browse{
+    margin: 50px 20px;
+  }
+}
+.BrowseSearchBar{
   outline: none;
-  height: 45px;
+  font-size:17px;
+  padding:10px;
+  font-weight: 600;
+  border-radius:3px;
   border: none;
+  margin: 10px 0px;
+  
 }
-.BrowseSearchInput {
-  width:50%;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+.BrowseSearchBar::placeholder{
+font-weight: normal;
 }
-.BrowseSearchInput::placeholder{
-    color: rgba(68, 68, 68, 0.589);
+.BrowseTitle{
+  font-size: 20px;
+  color: #aaa;
 }
-.BrowseSearchBtn {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  width: 200px;
-  background-color: #00fa9a;
-  color: #444;
-  cursor: pointer;
-}
-.BrowseSearchBtn:hover {
-  opacity: 0.7;
-}
-@media screen and (max-width: 1279px) {
-  .BrowseSearchBtn {
-    width: 100px;
-  }
-  .BrowseSearchInput {
-    width: 60%;
-  }
+.Browse select{
+  display: inline-block;
+  margin: 15px 5px 15px 0px;
+  font-weight:600;
+  font-size:17px;
+  padding:5px 50px;
+  outline: none;
+  border: none;
+  border-radius:3px;
 }
