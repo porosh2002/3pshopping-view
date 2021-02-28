@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../Components/Button/Button';
+import Social from '../Components/Social/Social';
 import '../Styles/Request.css'
 export class Request extends Component {
     render() {
@@ -10,10 +11,10 @@ export class Request extends Component {
 <textarea required placeholder='movie name / tv series name / live tv channel name : ' autoFocus></textarea>
 <Button value='Request' />
 </form>
-<p>Other Ways to Request via Email</p>
+<p>Other Ways to Request</p>
 <span>jamilkashem@zoho.com</span>
 <span>asif1999@gmail.com</span>
-<span>xyz@outlook.com</span>
+<Social />
 </div>
         )
     }

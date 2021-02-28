@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment';
-import {AiFillFacebook,AiFillYoutube} from 'react-icons/ai'
-import {FaTwitter,FaTelegramPlane} from 'react-icons/fa'
-import {AiFillInstagram} from 'react-icons/ai'
 import Logo from '../Logo/Logo'
+import Social from '../Social/Social';
 export default function Footer() {
     return (
         <div className='Footer'>
@@ -34,11 +32,7 @@ export default function Footer() {
                 </p>
             </div>
             <div className='FooterContent'>
-            <Link to='' className='SocialLinkFooter'><AiFillFacebook /></Link>
-            <Link to='' className='SocialLinkFooter'><FaTwitter /></Link>
-            <Link to='' className='SocialLinkFooter'><AiFillInstagram /></Link>
-            <Link to='' className='SocialLinkFooter'><FaTelegramPlane /></Link>
-            <Link to='' className='SocialLinkFooter'><AiFillYoutube /></Link>
+<Social />
             </div>
             <p>© 2021-{moment().format("YYYY")} Film Views</p>
         </div>
