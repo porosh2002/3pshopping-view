@@ -6,7 +6,8 @@
   font-weight: 600;
   border-radius:3px;
   border: none;
-  margin: 10px 0px;
+  margin: 10px auto;
+  display: block;
   
 }
 .BrowseSearchBar::placeholder{
@@ -15,7 +16,8 @@ font-weight: normal;
 .BrowseTitle{
   font-size: 20px;
   color: #aaa;
-  margin-top:20px;
+  margin:20px 0px 0px 5px;
+  text-align: left;
 }
 .Browse select,option{
   margin: 15px 5px 15px 0px;
@@ -38,14 +40,20 @@ font-weight: normal;
     margin:15px 20px 15px 0px;
   }
 }
-/* @media screen and (max-width:1279px){
+@media screen and (max-width:1279px){
   .Browse{
     margin: 50px 20px;
   }
-  .SelectsBrowse{
-    display:block
+  .BrowseSearchBar{
+    width:90%;
+    
   }
-} */
+}
+@media screen and (max-width:500px){
+  .Browse select,option{
+    width:300px;
+  }
+}
 .Browse select{
 appearance: none;
 background: url(../Images/selectIcom.png) no-repeat left 94.5% center/15px 15px;
