@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Form from "../Components/Form/Form";
-import { Button } from "../Styles/Styled";
+import DropThumb from '../Components/Dropzone/Dropjone'
+// import { Button } from "../Styles/Styled";
 import "../Styles/upload.css";
 class Upload extends Component {
   render() {
@@ -18,7 +19,8 @@ class Upload extends Component {
           </div>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Image : </p>
-            <input type='file' className='ImageInput' />
+            <DropThumb />
+            {/* <input type='file' className='ImageInput' /> */}
           </div>
         </form>
       </div>
