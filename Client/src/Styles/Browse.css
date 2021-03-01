@@ -1,7 +1,5 @@
 .BrowseSearchBar{
   width:100%;
-}
-.BrowseSearchBar{
   outline: none;
   font-size:17px;
   padding:10px;
@@ -29,28 +27,31 @@ font-weight: normal;
   border-radius:3px;
   width:200px;
 }
+.SelectWraper{
+  display: inline-block;
+}
 @media screen and (min-width:1280px){
   .Browse{
     margin:70px;
-  }
-  .SelectsBrowse{
-    display:flex;
   }
   .Browse select{
     margin:15px 20px 15px 0px;
   }
 }
-@media screen and (max-width:1279px){
+/* @media screen and (max-width:1279px){
   .Browse{
     margin: 50px 20px;
   }
   .SelectsBrowse{
     display:block
   }
-}
+} */
 .Browse select{
 appearance: none;
 background: url(../Images/selectIcom.png) no-repeat left 94.5% center/15px 15px;
 background-color: aliceblue;
 padding: 10px;
+}
+.SelectsBrowse{
+  text-align: center;
 }
