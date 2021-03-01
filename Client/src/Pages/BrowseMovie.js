@@ -10,37 +10,58 @@ export default class BrowseMovie extends Component {
 <div className='SelectWraper'>
 <p className='BrowseTitle'>Genre : </p>
 <select>
-                <option>one</option>
-                <option>one</option>
-                <option>one</option>
-                <option>one</option>
+                <option>--All--</option>
+                <option>Action</option>
+                <option>Adventure</option>
+                <option>Animation</option>
+                <option>Biography</option>
+                <option>Comedy</option>
+                <option>Documentary</option>
+                <option>Drama</option>
+                <option>Family</option>
+                <option>Fantasy</option>
+                <option>Romance</option>
+                <option>Horror</option>
+                <option>Mystery</option>
+                <option>Sci-fi</option>
+                {/* <option>Crime</option>
+                <option>Crime</option>
+                <option>Crime</option>
+                <option>Crime</option>
+                <option>Crime</option> */}
             </select>
 </div>
 <div className='SelectWraper'>
 <p className='BrowseTitle'>Language : </p>
             <select>
-                <option>one</option>
-                <option>one</option>
-                <option>one</option>
-                <option>one</option>
+                <option>--All--</option>
+                <option>English</option>
+                <option>Hindi</option>
+                <option>Japanese</option>
+                <option>Korean</option>
+                <option>Chinese</option>
+                <option>Bangla</option>
             </select>
 </div>
 <div className='SelectWraper'>
 <p className='BrowseTitle'>Rating : </p>
             <select>
-                <option>one</option>
-                <option>one</option>
-                <option>one</option>
-                <option>one</option>
+                <option>--All--</option>
+                <option>5+</option>
+                <option>6+</option>
+                <option>7+</option>
+                <option>8+</option>
+                <option>9+</option>
             </select>
 </div>
 <div className='SelectWraper'>
 <p className='BrowseTitle'>Year : </p>
             <select>
-                <option>one</option>
-                <option>one</option>
-                <option>one</option>
-                <option>one</option>
+                <option>--All--</option>
+                <option> - 2000</option>
+                <option> - 2010</option>
+                <option> - 2015</option>
+                <option> - 2021</option>
             </select>
 </div>
 </div>
