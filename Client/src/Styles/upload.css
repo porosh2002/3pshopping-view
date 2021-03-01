@@ -1,0 +1,25 @@
+.UploadDiv{
+    margin: 70px 20px;
+    text-align: center;
+}
+.uploadTitle{
+    font-size: 19px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+.MainTitleUp{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 50px;
+    color: rgb(201, 197, 197);
+}
+.UploadContentWraper, .UploadContentWraper input{
+    width: 400px;
+}
+.UploadContentWraper{
+    display: inline-block;
+    margin: 50px;
+}
+.ImageInput{
+    padding: 10px 15px;
+}

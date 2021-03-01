@@ -49,6 +49,7 @@ outline:none;
 border:1.5px solid #aaa;
 font-weight:600;
 letter-spacing:0.5px;
+border-radius:3px;
 `
 // Submit Button
 export const Button = styled.input`
