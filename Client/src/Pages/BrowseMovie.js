@@ -6,21 +6,25 @@ export default class BrowseMovie extends Component {
             <div className='Browse'>
             <p className='BrowseTitle'>Search : </p>
             <input placeholder='name' spellCheck='false' autoFocus className='BrowseSearchBar' type='text'></input>
-            <p className='BrowseTitle'>Search : </p>
 <div className='SelectsBrowse'>
+<div>
+<p className='BrowseTitle'>Search : </p>
 <select>
                 <option>one</option>
                 <option>one</option>
                 <option>one</option>
                 <option>one</option>
             </select>
-            <p className='BrowseTitle'>Search : </p>
+</div>
+<div>
+<p className='BrowseTitle'>Search : </p>
             <select>
                 <option>one</option>
                 <option>one</option>
                 <option>one</option>
                 <option>one</option>
             </select>
+</div>
 </div>
             </div>
         )

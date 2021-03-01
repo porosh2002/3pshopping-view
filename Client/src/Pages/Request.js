@@ -11,7 +11,7 @@ export class Request extends Component {
 <textarea required placeholder='movie name / tv series name / live tv channel name : ' autoFocus></textarea>
 <Button value='Request' />
 </form>
-<p>Other Ways to Request</p>
+<p>Other's Ways to Request</p>
 <span>jamilkashem@zoho.com</span>
 <span>asif1999@gmail.com</span>
 <Social />
