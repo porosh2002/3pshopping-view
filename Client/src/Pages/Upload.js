@@ -11,16 +11,15 @@ class Upload extends Component {
         <form>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Movie name : </p>
-            <Form />
+            <Form/>
           </div>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Year : </p>
             <Form type='number'/>
           </div>
           <div className="UploadContentWraper">
-            <p className="uploadTitle">Image : </p>
+            <p className="uploadTitle">Thumbnail : </p>
             <DropThumb />
-            {/* <input type='file' className='ImageInput' /> */}
           </div>
         </form>
       </div>

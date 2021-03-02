@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { VscAdd,VscSignIn} from "react-icons/vsc";
+import { AiOutlineCloudUpload,AiOutlineUpload} from "react-icons/ai";
 // import poster from '../../Images/poster.jpg'
 import {useDropzone} from 'react-dropzone';
 export default function Dropjone({onChange}) {
@@ -7,7 +7,7 @@ export default function Dropjone({onChange}) {
     const{getRootProps,getInputProps,isDragActive} = useDropzone({
         accept:"image/*",
         onDrop:(acceptedFiles)=>{
-            onChange(acceptedFiles);
+            // onChange(acceptedFiles);
             setImage(
                 acceptedFiles.map((upFile)=>Object.assign(upFile,{
                     preview:URL.createObjectURL(upFile)
@@ -19,13 +19,13 @@ export default function Dropjone({onChange}) {
 <div>
 <div className='DropDiv' {...getRootProps()}>
             <input {...getInputProps()}/>
-            {isDragActive ? <div className='dropsign'><VscSignIn /></div> :<div className='dropsign'><VscAdd /></div>}
+            {isDragActive ? <div className='dropsign'><AiOutlineUpload /></div> :<div className='dropsign'><AiOutlineCloudUpload /></div>}
         </div>
         {
             yourImage.map((upFile,i)=>{
                 return(
-                    <div className='VideoDiv' key={i}>
-                    <img src={upFile.preview} width='300' />
+                    <div className='ImgPreDiv' key={i}>
+                    <img src={upFile.preview} alt='Thumbnail' width='300' />
                     </div>
                 )
             })
