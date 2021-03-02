@@ -1,7 +1,7 @@
 import React from 'react'
 import {Input} from '../../Styles/Styled'
-export default function Form({name,placeHolder,type,minlen,maxlen}) {
+export default function Form({...Others}) {
     return (
-<Input minLength={minlen} maxLength={maxlen} type={type} placeholder={placeHolder} required name={name} spellCheck='false' className='Form' />
+<Input required  spellCheck='false' {...Others} className='Form' />
     )
 }

@@ -13,13 +13,13 @@ class Login extends Component {
                 <p className='FormHeader'>Signup</p>
                 <form className='LoginForm'>
                     <p className='FormLabel'>Name : </p>
-                    <Form minlen='2' maxlen='15' placeHolder='name here' type='text' name='LoginEmail'/>
+                    <Form minlen='2' maxlen='15' placeholder='name here' type='text' name='LoginEmail'/>
                     <p className='FormLabel'>Email : </p>
-                    <Form minlen='12' maxlen='50' placeHolder='email here' type='email' name='LoginEmail'/>
+                    <Form minlen='12' maxlen='50' placeholder='email here' type='email' name='LoginEmail'/>
                     <p className='FormLabel'>password : </p>
-                    <Form minlen='7' maxlen='150' placeHolder='password' type='password' name='LoginPassword'/>
+                    <Form minlen='7' maxlen='150' placeholder='password' type='password' name='LoginPassword'/>
                     <p className='FormLabel'>confirm password : </p>
-                    <Form minlen='7' maxlen='150' placeHolder='password' type='password' name='LoginPassword'/>
+                    <Form minlen='7' maxlen='150' placeholder='password' type='password' name='LoginPassword'/>
                     <div className='checkBoxSignup'>
                     <input required type='checkbox'/>
                     <p>

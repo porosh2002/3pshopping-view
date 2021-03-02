@@ -5,12 +5,12 @@
 .uploadTitle{
     font-size: 19px;
     color: #aaa;
-    margin-bottom: 10px;
+    margin-bottom:10px;
 }
 .MainTitleUp{
     text-align: center;
     font-size: 25px;
-    margin-bottom: 50px;
+    margin-bottom:20px;
     color: rgb(201, 197, 197);
 }
 .UploadContentWraper, .UploadContentWraper input{
@@ -18,7 +18,7 @@
 }
 .UploadContentWraper{
     display: inline-block;
-    margin: 50px;
+    margin:20px;
 }
 .ImageInput{
     padding: 10px 15px;
