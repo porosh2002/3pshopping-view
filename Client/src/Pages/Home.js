@@ -7,6 +7,7 @@ export default function Home() {
            <Title Text='Latest' filter='latest'/>
            <Title Text='Recommended' filter='recommended'/>
            <Title Text='Most Popular' filter='popular'/>
+           
         </div>
     )
 }
