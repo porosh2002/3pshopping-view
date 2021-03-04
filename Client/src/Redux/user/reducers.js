@@ -1,4 +1,4 @@
-import {SET_USER_ID} from '../costants'
+import {SET_USER_ID} from '../constants'
 const initial_state={
     userID:undefined
 }

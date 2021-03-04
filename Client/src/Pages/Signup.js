@@ -10,7 +10,7 @@ class Login extends Component {
     render() {
         return (
             <div className='LoginDiv'>
-                <p className='FormHeader'>Signup</p>
+                <p className='FormHeader'>Community Signup</p>
                 <form className='LoginForm'>
                     <p className='FormLabel'>Name : </p>
                     <Form minlen='2' maxlen='15' placeholder='name here' type='text' name='LoginEmail'/>

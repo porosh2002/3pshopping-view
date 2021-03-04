@@ -9,7 +9,7 @@ class Login extends Component {
     render() {
         return (
             <div className='LoginDiv'>
-                <p className='FormHeader'>Login</p>
+                <p className='FormHeader'>Community Login</p>
                 <form className='LoginForm'>
                     <p className='FormLabel'>Email : </p>
                     <Form minlen='12' maxlen='50' placeholder='email here' type='email' name='LoginEmail'/>

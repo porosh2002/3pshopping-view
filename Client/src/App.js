@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import Footer from './Components/Footer/Footer';
 import Navigation from './Components/Navigation/Navigation';
 import Loading from './Components/Loader/Loading'
+import { connect } from "react-redux";
+import { selectCurrentUser } from "./Redux/user/user_selector";
 const Home = React.lazy(() => import("./Pages/Home"));
 const ErrorPage = React.lazy(() => import("./Pages/Error"));
 const BrowseMovie = React.lazy(() => import("./Pages/BrowseMovie"));
@@ -14,6 +16,8 @@ const ImageUpload = React.lazy(() => import("./Pages/ImageUpload"));
 
 class App extends Component {
   render() {
+    const { userID } = this.props;
+    console.log(userID);
     return (
       <>
         <Navigation />
@@ -34,4 +38,9 @@ class App extends Component {
     )
   }
 }
-export default App
+const mapStateToProps = (state) => {
+  return {
+    userID: selectCurrentUser(state),
+  };
+};
+export default connect(mapStateToProps, null)(App)
