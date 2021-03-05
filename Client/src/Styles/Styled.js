@@ -1,5 +1,13 @@
 import styled from "styled-components";
+import ModalBG from '../Images/ModalBG.jpg'
 // ** Loader
+// Center
+export const Center = styled.div`
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+`
 export const Loader = styled.div`
     height:100vh;
     width:100vw;
@@ -61,8 +69,55 @@ width:100%;
 padding:10px 0px;
 outline:none;
 border:none;
+text-align:center;
 cursor: pointer;
 border-radius:2px;
+&:hover{
+    opacity:.9;
+}
+`
+// Modal
+export const Modal = styled.div`
+height:100vh;
+width:100vw;
+position:fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+z-index:99999999;
+background-color:#343a40c2;
+`
+// Modal Content Wraper
+export const ModalChild = styled.div`
+height:300px;
+width:90%;
+position:absolute;
+background:url(${ModalBG});
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+border-radius:5px;
+background-position:center;
+background-size:cover;
+`
+// Modal Content 
+export const ModalContent = styled.p`
+font-size:22px;
+padding:0px 15px;
+font-weight:500;
+letter-spacing:.5px;
+`
+// Modal BTN
+export const ModalBTN = styled.p`
+font-size:17px;
+padding:10px 0px;
+background-color: #343a40;
+color:#fff;
+margin-top:20px;
+cursor: pointer;
+width:300px;
+border-radius:3px;
 &:hover{
     opacity:.9;
 }

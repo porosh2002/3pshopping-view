@@ -160,3 +160,14 @@ margin: 7px 0px 0px 10px;
 font-weight: 600;
 width:90%;
 }
+/* Modal Child */
+@media screen and (max-width:699px){
+  .ModalChild{
+    width:90vw;
+  }
+}
+@media screen and (min-width:700px){
+  .ModalChild{
+    width: 700px;
+  }
+}

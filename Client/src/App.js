@@ -26,10 +26,10 @@ class App extends Component {
        <Route exact path="/" component={Home}/>
        <Route exact path="/browse" component={BrowseMovie}/>
        <Route exact path="/upload/movie" component={Upload}/>
-       <Route exact path="/login" component={Login}/>
+       <Route exact path="/community/login" component={Login}/>
        <Route exact path="/Request" component={Request}/>
        <Route exact path="/content/Image" component={ImageUpload}/>
-       <Route exact path="/signup" component={Signup}/>
+       <Route exact path="/community/signup" component={Signup}/>
        <Route component={ErrorPage}/>
       </Switch>
      </Suspense>
