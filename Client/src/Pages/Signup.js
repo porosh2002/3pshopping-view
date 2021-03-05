@@ -5,10 +5,18 @@ import Form from '../Components/Form/Form'
 import '../Styles/Login.css'
 import Modal from '../Components/Modal/Modal'
 class Login extends Component {
+    state={
+        ModalOpen:true
+    }
+    CloseModal=()=>{
+        this.setState({ModalOpen:false})
+    }
     FormValueVhange = e =>{
         console.log(e);
     }
     render() {
+        const {ModalOpen} = this.state;
+        const ModalStyle = ModalOpen ? null : ({display:"none"})
         return (
             <div className='LoginDiv'>
                 <p className='FormHeader'>Community Signup</p>
@@ -26,7 +34,9 @@ By clicking Register, you agree to our <Link to='#'>Terms and Conditions</Link><
                     </div>
                     <Button value='Apply For Community Account'/>
                 </form>
-                <Modal />
+                <div style={ModalStyle}>
+                <Modal ModalClick={this.CloseModal} Text={"Only Create Account If you want to join as an Admin"}/>
+                </div>
             </div>
         )
     }

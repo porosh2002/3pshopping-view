@@ -114,10 +114,11 @@ font-size:17px;
 padding:10px 0px;
 background-color: #343a40;
 color:#fff;
-margin-top:20px;
 cursor: pointer;
 width:300px;
 border-radius:3px;
+display:block;
+margin:20px auto;
 &:hover{
     opacity:.9;
 }
