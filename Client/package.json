@@ -20,7 +20,8 @@
     "redux-persist": "^6.0.0",
     "reselect": "^4.0.0",
     "styled-components": "^5.2.1",
-    "swiper": "^6.4.10"
+    "swiper": "^6.4.10",
+    "validator": "^13.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
