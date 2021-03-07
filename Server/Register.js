@@ -4,17 +4,18 @@ const RegisterUserSchema = new mongoose.Schema({
         type:String,
         required:true,
         minlength:12,
-        unique:true
+        unique:true,
+        maxlength:50
     },
     password:{
         type:String,
         required:true,
-        minlength:6,
     },
     name:{
         type:String,
         required:true,
         minlength:2,
+        maxlength:30
     }
 });
 const RegisterUserModel = mongoose.model('User', RegisterUserSchema);

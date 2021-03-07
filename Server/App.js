@@ -50,7 +50,7 @@ app.post("/api/login", (req, res) => {
   });
 });
 app.post("/api/register", (req, res) => {
-  const { name, email, password } = req.body;
+  const {name, email, password} = req.body;
   bcrypt.hash(password, saltRounds).then(function (Passwordhash) {
     const Register = new RegisterUserModel({
       email: md5(email),
@@ -59,10 +59,10 @@ app.post("/api/register", (req, res) => {
     });
     Register.save((err,noerr)=>{
       if(err){
-        res.sendStatus(400)
+        res.send('error')
       }
-      if(noerr){
-        res.sendStatus(200)
+      else{
+        res.send('noerror')
       }
     });
   });
