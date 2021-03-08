@@ -6,6 +6,8 @@ import axios from 'axios'
 import {URL} from '../serverUrl'
 import isEmail from "validator/lib/isEmail";
 import Modal from "../Components/Modal/Modal";
+import { connect } from "react-redux";
+import { setUser } from "../Redux/user/actions";
 class Login extends Component {
     state={
         Email:null,
@@ -30,9 +32,7 @@ onFormSubmit = (event) => {
                 this.setState({isError:true})
             }
             else if(true === isEmail(res.data)){
-                // Redirect to Admin Panel
-                // this.props.history.push("/");
-                alert("OK")
+                this.props.setUserID(res);
             }
         })
     } else {
@@ -63,6 +63,9 @@ onFormSubmit = (event) => {
         )
     }
 }
-
-
-export default Login
+const mapDispatchToProps = dispatch => {
+    return {
+      setUserID: (user) => dispatch(setUser(user)),
+    };
+  };
+  export default connect(null, mapDispatchToProps)(Login);
