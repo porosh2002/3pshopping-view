@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import { AiOutlineCloudUpload,AiOutlineUpload} from "react-icons/ai";
-// import poster from '../../Images/poster.jpg'
 import {useDropzone} from 'react-dropzone';
 export default function Dropjone({onChange}) {
     const [yourImage,setImage]=useState([]);

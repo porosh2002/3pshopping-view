@@ -54,7 +54,7 @@ class Upload extends Component {
             <DropThumb />
           </div>
           <br></br>
-          <input type='submit' />
+          <input className='UploadBTN' type='submit' />
         </form>
       </div>
     );
