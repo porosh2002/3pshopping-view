@@ -16,6 +16,10 @@ const RegisterUserSchema = new mongoose.Schema({
         required:true,
         minlength:2,
         maxlength:30
+    },
+    active:{
+        type:Boolean,
+        required:true,
     }
 });
 const RegisterUserModel = mongoose.model('User', RegisterUserSchema);

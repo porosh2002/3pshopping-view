@@ -40,12 +40,18 @@ app.use(bodyParser.json());
 app.use(helmet());
 //
 app.post("/api/login", (req, res) => {
-  const { email, password } = req.body;
-  RegisterUserModel.findOne({ email: md5(email) }, (error, result) => { if(result){
-      res.json(email)
-    }
-    else{
-      res.sendStatus(400)
+  const { Email, Password } = req.body;
+  RegisterUserModel.findOne({ email: md5(Email) }, (error, result) => {
+    if (result) {
+      bcrypt.compare(Password, result.password, function (err, Passok) {
+        if (Passok) {
+          res.json(Email);
+        } else {
+          res.json('error');
+        }
+      });
+    } else {
+      res.json('error');
     }
   });
 });
@@ -56,6 +62,7 @@ app.post("/api/register", (req, res) => {
       email: md5(email),
       password: Passwordhash,
       name,
+      active:false
     });
     Register.save((err,noerr)=>{
       if(err){
@@ -63,6 +70,7 @@ app.post("/api/register", (req, res) => {
       }
       else{
         res.send('noerror')
+        console.log(noerr);
       }
     });
   });

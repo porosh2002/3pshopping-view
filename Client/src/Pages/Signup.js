@@ -52,7 +52,7 @@ class Login extends Component {
   HandleClick = () => {
     this.props.history.push("/");
   };
-  FormValueVhange = (e) => {
+  FormValueChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
@@ -67,7 +67,7 @@ class Login extends Component {
         <form onSubmit={this.onFormSubmit} className="LoginForm">
           <p className="FormLabel">Full Name : </p>
           <Form
-            onChange={this.FormValueVhange}
+            onChange={this.FormValueChange}
             minLength="2"
             maxLength="30"
             placeholder="full name here"
@@ -76,7 +76,7 @@ class Login extends Component {
           />
           <p className="FormLabel">Email : </p>
           <Form
-            onChange={this.FormValueVhange}
+            onChange={this.FormValueChange}
             minLength="12"
             maxLength="50"
             placeholder="valid email here"
@@ -85,7 +85,7 @@ class Login extends Component {
           />
           <p className="FormLabel">new password : </p>
           <Form
-            onChange={this.FormValueVhange}
+            onChange={this.FormValueChange}
             minLength="12"
             maxLength="50"
             placeholder="new password"
@@ -94,7 +94,7 @@ class Login extends Component {
           />
           <p className="FormLabel">confirm new password : </p>
           <Form
-            onChange={this.FormValueVhange}
+            onChange={this.FormValueChange}
             minLength="12"
             maxLength="50"
             placeholder="confirm new password"
