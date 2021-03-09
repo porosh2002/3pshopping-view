@@ -22,9 +22,9 @@ const RegisterUserModel = require("./Register");
 //     }
 //   }
 // }
-const fileupload = multer({
+const ImageUpload = multer({
   limits: {
-    fileSize: 1000000,
+    fileSize:1000000,
   },
   fileFilter(req, file, cb) {
     if (!file.originalname.match(/\.(jpg|png|JPG|PNG|JPEG|jpeg)$/))
@@ -38,7 +38,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(morgan('combined'))
 app.use(bodyParser.json());
 app.use(helmet());
-//
+
+//Login
 app.post("/api/login", (req, res) => {
   const { Email, Password } = req.body;
   RegisterUserModel.findOne({ email: md5(Email) }, (error, result) => {
@@ -55,6 +56,7 @@ app.post("/api/login", (req, res) => {
     }
   });
 });
+// Register
 app.post("/api/register", (req, res) => {
   const {name, email, password} = req.body;
   bcrypt.hash(password, saltRounds).then(function (Passwordhash) {
@@ -75,6 +77,10 @@ app.post("/api/register", (req, res) => {
     });
   });
 });
+// Image Upload
+app.post('/api/image/:name',ImageUpload.single("image"),(req,res)=>{
+  console.log(req.file.buffer,req.params.name);
+})
 //
 app.listen(process.env.DB_PORT, async () => {
   try {

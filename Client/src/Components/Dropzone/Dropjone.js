@@ -6,7 +6,7 @@ export default function Dropjone({onChange}) {
     const{getRootProps,getInputProps,isDragActive} = useDropzone({
         accept:"image/*",
         onDrop:(acceptedFiles)=>{
-            // onChange(acceptedFiles);
+            onChange(acceptedFiles);
             setImage(
                 acceptedFiles.map((upFile)=>Object.assign(upFile,{
                     preview:URL.createObjectURL(upFile)

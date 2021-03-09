@@ -4,36 +4,39 @@ import { Link } from "react-router-dom";
 import Form from "../Components/Form/Form";
 import PassGen from "../Components/PassGen/PassGen";
 import "../Styles/Login.css";
-import axios from 'axios'
-import {URL} from '../serverUrl'
+import axios from "axios";
+import { URL } from "../serverUrl";
 import isEmail from "validator/lib/isEmail";
 import Modal from "../Components/Modal/Modal";
 class Login extends Component {
   state = {
-    ModalOpen:true,
+    ModalOpen: true,
     SuccesssMessage: false,
     name: null,
     email: null,
     password: null,
     confirmPass: null,
     PassGen: null,
-    isError:false
+    isError: false,
   };
   onFormSubmit = (event) => {
     event.preventDefault();
     const { name, email, password, confirmPass } = this.state;
     if (isEmail(email)) {
       if (password === confirmPass) {
-        axios.post(`${URL}api/register`,{
-            name, email, password
-        }).then(res=>{
-            if(res.data === 'noerror'){
-                this.setState({SuccesssMessage:true})
+        axios
+          .post(`${URL}api/register`, {
+            name,
+            email,
+            password,
+          })
+          .then((res) => {
+            if (res.data === "noerror") {
+              this.setState({ SuccesssMessage: true });
+            } else if (res.data === "error") {
+              this.setState({ isError: true });
             }
-            else if(res.data === 'error'){
-                this.setState({isError:true})
-            }
-        })
+          });
       } else {
         alert("Password and Confirm Password Doesn't match " + name);
       }
@@ -57,7 +60,7 @@ class Login extends Component {
     this.setState({ [name]: value });
   };
   render() {
-    const { ModalOpen, SuccesssMessage,isError } = this.state;
+    const { ModalOpen, SuccesssMessage, isError } = this.state;
     const ModalStyle = ModalOpen ? null : { display: "none" };
     const SuccessStyle = SuccesssMessage ? null : { display: "none" };
     const ErrorStyle = isError ? null : { display: "none" };
