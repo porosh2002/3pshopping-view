@@ -18,6 +18,7 @@ class Login extends Component {
     confirmPass: null,
     PassGen: null,
     isError: false,
+    PassMatchFail:false
   };
   onFormSubmit = (event) => {
     event.preventDefault();
@@ -38,14 +39,16 @@ class Login extends Component {
             }
           });
       } else {
-        alert("Password and Confirm Password Doesn't match " + name);
+        this.setState({PassMatchFail:true})
       }
     }
   };
   componentDidMount() {
     this.setState({ PassGen: PassGen() });
   }
-
+PassMatchClick=()=>{
+  this.setState({PassMatchFail:false})
+}
   PasswordGenerate = () => {
     this.setState({ PassGen: PassGen() });
   };
@@ -60,10 +63,11 @@ class Login extends Component {
     this.setState({ [name]: value });
   };
   render() {
-    const { ModalOpen, SuccesssMessage, isError } = this.state;
+    const { ModalOpen, SuccesssMessage, isError, PassMatchFail } = this.state;
     const ModalStyle = ModalOpen ? null : { display: "none" };
     const SuccessStyle = SuccesssMessage ? null : { display: "none" };
     const ErrorStyle = isError ? null : { display: "none" };
+    const PassStyle = PassMatchFail ? null : { display: "none" };
     return (
       <div className="LoginDiv">
         <p className="FormHeader">Community Signup</p>
@@ -74,7 +78,7 @@ class Login extends Component {
             minLength="2"
             maxLength="30"
             placeholder="full name here"
-            type="text"
+            type="name"
             name="name"
           />
           <p className="FormLabel">Email : </p>
@@ -136,6 +140,12 @@ class Login extends Component {
           <Modal
             ModalClick={this.HandleClick}
             Text={" Something went wrong "}
+          />
+        </div>
+        <div style={PassStyle}>
+          <Modal
+            ModalClick={this.PassMatchClick}
+            Text={"Password and Confirm Password Doesn't match"}
           />
         </div>
         <div style={ModalStyle}>

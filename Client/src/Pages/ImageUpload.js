@@ -1,57 +1,94 @@
-import React, { Component } from 'react'
-import DropZone from '../Components/Dropzone/Dropjone'
-import Form from '../Components/Form/Form';
-import Title from '../Components/Title/Title';
+import React, { Component } from "react";
+import DropZone from "../Components/Dropzone/Dropjone";
+import Form from "../Components/Form/Form";
+import Title from "../Components/Title/Title";
 import "../Styles/upload.css";
-import axios from 'axios';
-import {URL} from '../serverUrl'
+import Modal from "../Components/Modal/Modal";
+import axios from "axios";
+import { URL } from "../serverUrl";
 export default class ImageUpload extends Component {
-    state={
-        Image:null,
-        Name:null,
-        ImagesArray:[],
-        SearchField:''
-    }
-    ImageContent=(e)=>{
-       this.setState({Image:e[0]})
-    }
-    OnTextFieldChange=e=>{
-        const { name, value } = e.target;
-        this.setState({ [name]: value });
-    }
-    ImageUpload=e=>{
-        e.preventDefault();
-        const {Image,Name} = this.state;
-        if(Image !== null && Name !== null){
-            const formData = new FormData();
-            formData.append("image",Image);
-            const config = {
-                header: { "content-type": "multipart/form-data" },
-              };
-              axios.post(`${URL}api/image/${Name}`,formData,config).then(res=>{
-                  console.log(res);
-              })
+  state = {
+    Image: null,
+    Name: null,
+    ImagesArray: [],
+    SearchField: "",
+    ImageUploadDone: false,
+    ErrorHappend: false,
+  };
+  ImageContent = (e) => {
+    this.setState({ Image: e[0] });
+  };
+  OnTextFieldChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+  HandleClick = () => {
+    this.setState({
+      ImageUploadDone:false,
+      ErrorHappend:false,
+    });
+    this.props.history.push("/content/image");
+  };
+  ImageUpload = (e) => {
+    e.preventDefault();
+    const { Image, Name } = this.state;
+    if (Image !== null && Name !== null) {
+      const formData = new FormData();
+      formData.append("image", Image);
+      const config = {
+        header: { "content-type": "multipart/form-data" },
+      };
+      axios.post(`${URL}api/image/${Name}`, formData, config).then((res) => {
+        if (res.data === "noerror") {
+          this.setState({ ImageUploadDone: true });
+        } else if (res.data === "error") {
+          this.setState({ ErrorHappend: true });
         }
+      });
     }
-    render() {
-        return (
-            <div className='ImageUploadDiv'>
-                <Title Text='Upload Images' />
-                <br></br>
-                <br></br>
-                <br></br>
-<form onSubmit={this.ImageUpload}>
-<Form minlen='2' maxlen='50' onChange={this.OnTextFieldChange} placeholder='e.g. Jony Deep' type='text' name='Name'/>
-            <br></br>
-            <br></br>
-            <DropZone onChange={this.ImageContent}/>
-            <input className='UploadBTN' type='submit' />
-</form>
-            <br></br>
-            <br></br>
-            <Title Text='Images' />
-            </div>
-        )
-    }
+  };
+  render() {
+    const { ImageUploadDone, ErrorHappend } = this.state;
+    const SuccessStyle = ImageUploadDone ? null : { display: "none" };
+    const ErrorStyle = ErrorHappend ? null : { display: "none" };
+    return (
+      <div className="ImageUploadDiv">
+        <Title Text="Upload Images" />
+        <br></br>
+        <br></br>
+        <br></br>
+        <form onSubmit={this.ImageUpload}>
+          <Form
+            minlen="2"
+            maxlen="50"
+            onChange={this.OnTextFieldChange}
+            placeholder="e.g. Jony Deep"
+            type="text"
+            name="Name"
+          />
+          <br></br>
+          <br></br>
+          <DropZone onChange={this.ImageContent} />
+          <input className="UploadBTN" type="submit" />
+        </form>
+        <br></br>
+        <br></br>
+        <Title Text="Images" />
+<div style={{color:"#343a40"}}>
+<div style={SuccessStyle}>
+          <Modal
+            ModalClick={this.HandleClick}
+            Text={"Image Uploaded Successfully"}
+          />
+        </div>
+        <div style={ErrorStyle}>
+          <Modal
+            ModalClick={this.HandleClick}
+            Text={" Something went wrong "}
+          />
+        </div>
+</div>
+      </div>
+    );
+  }
 }
- 

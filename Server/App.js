@@ -11,6 +11,7 @@ const morgan = require("morgan");
 const multer = require("multer");
 const cors = require("cors");
 const RegisterUserModel = require("./Register");
+const ImageModel = require("./Image");
 //
 // const whitelist = ['https://wecubs.com']
 // const corsOptions = {
@@ -79,7 +80,21 @@ app.post("/api/register", (req, res) => {
 });
 // Image Upload
 app.post('/api/image/:name',ImageUpload.single("image"),(req,res)=>{
-  console.log(req.file.buffer,req.params.name);
+  const Image = req.file.buffer;
+  const ImageName = req.params.name;
+  const File = new ImageModel({
+    Image,
+    ImageName,
+  });
+  File.save((err, noerr) => {
+    if (err) {
+      res.json('error');
+      console.log(error);
+    }
+    if (noerr) {
+      res.json('noerror');
+    }
+  });
 })
 //
 app.listen(process.env.DB_PORT, async () => {
