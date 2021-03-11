@@ -96,6 +96,18 @@ app.post('/api/image/:name',ImageUpload.single("image"),(req,res)=>{
     }
   });
 })
+// Get Image
+app.get('/api/images',(req,res)=>{
+  const ImagesArray=[]
+  ImageModel.find({},function(err,result){
+    if(result){
+      result.map(data=>{
+        ImagesArray.push(data._id)
+      })
+      res.json(ImagesArray)
+    }
+  })
+})
 //
 app.listen(process.env.DB_PORT, async () => {
   try {

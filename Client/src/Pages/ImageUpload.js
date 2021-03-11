@@ -6,15 +6,21 @@ import "../Styles/upload.css";
 import Modal from "../Components/Modal/Modal";
 import axios from "axios";
 import { URL } from "../serverUrl";
+import ImageCard from "../Components/Card/ImageCardList";
 export default class ImageUpload extends Component {
   state = {
     Image: null,
     Name: null,
-    ImagesArray: [],
+    ImagesArray:null,
     SearchField: "",
     ImageUploadDone: false,
     ErrorHappend: false,
   };
+  componentDidMount() {
+    axios.get(`${URL}api/images`).then(res=>{
+      this.setState({ImagesArray:res.data})
+    })
+  }
   ImageContent = (e) => {
     this.setState({ Image: e[0] });
   };
@@ -48,9 +54,10 @@ export default class ImageUpload extends Component {
     }
   };
   render() {
-    const { ImageUploadDone, ErrorHappend } = this.state;
+    const { ImageUploadDone, ErrorHappend, ImagesArray } = this.state;
     const SuccessStyle = ImageUploadDone ? null : { display: "none" };
     const ErrorStyle = ErrorHappend ? null : { display: "none" };
+    // console.log(ImagesArray);
     return (
       <div className="ImageUploadDiv">
         <Title Text="Upload Images" />
@@ -74,6 +81,12 @@ export default class ImageUpload extends Component {
         <br></br>
         <br></br>
         <Title Text="Images" />
+
+{
+  ImagesArray ? <ImageCard data={ImagesArray} /> : null
+}
+
+
 <div style={{color:"#343a40"}}>
 <div style={SuccessStyle}>
           <Modal
