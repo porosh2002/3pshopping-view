@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const chalk = require('chalk');
 const helmet = require("helmet");
 const bcrypt = require("bcrypt");
 const md5 = require("md5");
@@ -105,6 +106,15 @@ app.get('/api/images',(req,res)=>{
         ImagesArray.push(data._id)
       })
       res.json(ImagesArray)
+    }
+  })
+})
+// Get Images Name
+app.post('/api/image/info/name',(req,res)=>{
+  const {ID} = req.body;
+  ImageModel.find({_id:ID},function(err,result){
+    if(result){
+    res.json(result[0].ImageName)
     }
   })
 })
