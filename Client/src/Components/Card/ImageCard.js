@@ -4,7 +4,6 @@ import axios from 'axios'
 export default class ImageCard extends Component {
     state={
         name: null,
-        Image:null
     }
     componentDidMount() {
         axios.post(`${URL}api/image/info/name`,{
@@ -12,19 +11,14 @@ export default class ImageCard extends Component {
         }).then(res=>{
             this.setState({name:res.data})
         })
-        axios.get(`${URL}api/image/info/image/${this.props.data}`,{
-        }).then((res2)=>{
-            this.setState({Image:res2})
-            console.log(res2);
-        })
     }
     
  render() {
-     const {name,Image} = this.state
+     const {name} = this.state
         return (
             <div>
                 {name}
-                <img alt={name} src={Image} />
+                <img alt={name} src={`${URL}api/image/info/image/${this.props.data}`} />
             </div>
         )
     }
