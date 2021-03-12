@@ -132,7 +132,7 @@ app.post('/api/image/info/image',(req,res)=>{
 //
 app.listen(process.env.DB_PORT, async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/errors", {
+    await mongoose.connect("mongodb://localhost:27017/Test", {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,

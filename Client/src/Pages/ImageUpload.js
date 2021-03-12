@@ -27,6 +27,7 @@ export default class ImageUpload extends Component {
   OnTextFieldChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
+    // Refresh The Page...........
   };
   HandleClick = () => {
     this.setState({
