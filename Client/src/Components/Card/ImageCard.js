@@ -11,11 +11,11 @@ export default class ImageCard extends Component {
             ID:this.props.data
         }).then(res=>{
             this.setState({name:res.data})
-            axios.post(`${URL}api/image/info/image`,{
-                ID:this.props.data
-            }).then(res=>{
-                this.setState({Image:res.data})
-            })
+        })
+        axios.get(`${URL}api/image/info/image/${this.props.data}`,{
+        }).then((res2)=>{
+            this.setState({Image:res2})
+            console.log(res2);
         })
     }
     

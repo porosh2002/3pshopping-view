@@ -119,13 +119,12 @@ app.post('/api/image/info/name',(req,res)=>{
   })
 })
 // Get Images
-app.post('/api/image/info/image',(req,res)=>{
-    const {ID} = req.body;
+app.get('/api/image/info/image/:id',(req,res)=>{
+    const ID = req.params.id;
     ImageModel.find({_id:ID},function(err,result){
       if(result){
-      console.log(chalk.cyan(result[0].Image))
-      res.set("Content-Type", "image/jpg");
-      res.json(result[0].Image.buffer)
+      res.set("Content-Type", "image/jpeg");
+      res.send(result[0].Image)
       }
     })
 })
