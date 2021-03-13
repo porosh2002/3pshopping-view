@@ -60,3 +60,29 @@
     background-color: springgreen;
     outline: none;
 }
+/* ImageOfCharecter */
+.ImageOfCharecter{
+    height: 80px;
+    border-radius:20%;
+}
+.ImageCharecterDiv{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    border: 2px solid #444;
+    border-radius:3px;
+    padding: 16px 0px;
+    margin: 5px 0px;
+}
+.ImageCharecterDiv p {
+    margin: 0px 15px 0px 10px;
+}
+.Charecter_Name{
+    font-size: 18px;
+    color: #aaa;
+}
+.Charecter_ID{
+    font-size:25px;
+    color: springgreen;
+}
