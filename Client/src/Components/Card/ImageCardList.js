@@ -7,7 +7,7 @@ export default class ImageCardList extends Component {
     ImagesArray: [],
   };
   componentDidMount() {
-    axios.get(`${URL}api/images`).then((res) => {
+    axios.get(`${URL}api/images/${this.props.SearchField}`).then((res) => {
       this.setState({ ImagesArray: res.data });
     });
   }

@@ -98,16 +98,20 @@ app.post('/api/image/:name',ImageUpload.single("image"),(req,res)=>{
   });
 })
 // Get Image
-app.get('/api/images',(req,res)=>{
+app.get('/api/images/:name',(req,res)=>{
+const SearchField = 'Depp'
   const ImagesArray=[]
-  ImageModel.find({},function(err,result){
-    if(result){
-      result.map(data=>{
-        ImagesArray.push(data._id)
-      })
-      res.json(ImagesArray)
-    }
-  })
+    ImageModel.find({},function(err,result){
+      if(result){
+        result.map(data=>{
+          const Name = data.ImageName
+          if(Name.toLowerCase().includes(SearchField.toLowerCase())){
+            ImagesArray.push(data._id)
+          }
+        })
+        res.json(ImagesArray)
+      }
+    })
 })
 // Get Images Name
 app.post('/api/image/info/name',(req,res)=>{
