@@ -11,15 +11,15 @@ export default class ImageUpload extends Component {
   state = {
     Image: null,
     Name: null,
-    ImagesArray:null,
-    SearchField: "",
+    ImagesArray: null,
+    SearchField:"",
     ImageUploadDone: false,
     ErrorHappend: false,
   };
   componentDidMount() {
-    axios.get(`${URL}api/images`).then(res=>{
-      this.setState({ImagesArray:res.data})
-    })
+    axios.get(`${URL}api/images`).then((res) => {
+      this.setState({ ImagesArray: res.data });
+    });
   }
   ImageContent = (e) => {
     this.setState({ Image: e[0] });
@@ -30,10 +30,10 @@ export default class ImageUpload extends Component {
   };
   HandleClick = () => {
     this.setState({
-      ImageUploadDone:false,
-      ErrorHappend:false,
+      ImageUploadDone: false,
+      ErrorHappend: false,
     });
-    window.location.reload()
+    window.location.reload();
   };
   ImageUpload = (e) => {
     e.preventDefault();
@@ -54,10 +54,9 @@ export default class ImageUpload extends Component {
     }
   };
   render() {
-    const { ImageUploadDone, ErrorHappend, ImagesArray } = this.state;
+    const { ImageUploadDone, ErrorHappend, ImagesArray,SearchField } = this.state;
     const SuccessStyle = ImageUploadDone ? null : { display: "none" };
-    const ErrorStyle = ErrorHappend ? null : { display: "none" };
-    // console.log(ImagesArray);
+    const ErrorStyle = ErrorHappend ? null : { display: "none" }
     return (
       <div className="ImageUploadDiv">
         <Title Text="Upload Images" />
@@ -74,33 +73,38 @@ export default class ImageUpload extends Component {
             name="Name"
           />
           <br></br>
-          <br></br>
           <DropZone onChange={this.ImageContent} />
           <input className="UploadBTN" type="submit" />
         </form>
         <br></br>
         <br></br>
         <Title Text="Images" />
+        <br></br>
+        <Form
+          minlen="2"
+          maxlen="50"
+          onChange={this.OnTextFieldChange}
+          placeholder="e.g. Jony Deep"
+          type="text"
+          name="SearchField"
+        />
+        <br></br>
+        {ImagesArray ? <ImageCard SearchField={SearchField} data={ImagesArray} /> : null}
 
-{
-  ImagesArray ? <ImageCard data={ImagesArray} /> : null
-}
-
-
-<div style={{color:"#343a40"}}>
-<div style={SuccessStyle}>
-          <Modal
-            ModalClick={this.HandleClick}
-            Text={"Image Uploaded Successfully"}
-          />
+        <div style={{ color: "#343a40" }}>
+          <div style={SuccessStyle}>
+            <Modal
+              ModalClick={this.HandleClick}
+              Text={"Image Uploaded Successfully"}
+            />
+          </div>
+          <div style={ErrorStyle}>
+            <Modal
+              ModalClick={this.HandleClick}
+              Text={" Something went wrong "}
+            />
+          </div>
         </div>
-        <div style={ErrorStyle}>
-          <Modal
-            ModalClick={this.HandleClick}
-            Text={" Something went wrong "}
-          />
-        </div>
-</div>
       </div>
     );
   }
