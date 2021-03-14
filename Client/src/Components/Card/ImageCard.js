@@ -4,12 +4,10 @@ import axios from 'axios'
 export default class ImageCard extends Component {
     state={
         name: null,
-        SearchField:''
     }
     componentDidMount() {
-        this.setState({SearchField:this.props.SearchField})
         axios.post(`${URL}api/image/info/name`,{
-            ID:this.props.data
+            ID:this.props.data,
         }).then(res=>{
             this.setState({name:res.data})
         })
@@ -17,7 +15,6 @@ export default class ImageCard extends Component {
     
  render() {
      const {name} = this.state
-     console.log(this.state.SearchField);
         return (
             <div className='ImageCharecterDiv'>
                 <img className='ImageOfCharecter' alt={name} src={`${URL}api/image/info/image/${this.props.data}`} />

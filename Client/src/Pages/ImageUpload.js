@@ -11,16 +11,10 @@ export default class ImageUpload extends Component {
   state = {
     Image: null,
     Name: null,
-    ImagesArray: null,
-    SearchField:"",
+    SearchField:null,
     ImageUploadDone: false,
     ErrorHappend: false,
   };
-  componentDidMount() {
-    axios.get(`${URL}api/images`).then((res) => {
-      this.setState({ ImagesArray: res.data });
-    });
-  }
   ImageContent = (e) => {
     this.setState({ Image: e[0] });
   };
@@ -54,7 +48,7 @@ export default class ImageUpload extends Component {
     }
   };
   render() {
-    const { ImageUploadDone, ErrorHappend, ImagesArray,SearchField } = this.state;
+    const { ImageUploadDone, ErrorHappend,SearchField } = this.state;
     const SuccessStyle = ImageUploadDone ? null : { display: "none" };
     const ErrorStyle = ErrorHappend ? null : { display: "none" }
     return (
@@ -89,8 +83,7 @@ export default class ImageUpload extends Component {
           name="SearchField"
         />
         <br></br>
-        {ImagesArray ? <ImageCard SearchField={SearchField} data={ImagesArray} /> : null}
-
+         <ImageCard SearchField={SearchField} /> 
         <div style={{ color: "#343a40" }}>
           <div style={SuccessStyle}>
             <Modal
