@@ -6,11 +6,11 @@ export default class ImageCard extends Component {
         name: null,
     }
     componentDidMount() {
-        axios.post(`${URL}api/image/info/name`,{
-            ID:this.props.data,
-        }).then(res=>{
-            this.setState({name:res.data})
-        })
+        // axios.post(`${URL}api/image/info/name`,{
+        //     ID:this.props.data,
+        // }).then(res=>{
+        //     this.setState({name:res.data})
+        // })
     }
     
  render() {

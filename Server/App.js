@@ -99,7 +99,7 @@ app.post('/api/image/:name',ImageUpload.single("image"),(req,res)=>{
 })
 // Get Image
 app.get('/api/images/:name',(req,res)=>{
-const SearchField = 'Depp'
+const SearchField = req.params.name
   const ImagesArray=[]
     ImageModel.find({},function(err,result){
       if(result){
