@@ -9,10 +9,12 @@ const saltRounds = 10;
 require("dotenv").config();
 const mongoose = require("mongoose");
 const morgan = require("morgan");
+const { v4: uuidv4 } = require('uuid');
 const multer = require("multer");
 const cors = require("cors");
 const RegisterUserModel = require("./Register");
-const ImageModel = require("./Image");
+const ImageInfoModel = require("./ImageInfo");
+const ImageModel = require("./Images");
 //
 // const whitelist = ['https://wecubs.com']
 // const corsOptions = {
@@ -83,8 +85,9 @@ app.post("/api/register", (req, res) => {
 app.post('/api/image/:name',ImageUpload.single("image"),(req,res)=>{
   const Image = req.file.buffer;
   const ImageName = req.params.name;
-  const File = new ImageModel({
-    Image,
+  const ID = uuidv4()
+  const File = new ImageInfoModel({
+    ID,
     ImageName,
   });
   File.save((err, noerr) => {
@@ -93,44 +96,36 @@ app.post('/api/image/:name',ImageUpload.single("image"),(req,res)=>{
       console.log(error);
     }
     if (noerr) {
-      res.json('noerror');
+      const ImageData = new ImageModel({
+        ID,
+        Image
+      })
+      ImageData.save((err2,noerr2)=>{
+        if(noerr2){
+          res.json('noerror');
+        }
+      })
     }
   });
 })
-// Get Image
-app.get('/api/images/:name',(req,res)=>{
-const SearchField = req.params.name
-  const ImagesArray=[]
-    ImageModel.find({},function(err,result){
-      if(result){
-        result.map(data=>{
-          const Name = data.ImageName
-          if(Name.toLowerCase().includes(SearchField.toLowerCase())){
-            ImagesArray.push(data._id)
-          }
-        })
-        res.json(ImagesArray)
-      }
-    })
-})
-// Get Images Name
-app.post('/api/image/info/name',(req,res)=>{
-  const {ID} = req.body;
-  ImageModel.find({_id:ID},function(err,result){
+// Get Images Info
+app.get('/api/image/info',(req,res)=>{
+  ImageInfoModel.find({},function(err,result){
     if(result){
-    res.json(result[0].ImageName)
+        res.json(result)
     }
   })
 })
-// Get Images
+// Get Image 
 app.get('/api/image/info/image/:id',(req,res)=>{
-    const ID = req.params.id;
-    ImageModel.find({_id:ID},function(err,result){
-      if(result){
-      res.set("Content-Type", "image/jpeg");
-      res.send(result[0].Image)
-      }
-    })
+
+  const ID = req.params.id;
+  ImageModel.find({ID:ID},function(err,result){
+    if(result){
+    res.set("Content-Type", "image/jpeg");
+    res.send(result[0].Image)
+    }
+  })
 })
 //
 app.listen(process.env.DB_PORT, async () => {
