@@ -14,9 +14,12 @@
     }
     render() {
     const { ImagesArray } = this.state;
+    const filteredImageInfo = ImagesArray.filter(data =>{
+      return data.ImageName.toLowerCase().includes(this.props.SearchField.toLowerCase());
+    })
     return (
       <div>
-  {ImagesArray.map((data, i) => {
+  {filteredImageInfo.map((data, i) => {
         return <ImageCard key={i} data={data} />;
   })}
       </div>

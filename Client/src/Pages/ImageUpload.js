@@ -11,7 +11,7 @@ export default class ImageUpload extends Component {
   state = {
     Image: null,
     Name: null,
-    SearchField:null,
+    SearchField:'',
     ImageUploadDone: false,
     ErrorHappend: false,
   };
