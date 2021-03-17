@@ -46,12 +46,12 @@ class Upload extends Component {
             <Form type='text' placeholder='Director name' name='Director' />
           </div>
           <div className="UploadContentWraper">
-            <p className="uploadTitle">Director Image : </p>
-            {/* <DropThumb /> */}
+            <p className="uploadTitle">Casts : </p>
+            {/* <Form type='text' placeholder='casts' name='Director' /> */}
           </div>
           <div className="UploadContentWraper">
-            <p className="uploadTitle">Thumbnail : </p>
-            {/* <DropThumb /> */}
+            <p className="uploadTitle">Description : </p>
+            {/* <Form type='text' placeholder='casts' name='Director' /> */}
           </div>
           <br></br>
           <input className='UploadBTN' type='submit' />

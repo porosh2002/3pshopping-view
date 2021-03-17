@@ -76,7 +76,6 @@ app.post("/api/register", (req, res) => {
       }
       else{
         res.send('noerror')
-        console.log(noerr);
       }
     });
   });
@@ -93,7 +92,6 @@ app.post('/api/image/:name',ImageUpload.single("image"),(req,res)=>{
   File.save((err, noerr) => {
     if (err) {
       res.json('error');
-      console.log(error);
     }
     if (noerr) {
       const ImageData = new ImageModel({

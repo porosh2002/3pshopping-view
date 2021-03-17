@@ -53,12 +53,17 @@
     font-size: 15px;
     font-weight: 600;
     border: none;
-    padding: 10px 250px;
+    padding: 10px 150px;
     color: #343a40;
     border-radius: 3px;
     cursor: pointer;
     background-color: springgreen;
     outline: none;
+}
+@media screen and (min-width:1280px){
+    .UploadBTN{
+        padding: 10px 250px;
+    }
 }
 /* ImageOfCharecter */
 .ImageOfCharecter{
@@ -85,4 +90,13 @@
 .Charecter_ID{
     font-size:25px;
     color: springgreen;
+}
+@media screen and (max-width:1279px){
+    .ImageCharecterDiv{
+        display:block;
+    }
+    .Charecter_ID{
+        font-size:20px;
+        color: springgreen;
+    }
 }
