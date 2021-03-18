@@ -45,15 +45,30 @@ class Upload extends Component {
             <p className="uploadTitle">Director : </p>
             <Form type='text' placeholder='Director name' name='Director' />
           </div>
-          <div className="UploadContentWraper">
+          <div>
             <p className="uploadTitle">Casts : </p>
-            {/* <Form type='text' placeholder='casts' name='Director' /> */}
-          </div>
-          <div className="UploadContentWraper">
-            <p className="uploadTitle">Description : </p>
+            <textarea  spellCheck='false' className='UploadPageTextArea'></textarea>
             {/* <Form type='text' placeholder='casts' name='Director' /> */}
           </div>
           <br></br>
+          <div>
+            <p className="uploadTitle">Description : </p>
+            <textarea spellCheck='false' className='UploadPageTextArea'></textarea>
+            {/* <Form type='text' placeholder='casts' name='Director' /> */}
+          </div>
+          <br></br>
+          <div>
+            <p className="uploadTitle">Download Links : </p>
+            <textarea spellCheck='false' className='UploadPageTextArea'></textarea>
+            {/* <Form type='text' placeholder='casts' name='Director' /> */}
+          </div>
+          <br></br>
+          <div>
+            <p className="uploadTitle">Subtitle Download Links : </p>
+            <textarea spellCheck='false' className='UploadPageTextArea'></textarea>
+            {/* <Form type='text' placeholder='casts' name='Director' /> */}
+          </div>
+          
           <input className='UploadBTN' type='submit' />
         </form>
       </div>
