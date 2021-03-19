@@ -110,3 +110,15 @@
     padding:15px;
     font-weight:600;
 }
+/* categories */
+.categories{
+    padding:10px;
+    border-radius:3px;
+    background-color: #aaa;
+    width: 150px;
+    display: inline-block;
+    margin: 10px;
+    font-weight: 600;
+    color: #343a40;
+    cursor:pointer;
+}

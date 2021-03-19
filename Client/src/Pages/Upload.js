@@ -45,6 +45,28 @@ class Upload extends Component {
             <p className="uploadTitle">Director : </p>
             <Form type='text' placeholder='Director name' name='Director' />
           </div>
+          {/* Cetagories */}
+          <div>
+            <p className="uploadTitle">Categories</p>
+<p className='categories'>Action</p>
+<p className='categories'>Adventure</p>
+<p className='categories'>Animation</p>
+<p className='categories'>Family</p>
+<p className='categories'>Biography</p>
+<p className='categories'>Thriller</p>
+<p className='categories'>Crime</p>
+<p className='categories'>Superhero</p>
+<p className='categories'>Comedy</p>
+<p className='categories'>Documentary</p>
+<p className='categories'>Drame</p>
+<p className='categories'>Fantasy</p>
+<p className='categories'>Romance</p>
+<p className='categories'>Horror</p>
+<p className='categories'>Mystery</p>
+
+          </div>
+          <br></br>
+          {/* TextArea */}
           <div>
             <p className="uploadTitle">Casts : </p>
             <textarea  spellCheck='false' className='UploadPageTextArea'></textarea>
