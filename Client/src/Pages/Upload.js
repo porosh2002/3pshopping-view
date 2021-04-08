@@ -42,12 +42,61 @@ class Upload extends Component {
   };
   CategoriesSelect = (e) => {
 const name = e.target.attributes.name.value
-    this.setState({ [name]: !this.state.name });
+if(name==='Action'){
+  this.setState({ [name]:!this.state.Action});
+}
+else if(name==='Adventure'){
+  this.setState({ [name]:!this.state.Adventure});
+}
+else if(name==='Animation'){
+  this.setState({ [name]:!this.state.Animation});
+}
+else if(name==='Biography'){
+  this.setState({ [name]:!this.state.Biography});
+}
+else if(name==='Thriller'){
+  this.setState({ [name]:!this.state.Thriller});
+}
+else if(name==='Comedy'){
+  this.setState({ [name]:!this.state.Comedy});
+}
+else if(name==='Crime'){
+  this.setState({ [name]:!this.state.Crime});
+}
+else if(name==='Documentary'){
+  this.setState({ [name]:!this.state.Documentary});
+}
+else if(name==='Drama'){
+  this.setState({ [name]:!this.state.Drama});
+}
+else if(name==='Family'){
+  this.setState({ [name]:!this.state.Family});
+}
+else if(name==='Fantasy'){
+  this.setState({ [name]:!this.state.Fantasy});
+}
+else if(name==='Horror'){
+  this.setState({ [name]:!this.state.Horror});
+}
+else if(name==='Mystery'){
+  this.setState({ [name]:!this.state.Mystery});
+}
+else if(name==='Romance'){
+  this.setState({ [name]:!this.state.Romance});
+}
+else if(name==='ScienceFiction'){
+  this.setState({ [name]:!this.state.ScienceFiction});
+}
+else if(name==='SuperHero'){
+  this.setState({ [name]:!this.state.SuperHero});
+}
   };
   CurrentTime = () => {
     return moment().format("MMMM Do YYYY, h:mm a");
   };
   render() {
+    console.log(this.state
+      .Action);
     const {
       Action,
       Adventure,
@@ -63,7 +112,24 @@ const name = e.target.attributes.name.value
       Horror,
       Mystery,
       Romance,
+      SuperHero
     } = this.state; 
+
+    const ActionStyle= Action ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const AdventureStyle= Adventure ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const AnimationStyle= Animation ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const BiographyStyle= Biography ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const ThrillerStyle= Thriller ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const ComedyStyle= Comedy ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const CrimeStyle= Crime ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const DocumentaryStyle= Documentary ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const DramaStyle= Drama ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const FamilyStyle= Family ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const FantasyStyle= Fantasy ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const HorrorStyle= Horror ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const MysteryStyle= Mystery ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const RomanceStyle= Romance ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
+    const SuperHeroStyle= SuperHero ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
     return (
       <div className="UploadDiv">
         <p className="MainTitleUp">Welcome to Admin Panel</p>
@@ -157,7 +223,7 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Action"
-              style={Action ? {backgroundColor:"#00fa9a"} :null}
+              style={ActionStyle}
             >
               Action
             </p>
@@ -165,6 +231,7 @@ const name = e.target.attributes.name.value
               className="categories"
               name="Adventure"
               onClick={this.CategoriesSelect}
+              style={AdventureStyle}
             >
               Adventure
             </p>
@@ -172,6 +239,7 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Animation"
+              style={AnimationStyle}
             >
               Animation
             </p>
@@ -179,6 +247,7 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Family"
+              style={FamilyStyle}
             >
               Family
             </p>
@@ -186,6 +255,7 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Biography"
+              style={BiographyStyle}
             >
               Biography
             </p>
@@ -193,6 +263,7 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Thriller"
+              style={ThrillerStyle}
             >
               Thriller
             </p>
@@ -200,13 +271,15 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Crime"
+              style={CrimeStyle}
             >
               Crime
             </p>
             <p
               className="categories"
               onClick={this.CategoriesSelect}
-              name="Superhero"
+              name="SuperHero"
+              style={SuperHeroStyle}
             >
               Superhero
             </p>
@@ -214,6 +287,7 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Comedy"
+              style={ComedyStyle}
             >
               Comedy
             </p>
@@ -221,13 +295,15 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Documentary"
+              style={DocumentaryStyle}
             >
               Documentary
             </p>
             <p
               className="categories"
               onClick={this.CategoriesSelect}
-              name="Drame"
+              name="Drama"
+              style={DramaStyle}
             >
               Drame
             </p>
@@ -235,6 +311,7 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Fantasy"
+              style={FantasyStyle}
             >
               Fantasy
             </p>
@@ -242,6 +319,7 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Romance"
+              style={RomanceStyle}
             >
               Romance
             </p>
@@ -249,6 +327,7 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Horror"
+              style={HorrorStyle}
             >
               Horror
             </p>
@@ -256,6 +335,7 @@ const name = e.target.attributes.name.value
               className="categories"
               onClick={this.CategoriesSelect}
               name="Mystery"
+              style={MysteryStyle}
             >
               Mystery
             </p>
