@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Form from "../Components/Form/Form";
-// import DropThumb from '../Components/Dropzone/Dropjone'
 import moment from "moment";
-// import { Button } from "../Styles/Styled";
 import "../Styles/upload.css";
 class Upload extends Component {
   state = {
@@ -35,6 +33,7 @@ class Upload extends Component {
     Romance: false,
     ScienceFiction: false,
     SuperHero: false,
+    
   };
   FormValueChange = (e) => {
     const { name, value } = e.target;
@@ -94,9 +93,30 @@ else if(name==='SuperHero'){
   CurrentTime = () => {
     return moment().format("MMMM Do YYYY, h:mm a");
   };
+  FormSubmit=(e)=>{
+    e.preventDefault()
+    const {
+      Action,
+      Adventure,
+      Animation,
+      Biography,
+      Thriller,
+      Comedy,
+      Crime,
+      Documentary,
+      Drama,
+      Family,
+      Fantasy,
+      Horror,
+      Mystery,
+      Romance,
+      SuperHero
+    } = this.state;
+if(Action === false || Adventure === false || Animation === false || Biography===false|| Thriller===false||Comedy===false|| Crime===false||Documentary===false|| Drama===false||Family===false||Fantasy===false||Horror===false||Mystery===false||Romance===false||SuperHero===false){
+  alert('Categories is not selected')
+}
+  }
   render() {
-    console.log(this.state
-      .Action);
     const {
       Action,
       Adventure,
@@ -114,7 +134,6 @@ else if(name==='SuperHero'){
       Romance,
       SuperHero
     } = this.state; 
-
     const ActionStyle= Action ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
     const AdventureStyle= Adventure ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
     const AnimationStyle= Animation ? {backgroundColor:"#00fa9a"}: {backgroundColor:"#aaa"}
@@ -133,7 +152,7 @@ else if(name==='SuperHero'){
     return (
       <div className="UploadDiv">
         <p className="MainTitleUp">Welcome to Admin Panel</p>
-        <form>
+        <form onSubmit={this.FormSubmit}>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Movie name : </p>
             <Form
@@ -372,7 +391,6 @@ else if(name==='SuperHero'){
               className="UploadPageTextArea"
               name="Download_Link"
             ></textarea>
-            {/* <Form type='text' placeholder='casts' name='Director' /> */}
           </div>
           <br></br>
           <div>
@@ -383,7 +401,7 @@ else if(name==='SuperHero'){
               className="UploadPageTextArea"
               name="Subtitle_Link"
             ></textarea>
-            {/* <Form type='text' placeholder='casts' name='Director' /> */}
+
           </div>
 
           <input className="UploadBTN" type="submit" />
