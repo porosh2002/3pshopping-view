@@ -15,7 +15,6 @@ export default class BrowseMovie extends Component {
                 <option>Adventure</option>
                 <option>Animation</option>
                 <option>Biography</option>
-                <option>Thriller</option>
                 <option>Comedy</option>
                 <option>Crime</option>
                 <option>Documentary</option>
@@ -27,6 +26,7 @@ export default class BrowseMovie extends Component {
                 <option>Mystery</option>
                 <option>Sci-fi</option>
                 <option>Superhero</option>
+                <option>Thriller</option>
                 {/* <option>Crime</option>
                 <option>Crime</option>
                 <option>Crime</option>
