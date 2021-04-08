@@ -15,7 +15,7 @@ class Upload extends Component {
     Age_Requirement: null,
     Trailer_Link: null,
     Director_Link: null,
-    Cast: null,
+    Casts: null,
     Description: null,
     Download_Link: null,
     Subtitle_Link: null,
@@ -36,63 +36,80 @@ class Upload extends Component {
     ScienceFiction: false,
     SuperHero: false,
   };
+  FormValueChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
   CurrentTime = () => {
     return moment().format("MMMM Do YYYY, h:mm a");
   };
   render() {
+    console.log(this.state);
     return (
       <div className="UploadDiv">
         <p className="MainTitleUp">Welcome to Admin Panel</p>
         <form>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Movie name : </p>
-            <Form
+            <Form onChange={this.FormValueChange}
               type="text"
               placeholder="movie name"
-              name="name"
+              name="Movie_Name"
               minlen="2"
               maxlen="50"
             />
           </div>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Year : </p>
-            <Form type="number" placeholder="movie relese year" name="year" />
+            <Form onChange={this.FormValueChange}
+              type="number"
+              placeholder="movie relese year"
+              name="Movie_Year"
+            />
           </div>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Uploader Name : </p>
-            <Form type="text" placeholder="uploader name" name="uploader" />
+            <Form
+              type="text"
+              placeholder="uploader name"
+              name="Uploader_Name"
+            />
           </div>
           <div className="UploadContentWraper">
             <p className="uploadTitle">IMDB Rating : </p>
-            <Form type="number" placeholder="IMDB Rating" name="imdb" />
+            <Form onChange={this.FormValueChange} type="number" placeholder="IMDB Rating" name="IMDB_Rating" />
           </div>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Rotten Tomatoes Rating : </p>
-            <Form
+            <Form onChange={this.FormValueChange}
               type="number"
               placeholder="Rotten Tomatoes Rating"
-              name="rotten"
+              name="Tomatos_Rating"
             />
           </div>
           <div className="UploadContentWraper">
             <p className="uploadTitle"> Metacritic Rating : </p>
-            <Form
+            <Form onChange={this.FormValueChange}
               type="number"
               placeholder=" Metacritic Rating"
-              name=" Metacritic"
+              name="Metacritic_Rating"
             />
           </div>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Minimum Age Requirement : </p>
-            <Form type="number" placeholder="12" name="Director" />
+            <Form onChange={this.FormValueChange} type="number" placeholder="12" name="Age_Requirement" />
           </div>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Trailer Link : </p>
-            <Form type="text" placeholder="Trailer Link" name="trailer" />
+            <Form onChange={this.FormValueChange} type="text" placeholder="Trailer Link" name="Trailer_Link" />
           </div>
           <div className="UploadContentWraper">
             <p className="uploadTitle">Director : </p>
-            <Form type="text" placeholder="Director name" name="Director" />
+            <Form onChange={this.FormValueChange}
+              type="text"
+              placeholder="Director name"
+              name="Director_Link"
+            />
           </div>
           {/* Cetagories */}
           <div>
@@ -117,36 +134,40 @@ class Upload extends Component {
           {/* TextArea */}
           <div>
             <p className="uploadTitle">Casts : </p>
-            <textarea
+            <textarea onChange={this.FormValueChange}
               spellCheck="false"
               className="UploadPageTextArea"
+              name="Casts"
             ></textarea>
             {/* <Form type='text' placeholder='casts' name='Director' /> */}
           </div>
           <br></br>
           <div>
             <p className="uploadTitle">Description : </p>
-            <textarea
+            <textarea onChange={this.FormValueChange}
               spellCheck="false"
               className="UploadPageTextArea"
+              name="Description"
             ></textarea>
             {/* <Form type='text' placeholder='casts' name='Director' /> */}
           </div>
           <br></br>
           <div>
             <p className="uploadTitle">Download Links : </p>
-            <textarea
+            <textarea onChange={this.FormValueChange}
               spellCheck="false"
               className="UploadPageTextArea"
+              name="Download_Link"
             ></textarea>
             {/* <Form type='text' placeholder='casts' name='Director' /> */}
           </div>
           <br></br>
           <div>
             <p className="uploadTitle">Subtitle Download Links : </p>
-            <textarea
+            <textarea onChange={this.FormValueChange}
               spellCheck="false"
               className="UploadPageTextArea"
+              name="Subtitle_Link"
             ></textarea>
             {/* <Form type='text' placeholder='casts' name='Director' /> */}
           </div>
