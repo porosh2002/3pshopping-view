@@ -38,6 +38,10 @@ class Upload extends Component {
             <Form type='number' placeholder=' Metacritic Rating' name=' Metacritic' />
           </div>
           <div className="UploadContentWraper">
+            <p className="uploadTitle">Minimum Age Requirement : </p>
+            <Form type='number' placeholder='12' name='Director' />
+          </div>
+          <div className="UploadContentWraper">
             <p className="uploadTitle">Trailer Link : </p>
             <Form type='text' placeholder='Trailer Link' name='trailer' />
           </div>

@@ -16,17 +16,17 @@ export default class BrowseMovie extends Component {
                 <option>Animation</option>
                 <option>Biography</option>
                 <option>Thriller</option>
-                <option>Crime</option>
-                <option>Superhero</option>
                 <option>Comedy</option>
+                <option>Crime</option>
                 <option>Documentary</option>
                 <option>Drama</option>
                 <option>Family</option>
                 <option>Fantasy</option>
-                <option>Romance</option>
                 <option>Horror</option>
+                <option>Romance</option>
                 <option>Mystery</option>
                 <option>Sci-fi</option>
+                <option>Superhero</option>
                 {/* <option>Crime</option>
                 <option>Crime</option>
                 <option>Crime</option>
