@@ -15,6 +15,8 @@ const cors = require("cors");
 const RegisterUserModel = require("./Register");
 const ImageInfoModel = require("./ImageInfo");
 const ImageModel = require("./Images");
+const MovieModel = require("./MovieInfo");
+const { json } = require("body-parser");
 //
 // const whitelist = ['https://wecubs.com']
 // const corsOptions = {
@@ -116,7 +118,6 @@ app.get('/api/image/info',(req,res)=>{
 })
 // Get Image 
 app.get('/api/image/info/image/:id',(req,res)=>{
-
   const ID = req.params.id;
   ImageModel.find({ID:ID},function(err,result){
     if(result){
@@ -126,6 +127,79 @@ app.get('/api/image/info/image/:id',(req,res)=>{
   })
 })
 //
+// Movie Details
+app.post('/api/upload/movie',(req,res)=>{
+  const {        Action,
+    Adventure,
+    Animation,
+    Biography,
+    Thriller,
+    Comedy,
+    Crime,
+    Documentary,
+    Drama,
+    Family,
+    Fantasy,
+    Horror,
+    Mystery,
+    Romance,
+    SuperHero,
+    ScienceFiction,
+    Movie_Name,
+    Movie_Year,
+    Uploader_Name,
+    IMDB_Rating,
+    Tomatos_Rating,
+    Metacritic_Rating,
+    Age_Requirement,
+    Trailer_Link,
+    Director_Link,
+    Casts,
+    Description,
+    Download_Link,
+    Subtitle_Link} = req.body
+  const File = new MovieModel({
+    Action,
+    Adventure,
+    Animation,
+    Biography,
+    Thriller,
+    Comedy,
+    Crime,
+    Documentary,
+    Drama,
+    Family,
+    Fantasy,
+    Horror,
+    Mystery,
+    Romance,
+    SuperHero,
+    ScienceFiction,
+    Movie_Name,
+    Movie_Year,
+    Uploader_Name,
+    IMDB_Rating,
+    Tomatos_Rating,
+    Metacritic_Rating,
+    Age_Requirement,
+    Trailer_Link,
+    Director_Link,
+    Casts,
+    Description,
+    Download_Link,
+    Subtitle_Link,
+  });
+  File.save((err, noerr) => {
+    if (err) {
+      res.json('error');
+    }
+if(noerr){
+  res.json('noerror')
+}
+  });
+})
+
+
 app.listen(process.env.DB_PORT, async () => {
   try {
     await mongoose.connect("mongodb://localhost:27017/Test", {
