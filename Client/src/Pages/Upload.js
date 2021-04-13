@@ -4,8 +4,11 @@ import moment from "moment";
 import axios from "axios";
 import { URL } from "../serverUrl";
 import "../Styles/upload.css";
+import Modal from "../Components/Modal/Modal";
 class Upload extends Component {
   state = {
+    MovieUploadDone: false,
+    ErrorHappend:false,
     Movie_Name: null,
     Movie_Year: null,
     Uploader_Name:'Porosh',
@@ -35,6 +38,13 @@ class Upload extends Component {
     Romance: false,
     ScienceFiction: false,
     SuperHero: false,
+  };
+  HandleClick = () => {
+    this.setState({
+      ImageUploadDone: false,
+      ErrorHappend: false,
+    });
+    window.location.reload();
   };
   FormValueChange = (e) => {
     const { name, value } = e.target;
@@ -162,6 +172,12 @@ class Upload extends Component {
         Description,
         Download_Link,
         Subtitle_Link,
+      }).then((res) => {
+        if (res.data === "noerror") {
+          this.setState({ MovieUploadDone: true });
+        } else if (res.data === "error") {
+          this.setState({ ErrorHappend: true });
+        }
       });
     }
   };
@@ -182,8 +198,11 @@ class Upload extends Component {
       Mystery,
       Romance,
       SuperHero,
-      ScienceFiction
+      ScienceFiction,
+      MovieUploadDone, ErrorHappend
     } = this.state;
+    const SuccessStyle = MovieUploadDone ? null : { display: "none" };
+    const ErrorStyle = ErrorHappend ? null : { display: "none" }
     const ActionStyle = Action
       ? { backgroundColor: "#00fa9a" }
       : { backgroundColor: "#aaa" };
@@ -500,6 +519,18 @@ class Upload extends Component {
 
           <input className="UploadBTN" type="submit" />
         </form>
+        <div style={SuccessStyle}>
+            <Modal
+              ModalClick={this.HandleClick}
+              Text={"Image Uploaded Successfully"}
+            />
+          </div>
+          <div style={ErrorStyle}>
+            <Modal
+              ModalClick={this.HandleClick}
+              Text={" Something went wrong "}
+            />
+          </div>
       </div>
     );
   }

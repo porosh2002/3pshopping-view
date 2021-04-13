@@ -124,6 +124,9 @@ app.get('/api/image/info/image/:id',(req,res)=>{
     res.set("Content-Type", "image/jpeg");
     res.send(result[0].Image)
     }
+    if(err){
+      console.log(err);
+    }
   })
 })
 //

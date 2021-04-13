@@ -107,6 +107,7 @@ font-size:22px;
 padding:0px 15px;
 font-weight:500;
 letter-spacing:.5px;
+color:#343a40;
 `
 // Modal BTN
 export const ModalBTN = styled.p`
