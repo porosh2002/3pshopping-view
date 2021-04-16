@@ -131,6 +131,18 @@ app.get('/api/image/info/image/:id',(req,res)=>{
 })
 //
 // Movie Details
+
+app.get('/api/movie/:name',(req,res)=>{
+  const name = req.params.name;
+  MovieModel.find({},(err,result)=>{
+    if(name === 'latest'){
+      const MovieData = result.reverse();
+      res.json(MovieData)
+    }
+  })
+})
+
+// Upload Movie
 app.post('/api/upload/movie',(req,res)=>{
   const {        Action,
     Adventure,

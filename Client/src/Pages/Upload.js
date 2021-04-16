@@ -290,6 +290,7 @@ class Upload extends Component {
               type="number"
               placeholder="IMDB Rating"
               name="IMDB_Rating"
+              step="0.01"
             />
           </div>
           <div className="UploadContentWraper">
@@ -299,6 +300,7 @@ class Upload extends Component {
               type="number"
               placeholder="Rotten Tomatoes Rating"
               name="Tomatos_Rating"
+              step="0.01"
             />
           </div>
           <div className="UploadContentWraper">
@@ -308,6 +310,7 @@ class Upload extends Component {
               type="number"
               placeholder=" Metacritic Rating"
               name="Metacritic_Rating"
+              step="0.01"
             />
           </div>
           <div className="UploadContentWraper">
@@ -522,7 +525,7 @@ class Upload extends Component {
         <div style={SuccessStyle}>
             <Modal
               ModalClick={this.HandleClick}
-              Text={"Image Uploaded Successfully"}
+              Text={"Movie Uploaded Successfully"}
             />
           </div>
           <div style={ErrorStyle}>
