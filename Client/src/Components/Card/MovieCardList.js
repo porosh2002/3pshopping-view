@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {URL} from '../../serverUrl'
 import axios from 'axios'
+import MovieCard from './MovieCard'
 export default class MovieCardList extends Component {
     state={
         data:[]
@@ -12,10 +13,13 @@ export default class MovieCardList extends Component {
     }
     
     render() {
-        console.log(this.state.data);
+        const data = this.state.data
+
         return (
             <div>
-                
+                {data.length !== 0 ? data.map((i)=>{
+                   return  <MovieCard data={i} key={i._id} />
+                }): <div></div>}
             </div>
         )
     }
