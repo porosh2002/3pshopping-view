@@ -29,7 +29,7 @@ body {
   color: #fff;
   display: flex;
   align-items: center;
-  color: #00fa9a;
+  color: #1ce783;
 }
 @media screen and (min-width: 1280px) {
   .LogoLink {
@@ -185,7 +185,7 @@ width:90%;
   font-weight:500;
   font-size:17px;
   padding:5px;
-  color: #00fa9a;
+  color: #1ce783;
   background-color: #343a40;
   border-radius:3px;
   width: 70%;
@@ -193,4 +193,8 @@ width:90%;
   display: block;
   margin: 10px auto 0px auto;
   user-select: none;
+}
+.MovieYear_IMDB{
+  display:flex;
+  justify-content:space-between;
 }

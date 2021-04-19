@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled,{css} from "styled-components";
 import ModalBG from '../Images/ModalBG.jpg'
 import {Link} from 'react-router-dom'
 // ** Loader
@@ -135,22 +135,34 @@ margin:20px 10px;
 background-size:cover !important;
 background-position:center !important;
 background-repeat:no-repeat !important;
+&:hover{
+    opacity:.5;
+}
 `
-export const MovieYear = styled.p`
-    padding:5px 0px;
-    background-color:#00fa9a;
+const CommonStyle_Movie_Card = css`
     color:#343a40;
     font-size:15px;
     font-weight:600;
-    max-width:50px;
-    text-align:center;
+    `;
+export const MovieYear = styled.p`
+background-color:#1ce783;
+    padding:5px 10px;
     border-top-left-radius:3px;
+    border-bottom-right-radius:3px;
+    ${CommonStyle_Movie_Card}
+    `
+export const IMDB = styled.p`
+    padding:5px 20px;
+    border-top-right-radius:3px;
+    border-bottom-left-radius:3px;
+    ${CommonStyle_Movie_Card}
+    background-color:#f5c518;
 `
 export const Moviename = styled.p`
 margin-top:105%;
 text-align: center;
 padding:5px;
-background-color:#00fa9a;
+background-color:#1ce783;
 color:#343a40;
 font-weight:600;
 border-bottom-left-radius:3px;
