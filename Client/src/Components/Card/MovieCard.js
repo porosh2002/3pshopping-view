@@ -1,58 +1,16 @@
 import React from 'react'
-
-export default function MovieCard() {
+import {MovieCard,MovieYear,Moviename} from '../../Styles/Styled'
+export default function MovieCardComponent({data}) {
+   const {Movie_Name,Movie_Year,IMDB_Rating,Tomatos_Rating,Metacritic_Rating} = data;
     return (
-        <div>
-            
-        </div>
+        <MovieCard to='/ok' style={{background:"url('https://boyertownstatetheatre.com/wp-content/uploads/2021/03/raya.jpg')"}}>
+           <MovieYear>{Movie_Year}</MovieYear>
+           <Moviename>{Movie_Name}</Moviename>
+           <div>
+               <div>
+                   
+               </div>
+           </div>
+        </MovieCard>
     )
 }
-
-// import React, { Component } from 'react'
-
-// export default class MovieCard extends Component {
-//     state={
-//         Movie_Name: null,
-//         Movie_Year: null,
-//         Uploader_Name:null,
-//         IMDB_Rating: null,
-//         Tomatos_Rating: null,
-//         Metacritic_Rating: null,
-//         Age_Requirement: null,
-//         Trailer_Link: null,
-//         Director_Link: null,
-//         Casts: null,
-//         Description: null,
-//         Download_Link: null,
-//         Subtitle_Link: null,
-//         Action: false,
-//         Adventure: false,
-//         Animation: false,
-//         Biography: false,
-//         Thriller: false,
-//         Comedy: false,
-//         Crime: false,
-//         Documentary: false,
-//         Drama: false,
-//         Family: false,
-//         Fantasy: false,
-//         Horror: false,
-//         Mystery: false,
-//         Romance: false,
-//         ScienceFiction: false,
-//         SuperHero: false,
-//     }
-//     componentDidMount() {
-//         const {data} = this.props
-//         console.log(data);
-//     }
-    
-//     render() {
-//         console.log('Card');
-//         return (
-//             <div>
-                
-//             </div>
-//         )
-//     }
-// }

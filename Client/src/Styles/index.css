@@ -70,6 +70,9 @@ opacity: .9;
   font-size: 25px;
   letter-spacing:.5px;
 }
+.MovieCardWrap{
+  padding:30px 35px;
+}
 .TitleText{
   padding-bottom: 5px;
   border-bottom: 2px solid springgreen;

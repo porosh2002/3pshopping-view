@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ModalBG from '../Images/ModalBG.jpg'
+import {Link} from 'react-router-dom'
 // ** Loader
 // Center
 export const Center = styled.div`
@@ -123,4 +124,35 @@ margin:20px auto;
 &:hover{
     opacity:.9;
 }
+`
+export const MovieCard = styled(Link)`
+background-color:#fff;
+height:300px;
+width:250px;
+border-radius:3px;
+display:inline-block;
+margin:20px 10px;
+background-size:cover !important;
+background-position:center !important;
+background-repeat:no-repeat !important;
+`
+export const MovieYear = styled.p`
+    padding:5px 0px;
+    background-color:#00fa9a;
+    color:#343a40;
+    font-size:15px;
+    font-weight:600;
+    max-width:50px;
+    text-align:center;
+    border-top-left-radius:3px;
+`
+export const Moviename = styled.p`
+margin-top:105%;
+text-align: center;
+padding:5px;
+background-color:#00fa9a;
+color:#343a40;
+font-weight:600;
+border-bottom-left-radius:3px;
+border-bottom-right-radius:3px;
 `

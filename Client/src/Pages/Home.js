@@ -6,9 +6,17 @@ export default function Home() {
         <div> 
         
            <Title Text='Latest' filter='latest'/>
+           <div className='MovieCardWrap'>
            <MovieCardList name='latest' />
+           </div>
            <Title Text='Recommended' filter='recommended'/>
+           <div className='MovieCardWrap'>
+           <MovieCardList name='latest' />
+           </div>
            <Title Text='Most Popular' filter='popular'/>
+           <div className='MovieCardWrap'>
+           <MovieCardList name='latest' />
+           </div>
         </div>
     )
 }
