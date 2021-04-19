@@ -13,6 +13,7 @@ const Login = React.lazy(() => import("./Pages/Login"));
 const Signup = React.lazy(() => import("./Pages/Signup"));
 const Request = React.lazy(() => import("./Pages/Request"));
 const ImageUpload = React.lazy(() => import("./Pages/ImageUpload"));
+const MoviePage = React.lazy(() => import("./Pages/Movie"));
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
        <Route exact path="/Request" component={Request}/>
        <Route exact path="/content/Image" component={ImageUpload}/>
        <Route exact path="/community/signup" component={Signup}/>
+       <Route exact path="/movie/:name" component={MoviePage}/>
        <Route component={ErrorPage}/>
       </Switch>
      </Suspense>

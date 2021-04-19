@@ -141,6 +141,13 @@ app.get('/api/movie/:name',(req,res)=>{
     }
   })
 })
+// Get Spacific Movie
+app.get('/api/movie/specific/:name',(req,res)=>{
+  const name = req.params.name;
+  MovieModel.find({Movie_Name:name},(err,result)=>{
+      res.json(result)
+  })
+})
 
 // Upload Movie
 app.post('/api/upload/movie',(req,res)=>{
