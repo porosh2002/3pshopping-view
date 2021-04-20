@@ -536,6 +536,7 @@ class Upload extends Component {
 
 
           <div>
+            <p className='SubLinkAdd'>Add Subtitle Link</p>
             <p className="uploadTitle">Subtitle Download Links : </p>
             <textarea
               onChange={this.FormValueChange}

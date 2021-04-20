@@ -123,3 +123,15 @@
     cursor:pointer;
     user-select: none;
 }
+.SubLinkAdd{
+    font-size: 17px;
+    color: #00ff7f;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 200px;
+    display: block;
+    margin: 0px auto;
+    text-decoration:underline;
+    cursor: pointer;
+    user-select:none;
+}
