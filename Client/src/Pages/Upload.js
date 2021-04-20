@@ -122,6 +122,7 @@ class Upload extends Component {
       Download_Link,
       Subtitle_Link,
     } = this.state;
+    const UploadDate = moment().format('MMMM Do YYYY')
     if (
       Action === false &&
       Adventure === false &&
@@ -172,6 +173,7 @@ class Upload extends Component {
         Description,
         Download_Link,
         Subtitle_Link,
+        UploadDate
       }).then((res) => {
         if (res.data === "noerror") {
           this.setState({ MovieUploadDone: true });
@@ -322,15 +324,7 @@ class Upload extends Component {
               name="Age_Requirement"
             />
           </div>
-          <div className="UploadContentWraper">
-            <p className="uploadTitle">Trailer Link : </p>
-            <Form
-              onChange={this.FormValueChange}
-              type="text"
-              placeholder="Trailer Link"
-              name="Trailer_Link"
-            />
-          </div>
+
           <div className="UploadContentWraper">
             <p className="uploadTitle">Director : </p>
             <Form
@@ -485,6 +479,28 @@ class Upload extends Component {
             ></textarea>
             {/* <Form type='text' placeholder='casts' name='Director' /> */}
           </div>
+
+          {/* <div className="UploadContentWraper">
+            <p className="uploadTitle">Trailer Link : </p>
+            <Form
+              onChange={this.FormValueChange}
+              type="text"
+              placeholder="Trailer Link"
+              name="Trailer_Link"
+            />
+          </div> */}
+
+          <br></br>
+          <div>
+            <p className="uploadTitle">Trailer Links : </p>
+            <textarea
+              required
+              onChange={this.FormValueChange}
+              spellCheck="false"
+              className="UploadPageTextArea"
+              name="Trailer_Link"
+            ></textarea>
+          </div>
           <br></br>
           <div>
             <p className="uploadTitle">Description : </p>
@@ -495,7 +511,6 @@ class Upload extends Component {
               className="UploadPageTextArea"
               name="Description"
             ></textarea>
-            {/* <Form type='text' placeholder='casts' name='Director' /> */}
           </div>
           <br></br>
           <div>
@@ -509,6 +524,17 @@ class Upload extends Component {
             ></textarea>
           </div>
           <br></br>
+
+
+
+
+
+
+
+
+
+
+
           <div>
             <p className="uploadTitle">Subtitle Download Links : </p>
             <textarea
@@ -519,6 +545,23 @@ class Upload extends Component {
               required
             ></textarea>
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           <input className="UploadBTN" type="submit" />
         </form>

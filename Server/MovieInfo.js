@@ -116,6 +116,10 @@ const MovieSchema = new mongoose.Schema({
         required:true,
         type:String
     },
+    UploadDate:{
+        required:true,
+        type:String
+    }
 });
 const MovieModel = mongoose.model('Movie',MovieSchema);
 module.exports = MovieModel;
