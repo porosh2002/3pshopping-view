@@ -17,7 +17,7 @@ const SubFile = () => {
             onChange={Change}
             spellCheck="false"
             className="UploadPageTextArea"
-            name="Subtitle_Link"
+            name={`Subtitle_Link_${i}`}
             required
           ></textarea>
               </div>

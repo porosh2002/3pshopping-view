@@ -128,8 +128,14 @@ class Upload extends Component {
       Casts,
       Description,
       Download_Link,
-      Subtitle_Link,
+      SubNumber
     } = this.state;
+    const Subtitle_Link = []
+    var i;
+    for(i=1;i<=SubNumber; i++){
+      var Link = 'Subtitle_Link_' + {i}
+      console.log(Link);
+    }
     const UploadDate = moment().format('MMMM Do YYYY')
     if (
       Action === false &&
