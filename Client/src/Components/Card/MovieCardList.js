@@ -11,9 +11,9 @@ export default function MovieCardList({name}) {
       }, [])
     return (
         <div>
-            {data.map((i)=>{
+            {/* {data.map((i)=>{
               return  <MovieCard data={i} key={i._id} />
-            })}
+            })} */}
         </div>
     )
 }

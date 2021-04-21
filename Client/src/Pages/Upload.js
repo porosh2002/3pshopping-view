@@ -5,8 +5,10 @@ import axios from "axios";
 import { URL } from "../serverUrl";
 import "../Styles/upload.css";
 import Modal from "../Components/Modal/Modal";
+import Subtitle from "../Components/Download_Links/Subtitle";
 class Upload extends Component {
   state = {
+    SubNumber:1,
     MovieUploadDone: false,
     ErrorHappend:false,
     Movie_Name: null,
@@ -39,6 +41,9 @@ class Upload extends Component {
     ScienceFiction: false,
     SuperHero: false,
   };
+  IncreaseSub=()=>{
+    this.setState({SubNumber:this.state.SubNumber + 1})
+  }
   HandleClick = () => {
     this.setState({
       ImageUploadDone: false,
@@ -183,6 +188,7 @@ class Upload extends Component {
       });
     }
   };
+
   render() {
     const {
       Action,
@@ -492,7 +498,7 @@ class Upload extends Component {
 
           <br></br>
           <div>
-            <p className="uploadTitle">Trailer Links : </p>
+            <p className="uploadTitle">Trailer: </p>
             <textarea
               required
               onChange={this.FormValueChange}
@@ -536,15 +542,8 @@ class Upload extends Component {
 
 
           <div>
-            <p className='SubLinkAdd'>Add Subtitle Link</p>
-            <p className="uploadTitle">Subtitle Download Links : </p>
-            <textarea
-              onChange={this.FormValueChange}
-              spellCheck="false"
-              className="UploadPageTextArea"
-              name="Subtitle_Link"
-              required
-            ></textarea>
+            <p className='SubLinkAdd' onClick={this.IncreaseSub}>Add Subtitle Link</p>
+          <Subtitle Loop={this.state.SubNumber} Change={this.FormValueChange} />
           </div>
 
 
