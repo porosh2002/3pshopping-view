@@ -1,5 +1,5 @@
 import React from 'react'
-export default function Subtitle({ Loop, Change }) {
+export default function Subtitle({ Loop, Change}) {
 const NewArray= []
 for(var i =1 ; i<Loop ;i++){
     NewArray.push(i)
@@ -11,7 +11,8 @@ const SubFile = () => {
         <>
         {NewArray.map((i) => {
               return <div key={i}>
-          <p className="uploadTitle">Subtitle Download Links : </p>
+                <br />
+          <p className="uploadTitle">Subtitle Download Links {i} : </p> 
           <textarea
             onChange={Change}
             spellCheck="false"

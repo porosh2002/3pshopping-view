@@ -44,6 +44,9 @@ class Upload extends Component {
   IncreaseSub=()=>{
     this.setState({SubNumber:this.state.SubNumber + 1})
   }
+  decreaseSub=()=>{
+    this.setState({SubNumber:this.state.SubNumber - 1})
+  }
   HandleClick = () => {
     this.setState({
       ImageUploadDone: false,
@@ -542,7 +545,9 @@ class Upload extends Component {
 
 
           <div>
-            <p className='SubLinkAdd' onClick={this.IncreaseSub}>Add Subtitle Link</p>
+            <p className='SubLinkAdd' onClick={this.IncreaseSub}>Add one</p>
+            <p className='SubLinkAdd' onClick={this.decreaseSub}>Delete one </p>
+            <br />
           <Subtitle Loop={this.state.SubNumber} Change={this.FormValueChange} />
           </div>
 
