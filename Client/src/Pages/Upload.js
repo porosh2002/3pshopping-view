@@ -23,7 +23,7 @@ class Upload extends Component {
     Casts: null,
     Description: null,
     Download_Link: null,
-    Subtitle_Link: null,
+    Subtitle_Link:[],
     Action: false,
     Adventure: false,
     Animation: false,
@@ -56,7 +56,26 @@ class Upload extends Component {
   };
   FormValueChange = (e) => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    
+    var i = 1;
+    for(i=1;i<=this.state.SubNumber;i++){
+
+    }
+    const SubString2  = `Subtitle_Link_${i}`
+    if(name.includes('Subtitle_Link')){
+      this.setState({ [name]: value });
+      console.log(this.state);
+    }
+
+
+
+
+
+
+    else{
+      this.setState({ [name]: value });
+    }
+    // const SubAdd = 'Subtitle_Link_' + `${i}`
   };
   CategoriesSelect = (e) => {
     const name = e.target.attributes.name.value;
@@ -130,12 +149,6 @@ class Upload extends Component {
       Download_Link,
       SubNumber
     } = this.state;
-    const Subtitle_Link = []
-    var i;
-    for(i=1;i<=SubNumber; i++){
-      var Link = 'Subtitle_Link_' + {i}
-      console.log(Link);
-    }
     const UploadDate = moment().format('MMMM Do YYYY')
     if (
       Action === false &&
@@ -186,7 +199,6 @@ class Upload extends Component {
         Casts,
         Description,
         Download_Link,
-        Subtitle_Link,
         UploadDate
       }).then((res) => {
         if (res.data === "noerror") {
