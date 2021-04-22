@@ -5,10 +5,8 @@ import axios from "axios";
 import { URL } from "../serverUrl";
 import "../Styles/upload.css";
 import Modal from "../Components/Modal/Modal";
-import Subtitle from "../Components/Download_Links/Subtitle";
 class Upload extends Component {
   state = {
-    SubNumber:1,
     MovieUploadDone: false,
     ErrorHappend:false,
     Movie_Name: null,
@@ -41,12 +39,6 @@ class Upload extends Component {
     ScienceFiction: false,
     SuperHero: false,
   };
-  IncreaseSub=()=>{
-    this.setState({SubNumber:this.state.SubNumber + 1})
-  }
-  decreaseSub=()=>{
-    this.setState({SubNumber:this.state.SubNumber - 1})
-  }
   HandleClick = () => {
     this.setState({
       ImageUploadDone: false,
@@ -56,26 +48,7 @@ class Upload extends Component {
   };
   FormValueChange = (e) => {
     const { name, value } = e.target;
-    
-    var i = 1;
-    for(i=1;i<=this.state.SubNumber;i++){
-
-    }
-    const SubString2  = `Subtitle_Link_${i}`
-    if(name.includes('Subtitle_Link')){
       this.setState({ [name]: value });
-      console.log(this.state);
-    }
-
-
-
-
-
-
-    else{
-      this.setState({ [name]: value });
-    }
-    // const SubAdd = 'Subtitle_Link_' + `${i}`
   };
   CategoriesSelect = (e) => {
     const name = e.target.attributes.name.value;
@@ -146,8 +119,7 @@ class Upload extends Component {
       Director_Link,
       Casts,
       Description,
-      Download_Link,
-      SubNumber
+      Download_Link
     } = this.state;
     const UploadDate = moment().format('MMMM Do YYYY')
     if (
@@ -553,37 +525,16 @@ class Upload extends Component {
           <br></br>
 
 
-
-
-
-
-
-
-
-
-
           <div>
-            <p className='SubLinkAdd' onClick={this.IncreaseSub}>Add one</p>
-            <p className='SubLinkAdd' onClick={this.decreaseSub}>Delete one </p>
-            <br />
-          <Subtitle Loop={this.state.SubNumber} Change={this.FormValueChange} />
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <p className="uploadTitle">Subtitle Links : </p>
+          <textarea
+            onChange={this.FormValueChange}
+            spellCheck="false"
+            className="UploadPageTextArea"
+            name={`Subtitle_Link`}
+            required
+          ></textarea>
+              </div>
 
 
           <input className="UploadBTN" type="submit" />
