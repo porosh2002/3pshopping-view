@@ -8,6 +8,7 @@ import Modal from "../Components/Modal/Modal";
 class Upload extends Component {
   state = {
     MovieUploadDone: false,
+    ImageID:null,
     ErrorHappend:false,
     Movie_Name: null,
     Movie_Year: null,
@@ -119,7 +120,9 @@ class Upload extends Component {
       Director_Link,
       Casts,
       Description,
-      Download_Link
+      Download_Link,
+      Subtitle_Link,
+      ImageID
     } = this.state;
     const UploadDate = moment().format('MMMM Do YYYY')
     if (
@@ -171,7 +174,9 @@ class Upload extends Component {
         Casts,
         Description,
         Download_Link,
-        UploadDate
+        UploadDate,
+        Subtitle_Link,
+        ImageID
       }).then((res) => {
         if (res.data === "noerror") {
           this.setState({ MovieUploadDone: true });
@@ -331,6 +336,15 @@ class Upload extends Component {
               type="text"
               placeholder="Director name"
               name="Director_Link"
+            />
+          </div>
+          <div className="UploadContentWraper">
+            <p className="uploadTitle">Thumbnail ID : </p>
+            <Form
+              onChange={this.FormValueChange}
+              type="text"
+              placeholder="Thumbnail ID"
+              name="ImageID"
             />
           </div>
           {/* Cetagories */}

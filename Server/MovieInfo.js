@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 const MovieSchema = new mongoose.Schema({
+    ImageID:{
+        required:true,
+        type:String 
+    }
+    ,
     Action:{
         required:true,
         type:Boolean

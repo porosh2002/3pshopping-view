@@ -151,7 +151,7 @@ app.get('/api/movie/specific/:name',(req,res)=>{
 
 // Upload Movie
 app.post('/api/upload/movie',(req,res)=>{
-  const {        Action,
+  const {Action,
     Adventure,
     Animation,
     Biography,
@@ -180,6 +180,7 @@ app.post('/api/upload/movie',(req,res)=>{
     Description,
     Download_Link,
     UploadDate,
+    ImageID,
     Subtitle_Link} = req.body
   const File = new MovieModel({
     Action,
@@ -212,10 +213,12 @@ app.post('/api/upload/movie',(req,res)=>{
     Description,
     Download_Link,
     Subtitle_Link,
+    ImageID
   });
   File.save((err, noerr) => {
     if (err) {
-      res.json('error');
+      // res.json('error');
+      console.log(err)
     }
 if(noerr){
   res.json('noerror')
@@ -226,7 +229,7 @@ if(noerr){
 
 app.listen(process.env.DB_PORT, async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/FILMV", {
+    await mongoose.connect("mongodb://localhost:27017/db_Film_V", {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
